@@ -1,0 +1,220 @@
+.quizContainer {
+  max-width: 50%;
+  min-height: 650px;
+  margin: 100px auto 0;
+  .questionTextContainer {
+    margin-bottom: 50px;
+    .questionText {
+      font-size: 24px;
+    }
+  }
+  //   .questionTableContainer {
+  //     overflow-x: auto;
+  //     margin: 30px 0;
+  //     .questionTable {
+  //       font-size: 22px;
+  //       border-collapse: collapse;
+  //       width: 100%;
+  //       .questionTableRow:nth-child(odd) {
+  //         background-color: #c9c9c9;
+  //         .questionTableCell {
+  //           text-align: center;
+  //           border: 1px solid #ffffff;
+  //           padding: 8px;
+  //         }
+  //         &:hover {
+  //           background-color: #e9abab;
+  //         }
+  //       }
+  //       .questionTableRow:nth-child(even) {
+  //         background-color: #f2f2f2;
+  //         .questionTableCell {
+  //           text-align: center;
+  //           border: 1px solid #ddd;
+  //           padding: 8px;
+  //         }
+  //         &:hover {
+  //           background-color: #e9abab;
+  //         }
+  //       }
+  //     }
+  //   }
+  .ddQContainer {
+    .ddQForm {
+      .ddQSelect {
+        width: 200px;
+        margin: 50px 10px;
+        box-shadow: 0 0 3px 3px #d15c5c;
+        outline: none;
+        border-radius: 5px;
+        background-color: rgb(236, 236, 236);
+        font-size: 22px;
+        padding: 5px;
+        .ddQOption {
+          font-size: 22px;
+          text-align: center;
+        }
+        &:focus {
+          box-shadow: 0 0 3px 3px #522f2f;
+        }
+        &:hover {
+          box-shadow: 0 0 3px 3px #522f2f;
+        }
+      }
+      .ddQGoBtn {
+        padding: 10px 32px 8px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 0 50px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        border-radius: 5px;
+        margin-top: 70px;
+        &:hover {
+          background-color: #555555;
+          color: white;
+        }
+      }
+    }
+    #corr {
+      width: 200px;
+      height: 100px;
+      font-size: 24px;
+      color: green;
+      font-weight: bold;
+    }
+    #incorr {
+      width: 200px;
+      height: 100px;
+      font-size: 24px;
+      color: #d15c5c;
+      font-weight: bold;
+    }
+  }
+
+  .mcQContainer {
+    .mcQForm {
+      .mcQLabel {
+        font-size: 26px;
+        margin: 20px 20px;
+        .mcQRadio {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          border-radius: 10px;
+          border: 2px solid gray;
+          /* Adjusts the position of the checkboxes on the text baseline */
+          vertical-align: -2px;
+          outline: none;
+          margin: 0 10px;
+          &::before {
+            display: block;
+            content: " ";
+            width: 10px;
+            height: 10px;
+            border-radius: 6px;
+            background-color: red;
+            font-size: 1.2em;
+            transform: translate(3px, 3px) scale(0);
+            transform-origin: center;
+            transition: all 0.3s ease-in;
+          }
+          &:checked::before {
+            transform: translate(3px, 3px) scale(1);
+            transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+          }
+        }
+      }
+      .mcQGoBtn {
+        padding: 8px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 0 50px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        background-color: white;
+        color: black;
+        border: 2px solid #555555;
+        border-radius: 5px;
+        margin-top: 70px;
+        &:hover {
+          background-color: #555555;
+          color: white;
+        }
+      }
+    }
+    #corr {
+      width: 200px;
+      height: 100px;
+      font-size: 24px;
+      color: green;
+      font-weight: bold;
+    }
+    #incorr {
+      width: 200px;
+      height: 100px;
+      font-size: 24px;
+      color: #d15c5c;
+      font-weight: bold;
+    }
+  }
+
+  .alignmentContainer {
+    width: 100%;
+    height: 25vh;
+    .alignment {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .quizButtonContainer {
+    width: 50vw;
+    display: block;
+    margin-bottom: 40px;
+    .quizNextBtn {
+      padding: 8px 32px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      font-size: 16px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      background-color: white;
+      color: #555555;
+      border: 2px solid #555555;
+      border-radius: 5px;
+      width: 150px;
+      &:hover {
+        background-color: #555555;
+        color: white;
+      }
+    }
+    .finishQuizBtn {
+      padding: 8px 32px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      font-size: 16px;
+      // margin-left: 50%;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      background-color: white;
+      color: #555555;
+      border: 2px solid #555555;
+      border-radius: 5px;
+      width: 150px;
+      &:hover {
+        background-color: #555555;
+        color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.footerPalette {
+  position: relative;
+  width: 100%;
+  background-color: #4b4b4b;
+  bottom: 0;
+}
+.footerPalette .footerContainer {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+}
+.footerPalette .footerContainer .logoCol {
+  display: inline-block;
+  padding-top: 20px;
+}
+.footerPalette .footerContainer .logoCol .footerLogo {
+  padding-bottom: 10px;
+}
+.footerPalette .footerContainer .logoCol .footerLogo .logoImg {
+  width: 150px;
+}
+.footerPalette .footerContainer .logoCol .social .socialIcon {
+  padding-right: 7px;
+  display: inline-block;
+}
+.footerPalette .footerContainer .emptyCol {
+  display: inline-block;
+  width: 80%;
+}
+.footerPalette .footerContainer .linksCol {
+  display: inline-block;
+  padding-top: 40px;
+  width: 150px;
+}
+.footerPalette .footerContainer .linksCol .footerMenu {
+  list-style-type: none;
+}
+.footerPalette .footerContainer .linksCol .footerMenu a {
+  color: #b4b4b4;
+}
+.footerPalette .footerContainer .linksCol .footerMenu a:hover {
+  color: #ca5555;
+}
+.footerPalette .copyright {
+  width: 250px;
+  color: #b4b4b4;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=footer.css.map */

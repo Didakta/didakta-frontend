@@ -1,0 +1,84 @@
+.resultContainer {
+  width: 40%;
+  margin: 100px auto;
+}
+.resultContainer .average {
+  padding-bottom: 20px;
+}
+.resultContainer .recommendation {
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+.resultContainer .resOneQuestion .yourResult {
+  padding-bottom: 20px;
+}
+.resultContainer .resOneQuestion .wrongAnswer {
+  background-color: #eed5d5;
+  border: 2px solid #eb7777;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 20px;
+}
+.resultContainer .resOneQuestion .wrongAnswer .resQText {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+.resultContainer .resOneQuestion .wrongAnswer .alignmentContainer {
+  width: 90%;
+  height: 15vh;
+  margin: 0 auto 20px;
+}
+.resultContainer .resOneQuestion .wrongAnswer .alignmentContainer .alignment {
+  width: 100%;
+  height: 100%;
+}
+.resultContainer .resOneQuestion .wrongAnswer .ResQRight {
+  font-size: 22px;
+  color: green;
+  padding: 5px 0;
+}
+.resultContainer .resOneQuestion .rightAnswer {
+  background-color: #ddeed5;
+  border: 2px solid #8edf60;
+  border-radius: 5px;
+  margin: 5px 0;
+  padding: 20px;
+}
+.resultContainer .resOneQuestion .rightAnswer .resQText {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+.resultContainer .resOneQuestion .rightAnswer .alignmentContainer {
+  width: 90%;
+  height: 15vh;
+  margin: 0 auto 20px;
+}
+.resultContainer .resOneQuestion .rightAnswer .alignmentContainer .alignment {
+  width: 100%;
+  height: 100%;
+}
+.resultContainer .resOneQuestion .rightAnswer .ResQRight {
+  font-size: 22px;
+  color: green;
+  padding: 5px 0;
+}
+.resultContainer .backDash {
+  margin-top: 50px;
+  padding: 8px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: #555555;
+  border: 2px solid #555555;
+  border-radius: 5px;
+}
+.resultContainer .backDash:hover {
+  background-color: #555555;
+  color: white;
+}
+
+/*# sourceMappingURL=quizResult.css.map */

@@ -1,0 +1,268 @@
+.courseContainer {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+}
+.courseContainer .listContainer {
+  width: 25%;
+}
+.courseContainer .chapterContainer {
+  margin-top: 100px;
+  width: 75%;
+}
+.courseContainer .chapterContainer .chapterText {
+  font-size: 22px;
+  margin-top: 50px;
+}
+.courseContainer .chapterContainer .chapterText a {
+  font-size: 22px;
+  color: #eb6d6d;
+  text-decoration: none;
+}
+.courseContainer .chapterContainer .chapterText a:hover {
+  color: green;
+}
+.courseContainer .chapterContainer .audioText {
+  font-size: 26px;
+  text-align: justify;
+}
+.courseContainer .chapterContainer .audioPlayer {
+  margin: 50px auto;
+}
+.courseContainer .chapterContainer .tableContainer {
+  overflow-x: auto;
+  margin: 50px 0;
+}
+.courseContainer .chapterContainer .tableContainer .chapterTable {
+  font-size: 22px;
+  border-collapse: collapse;
+  width: 100%;
+}
+.courseContainer .chapterContainer .tableContainer .chapterTable .chapterTableRow:nth-child(odd) {
+  background-color: #c9c9c9;
+}
+.courseContainer .chapterContainer .tableContainer .chapterTable .chapterTableRow:nth-child(odd) .chapterTableCell {
+  text-align: center;
+  border: 1px solid #ffffff;
+  padding: 8px;
+}
+.courseContainer .chapterContainer .tableContainer .chapterTable .chapterTableRow:nth-child(odd):hover {
+  background-color: #e9abab;
+}
+.courseContainer .chapterContainer .tableContainer .chapterTable .chapterTableRow:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.courseContainer .chapterContainer .tableContainer .chapterTable .chapterTableRow:nth-child(even) .chapterTableCell {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.courseContainer .chapterContainer .tableContainer .chapterTable .chapterTableRow:nth-child(even):hover {
+  background-color: #e9abab;
+}
+.courseContainer .chapterContainer .videoContainer {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.courseContainer .chapterContainer .ddContainer .ddText {
+  font-size: 24px;
+}
+.courseContainer .chapterContainer .ddContainer .ddForm .ddSelect {
+  width: 200px;
+  margin: 50px 10px;
+  box-shadow: 0 0 3px 3px #d15c5c;
+  outline: none;
+  border-radius: 5px;
+  background-color: #ececec;
+  font-size: 22px;
+  padding: 5px;
+}
+.courseContainer .chapterContainer .ddContainer .ddForm .ddSelect .ddOption {
+  font-size: 22px;
+  text-align: center;
+}
+.courseContainer .chapterContainer .ddContainer .ddForm .ddSelect:focus {
+  box-shadow: 0 0 3px 3px #522f2f;
+}
+.courseContainer .chapterContainer .ddContainer .ddForm .ddSelect:hover {
+  box-shadow: 0 0 3px 3px #522f2f;
+}
+.courseContainer .chapterContainer .ddContainer .ddForm .ddBtn {
+  padding: 10px 32px 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 50px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  border-radius: 5px;
+  margin-top: 70px;
+}
+.courseContainer .chapterContainer .ddContainer .ddForm .ddBtn:hover {
+  background-color: #555555;
+  color: white;
+}
+.courseContainer .chapterContainer .ddContainer #corr {
+  width: 200px;
+  height: 100px;
+  font-size: 24px;
+  color: green;
+  font-weight: bold;
+}
+.courseContainer .chapterContainer .ddContainer #incorr {
+  width: 200px;
+  height: 100px;
+  font-size: 24px;
+  color: #d15c5c;
+  font-weight: bold;
+}
+.courseContainer .chapterContainer .mcContainer .mcText {
+  font-size: 24px;
+}
+.courseContainer .chapterContainer .mcContainer .mcForm .mcLabel {
+  font-size: 26px;
+  margin: 50px 50px;
+}
+.courseContainer .chapterContainer .mcContainer .mcForm .mcLabel .mcInput {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 2px solid gray;
+  /* Adjusts the position of the checkboxes on the text baseline */
+  vertical-align: -2px;
+  outline: none;
+  margin: 0 10px;
+}
+.courseContainer .chapterContainer .mcContainer .mcForm .mcLabel .mcInput::before {
+  display: block;
+  content: " ";
+  width: 10px;
+  height: 10px;
+  border-radius: 6px;
+  background-color: red;
+  font-size: 1.2em;
+  transform: translate(3px, 3px) scale(0);
+  transform-origin: center;
+  transition: all 0.3s ease-in;
+}
+.courseContainer .chapterContainer .mcContainer .mcForm .mcLabel .mcInput:checked::before {
+  transform: translate(3px, 3px) scale(1);
+  transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+}
+.courseContainer .chapterContainer .mcContainer .mcForm .mcBtn {
+  padding: 8px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0 50px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  border-radius: 5px;
+  margin-top: 70px;
+}
+.courseContainer .chapterContainer .mcContainer .mcForm .mcBtn:hover {
+  background-color: #555555;
+  color: white;
+}
+.courseContainer .chapterContainer .mcContainer #corr {
+  width: 200px;
+  height: 100px;
+  font-size: 24px;
+  color: green;
+  font-weight: bold;
+}
+.courseContainer .chapterContainer .mcContainer #incorr {
+  width: 200px;
+  height: 100px;
+  font-size: 24px;
+  color: #d15c5c;
+  font-weight: bold;
+}
+.courseContainer .chapterContainer .alignmentText {
+  font-size: 22px;
+  margin-bottom: 50px;
+}
+.courseContainer .chapterContainer .alignmentContainer {
+  width: 100%;
+  height: 25vh;
+}
+.courseContainer .chapterContainer .alignmentContainer .alignment {
+  width: 100%;
+  height: 100%;
+}
+.courseContainer .chapterContainer .footnotes .ruler {
+  width: 50%;
+}
+.courseContainer .chapterContainer .btnContainer {
+  width: 50vw;
+  display: block;
+  margin: 50px 0;
+}
+.courseContainer .chapterContainer .btnContainer .ChapPrevBtn {
+  padding: 8px 32px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 300px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: #555555;
+  border: 2px solid #555555;
+  border-radius: 5px;
+  width: 150px;
+}
+.courseContainer .chapterContainer .btnContainer .ChapPrevBtn:hover {
+  background-color: #555555;
+  color: white;
+}
+.courseContainer .chapterContainer .btnContainer .chapNextBtn {
+  padding: 8px 32px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 40px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: #555555;
+  border: 2px solid #555555;
+  border-radius: 5px;
+  width: 150px;
+}
+.courseContainer .chapterContainer .btnContainer .chapNextBtn:hover {
+  background-color: #555555;
+  color: white;
+}
+.courseContainer .chapterContainer .btnContainer .chapQuizBtn {
+  padding: 8px 32px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 40px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: white;
+  color: #7e3a3a;
+  border: 2px solid #7e3a3a;
+  border-radius: 5px;
+}
+.courseContainer .chapterContainer .btnContainer .chapQuizBtn:hover {
+  background-color: #7e3a3a;
+  color: white;
+}
+
+/*# sourceMappingURL=course.css.map */

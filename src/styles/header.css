@@ -1,0 +1,33 @@
+.headerLogo {
+  /* -webkit-filter: drop-shadow(5px 5px 5px #000);
+  filter: drop-shadow(5px 5px 5px #000); */
+  width: 120px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+}
+a:hover {
+  color: white;
+}
+
+.aboutLink {
+  padding: 0 10px;
+}
+
+.aboutLink:hover {
+  color: white !important;
+}
+
+.headerContainer {
+  background-color: #818181;
+  position: sticky;
+  top: 0;
+}
+
+.menuItem {
+  padding-left: 200px;
+}
+/* background-color: #d37f31; */

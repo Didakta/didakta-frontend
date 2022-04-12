@@ -1,0 +1,13 @@
+.dashboard {
+  width: 70%;
+  margin: 100px auto;
+}
+.dashboard .dashboardContainer {
+  width: 100%;
+  display: block;
+}
+.dashboard .dashboardContainer .syllabus {
+  width: 100%;
+}
+
+/*# sourceMappingURL=dashboard.css.map */
