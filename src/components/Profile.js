@@ -1,44 +1,54 @@
 import React, { useState, useEffect } from "react";
-import jwtDecode from "jwt-decode";
+import { useParams } from "react-router-dom";
+import {
+  getUserToken,
+  getUserProgress,
+  getUserProfile,
+  updateProfile,
+} from "../functions/userFunctions";
 
 const Profile = () => {
+  const [userEmail, setUserEmail] = useState("");
+  const [editableElement, setEditableElement] = useState(false);
+  const [userProgress, setUserProgress] = useState({
+    lessonProgress: "",
+    chapterProgress: "",
+    quizProgress: [],
+  });
   const [userData, setUserData] = useState({
     first: "",
     last: "",
     email: "",
     id: "",
-    regDate: Date().now,
-    quizProgress: {
-      firstTimeScore: 0,
-      quiz: "",
-    },
-    lessonProgress: "",
-    chapterProgress: "",
+    admin: false,
   });
+  const { userId } = useParams();
 
   useEffect(() => {
-    getProfile();
+    getUserProfile(setUserData);
+    const progress = async () => {
+      const token = await getUserToken();
+      setUserProgress(await getUserProgress(userId, token));
+    };
+    progress();
   }, []);
 
-  const getProfile = async () => {
-    const token = await localStorage.usertoken;
-    const decoded = await jwtDecode(token);
-    setUserData({
-      first: decoded.user.first,
-      last: decoded.user.last,
-      email: decoded.user.email,
-      id: decoded.user._id,
-      regDate: decoded.user.regDate,
-      quizProgress: decoded.user.quizProgress,
-      lessonProgress: decoded.user.lessonProgress,
-      chapterProgress: decoded.user.chapterProgress,
-    });
-  };
-  console.log(userData);
+  // console.log(userProgress);
+
+  // const handleUserData = (e) => {
+  //   setUserData({
+  //     first: userData.first,
+  //     last: userData.last,
+  //     email: e.currentTarget.textContent,
+  //     id: userData.id,
+  //     admin: userData.admin,
+  //   });
+  //   console.log(userData);
+  // };
 
   return (
     <div>
-      <p>Hello {userData.first}</p>
+      <div>{userData.email}</div>
     </div>
   );
 };
