@@ -3,22 +3,27 @@ import { ApiController } from "./LessonsContext";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Home from "./components/Home";
-import Header from "./components/Header";
+// import Header from "./components/Header";
+
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Course from "./components/Course";
 import Syllabus from "./components/Syllabus";
 import Quiz from "./components/Quiz";
 import QuizResult from "./components/QuizResult";
+import Profile from "./components/Profile";
 import NotFound from "./components/NotFound";
 
-import "./styles/router.css";
+import CssBaseline from "@mui/material/CssBaseline";
+
+// import "./styles/router.css";
 
 const AppRouter = () => {
   return (
     <ApiController>
+      <CssBaseline />
       <div className="siteContainer">
-        <Header />
+        {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -28,6 +33,7 @@ const AppRouter = () => {
           <Route path="/about" element={<About />} />
           <Route path="/quiz/:lessonId/:questionId" element={<Quiz />} />
           <Route path="/quiz/result/:lessonId" element={<QuizResult />} />
+          <Route path="/user/:userId" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer className="footer" />
