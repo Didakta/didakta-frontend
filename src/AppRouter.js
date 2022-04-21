@@ -14,15 +14,12 @@ import QuizResult from "./components/QuizResult";
 import Profile from "./components/Profile";
 import NotFound from "./components/NotFound";
 
-import CssBaseline from "@mui/material/CssBaseline";
-
 // import "./styles/router.css";
 
 const AppRouter = () => {
   return (
     <ApiController>
-      <CssBaseline />
-      <div className="siteContainer">
+      <div className="">
         {/* <Header /> */}
         <Routes>
           <Route path="/" element={<Home />} />
@@ -36,7 +33,7 @@ const AppRouter = () => {
           <Route path="/user/:userId" element={<Profile />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-        <Footer className="footer" />
+        {/* <Footer className="" /> */}
       </div>
     </ApiController>
   );

@@ -15,7 +15,7 @@
   box-shadow: 0 0 3px 3px #d15c5c;
   outline: none;
   border-radius: 5px;
-  background-color: #ececec;
+  background-color: rgb(236, 236, 236);
   font-size: 22px;
   padding: 5px;
 }
