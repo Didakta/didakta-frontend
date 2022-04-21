@@ -1,67 +1,231 @@
-.homeContainer {
-  .homeImageContainer {
-    background: url("../images/boy_with_horse_overlay.jpg") no-repeat top;
-    background-size: cover;
-    height: auto;
-    text-align: center;
-    padding-top: 300px;
-    padding-bottom: 200px;
-    .startLearning {
-      padding: 16px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      transition-duration: 0.4s;
-      cursor: pointer;
-      background-color: white;
-      color: black;
-      border: 2px solid #555555;
-      border-radius: 5px;
-      margin-top: 70px;
-      &:hover {
-        background-color: #555555;
-        color: white;
-      }
-    }
-  }
-  .homeTextContainer {
-    text-align: justify;
-    width: 60%;
-    margin: 100px auto;
-    font-size: 22px;
+$dk-violet: rgb(48, 41, 52);
+$dk-yellow: rgb(167, 119, 31);
+$dk-red: rgb(73, 27, 27);
+$dk-blue: rgb(21, 50, 59);
+$dk-green: rgb(39, 52, 42);
+$dk-light-violet: rgb(122, 88, 88);
 
-    h1 {
-      margin-bottom: 50px;
-    }
-    .homeP {
-      margin-bottom: 50px;
-      #webdev {
-        font-style: italic;
-        color: #b64545;
-      }
-    }
-  }
-  .ugaritLink {
+.home-container {
+  width: 100%;
+
+  .home-rows {
     width: 100%;
-    text-align: center;
-    margin: 100px 0;
 
-    .ugarit {
-      height: 50px;
-      margin-right: 10px;
+    /////////////////////////// FIRST ROW ///////////////////////////
+    .home-row-1-ct {
+      width: 100%;
+      background-color: $dk-violet;
+      aspect-ratio: 6/1;
+      .home-row-1 {
+        width: 100%;
+        display: flex;
+        margin: 0 auto;
+        .home-row-1-left {
+          display: inline-block;
+          // min-width: 250px;
 
-      &:hover {
-        opacity: 0.5;
+          .home-logo-container {
+            background-image: url("../images/logo.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 65%;
+            height: 100%;
+            margin-bottom: 20px;
+            transition: opacity 0.5s;
+            -webkit-transition: opacity 0.5s;
+            &:hover {
+              opacity: 0.5;
+            }
+          }
+        }
+        .home-row-1-right {
+          display: inline-block;
+          // min-width: 250px;
+
+          .home-row-1-text {
+            text-align: center;
+            font-size: 3vw;
+            font-weight: bold;
+            margin: 15vh 20px 20px;
+            color: lightgray;
+          }
+        }
       }
     }
-    .perseus {
-      height: 50px;
-      margin-left: 10px;
-      border-radius: 7px;
-      &:hover {
-        opacity: 0.5;
+
+    /////////////////////////// SECOND ROW ///////////////////////////
+    .home-row-2-ct {
+      width: 100%;
+      background-color: $dk-yellow;
+      .home-row-2 {
+        width: 100%;
+        display: flex;
+        height: 70vh;
+
+        .home-row-2-left {
+          position: relative;
+          transition: width 1s;
+          -webkit-transition: width 1s;
+          .block-ct {
+            position: absolute;
+            top: 30%;
+            right: 7vw;
+            padding-left: 7vw;
+            text-align: center;
+            color: rgb(39, 39, 39);
+            h1 {
+              font-size: 3vw;
+              margin-bottom: 10px;
+            }
+            p {
+              font-size: clamp(14px, 1.8vw, 2vw);
+              margin-bottom: 30px;
+            }
+          }
+        }
+        .home-row-2-right {
+          display: inline-block;
+          transition: width 1s;
+          -webkit-transition: width 1s;
+          .home-img-container {
+            background-image: url("../images/Face.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 200px;
+            height: 100%;
+          }
+        }
+        &:hover {
+          .home-row-2-left {
+            width: 60%;
+          }
+          .home-row-2-right {
+            width: 40%;
+          }
+        }
+      }
+    }
+
+    /////////////////////////// THIRD ROW ///////////////////////////
+    .home-row-3-ct {
+      .home-row-3 {
+        width: 100%;
+        padding: 20vh 6vw;
+        text-align: center;
+        background-color: $dk-green;
+        color: lightgray;
+        font-size: clamp(16px, 2.3vw, 2.3vw);
+        .home-green-btn {
+          margin-top: 40px;
+        }
+      }
+    }
+    /////////////////////////// FOURTH ROW ///////////////////////////
+    .home-row-4-ct {
+      width: 100%;
+      background-color: $dk-red;
+      .home-row-4 {
+        width: 100%;
+        display: flex;
+        height: 70vh;
+        .home-row-4-left {
+          display: inline-block;
+          transition: width 1s;
+          -webkit-transition: width 1s;
+          .home-img-container {
+            background-image: url("../images/DP244583.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 200px;
+            height: 100%;
+          }
+        }
+        .home-row-4-right {
+          position: relative;
+          transition: width 1s;
+          -webkit-transition: width 1s;
+          .block-ct {
+            position: absolute;
+            top: 30%;
+            left: 7vw;
+            padding-right: 7vw;
+            text-align: center;
+            color: lightgray;
+            h1 {
+              font-size: 3vw;
+              margin-bottom: 10px;
+            }
+            p {
+              font-size: clamp(14px, 1.8vw, 2vw);
+              margin-bottom: 30px;
+            }
+          }
+        }
+
+        &:hover {
+          .home-row-4-left {
+            width: 40%;
+          }
+          .home-row-4-right {
+            width: 60%;
+          }
+        }
+      }
+    }
+
+    /////////////////////////// FIFTH ROW ///////////////////////////
+    .home-row-5-ct {
+      width: 100%;
+      background-color: $dk-blue;
+      .home-row-5 {
+        width: 100%;
+        display: flex;
+        height: 70vh;
+        .home-row-5-left {
+          position: relative;
+          transition: width 1s;
+          -webkit-transition: width 1s;
+          .block-ct {
+            position: absolute;
+            top: 30%;
+            right: 7vw;
+            padding-left: 7vw;
+            text-align: center;
+            color: lightgray;
+            h1 {
+              font-size: 3vw;
+              margin-bottom: 10px;
+            }
+            p {
+              font-size: clamp(14px, 1.8vw, 2vw);
+              margin-bottom: 30px;
+            }
+          }
+        }
+        .home-row-5-right {
+          display: inline-block;
+          transition: width 1s;
+          -webkit-transition: width 1s;
+          .home-img-container {
+            background-image: url("../images/plate-1.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: 200px;
+            height: 100%;
+          }
+        }
+
+        &:hover {
+          .home-row-5-left {
+            width: 60%;
+          }
+          .home-row-5-right {
+            width: 40%;
+          }
+        }
       }
     }
   }

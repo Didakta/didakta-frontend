@@ -13,8 +13,8 @@
   padding-bottom: 20px;
 }
 .resultContainer .resOneQuestion .wrongAnswer {
-  background-color: #eed5d5;
-  border: 2px solid #eb7777;
+  background-color: rgb(238, 213, 213);
+  border: 2px solid rgb(235, 119, 119);
   border-radius: 5px;
   margin: 5px 0;
   padding: 20px;
@@ -38,8 +38,8 @@
   padding: 5px 0;
 }
 .resultContainer .resOneQuestion .rightAnswer {
-  background-color: #ddeed5;
-  border: 2px solid #8edf60;
+  background-color: rgb(221, 238, 213);
+  border: 2px solid rgb(142, 223, 96);
   border-radius: 5px;
   margin: 5px 0;
   padding: 20px;

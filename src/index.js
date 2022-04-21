@@ -1,7 +1,6 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider } from "@mui/material/styles";
-import Theme from "./Theme";
+import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import AppRouter from "./AppRouter";
@@ -9,9 +8,7 @@ import AppRouter from "./AppRouter";
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-      <ThemeProvider theme={Theme}>
-        <AppRouter />
-      </ThemeProvider>
+      <AppRouter />
     </React.StrictMode>
   </BrowserRouter>,
   document.getElementById("root")
