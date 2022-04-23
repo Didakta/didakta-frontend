@@ -1,11 +1,24 @@
-.dashboard {
+.syllabusContainer {
   width: 70%;
   margin: 100px auto;
-  .dashboardContainer {
-    width: 100%;
+  display: flex;
+  .listAndHeaderContainer {
     display: block;
-    .syllabus {
+    .listContainer {
+      display: flex;
       width: 100%;
+      .oneLessonList {
+        font-size: 17px;
+        margin: 100px 30px;
+      }
+    }
+  }
+  .syllabusImageContainer {
+    width: 50%;
+    margin-top: 50px;
+    .syllabusImage {
+      width: 100%;
+      //   margin-top: 200px;
     }
   }
 }

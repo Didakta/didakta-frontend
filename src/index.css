@@ -5,3 +5,7 @@
   font-family: "Roboto";
   /* border: 1px solid red; */
 }
+
+[class*="btn"] {
+  cursor: none;
+}

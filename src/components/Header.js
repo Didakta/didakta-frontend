@@ -1,18 +1,11 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import { Navbar } from "reactstrap";
-import { NavbarBrand } from "reactstrap";
-import { NavbarToggler } from "reactstrap";
-import { Collapse } from "reactstrap";
-import { Nav } from "reactstrap";
-import { NavItem } from "reactstrap";
-import { NavLink } from "reactstrap";
-import { NavbarText } from "reactstrap";
 import "../styles/header.css";
-import { Link, useNavigate } from "react-router-dom";
-import logo from "../images/logo.png";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import logo from "../images/icon-white.png";
 
 const Header = () => {
   const navigate = useNavigate();
+  const [navOpen, setNavOpen] = useState(0);
 
   const logOut = (e) => {
     e.preventDefault();
@@ -21,56 +14,78 @@ const Header = () => {
   };
 
   return (
-    <div className="headerContainer">
-      <Navbar expand="md" light>
-        <NavbarBrand>
-          <Link to="/">
-            <img
-              className="headerLogo"
-              src={logo}
-              width="100"
-              alt="Didakta logo"
-            />
-          </Link>
-        </NavbarBrand>
-        <NavbarToggler onClick={function noRefCheck() {}} />
-        <Collapse navbar>
-          <Nav className="me-auto" navbar>
-            {localStorage.usertoken && (
-              <NavItem className="menuItem">
-                <NavLink>
-                  <Link to="/dashboard">DASHBOARD</Link>
-                </NavLink>
-              </NavItem>
-            )}
-            {localStorage.usertoken && (
-              <NavItem>
-                <NavLink>
-                  <a href="#" onClick={logOut}>
-                    LOGOUT
-                  </a>
-                </NavLink>
-              </NavItem>
-            )}
-            {!localStorage.usertoken && (
-              <NavItem className="menuItem">
-                <NavLink>
-                  <Link to="/login">LOGIN</Link>
-                </NavLink>
-              </NavItem>
-            )}
-            {!localStorage.usertoken && (
-              <NavItem>
-                <NavLink>
-                  <Link to="/register">REGISTER</Link>
-                </NavLink>
-              </NavItem>
-            )}
-          </Nav>
-          <NavbarText></NavbarText>
-        </Collapse>
-      </Navbar>
-    </div>
+    <>
+      <div className="header-ct">
+        <div className="header-logo-ct" onClick={() => navigate("/")}>
+          <img className="header-logo-btn" src={logo} alt="Didakta Logo" />
+        </div>
+        <div className="header-icon-ct">
+          <a className="header-icon" href="javascript:void(0)">
+            <i className="fa fa-bars" onClick={() => setNavOpen(300)}></i>
+          </a>
+        </div>
+      </div>
+
+      {/* Side Navigation */}
+      <div style={{ width: `${navOpen}px` }} className="side-nav-ct">
+        <a
+          href="javascript:void(0)"
+          className="sidenav-close"
+          onClick={() => setNavOpen(0)}
+        >
+          &times;
+        </a>
+        <NavLink className="side-nav-link" to="/">
+          Home
+        </NavLink>
+        {localStorage.usertoken && (
+          <NavLink
+            style={({ isActive }) => {
+              return {
+                color: isActive && "#a7771f",
+              };
+            }}
+            className="side-nav-link"
+            to="/dashboard"
+          >
+            Dashboard
+          </NavLink>
+        )}
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              color: isActive && "#a7771f",
+            };
+          }}
+          className="side-nav-link"
+          to="/about"
+        >
+          About Didakta
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              color: isActive && "#a7771f",
+            };
+          }}
+          className="side-nav-link"
+          to="/contact"
+        >
+          Contact Us
+        </NavLink>
+        {localStorage.usertoken && (
+          <>
+            <hr className="h-ruller" />
+            <NavLink className="side-nav-link" to="/user">
+              Your Profile
+            </NavLink>
+            <Link className="side-nav-link" to="/" onClick={logOut}>
+              Log Out
+            </Link>
+          </>
+        )}
+      </div>
+    </>
   );
 };
 export default Header;
