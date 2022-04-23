@@ -1,0 +1,9 @@
+.syllabusContainer {
+  min-height: 600px;
+}
+.syllabusContainer .listAndHeaderContainer .oneLessonList {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/*# sourceMappingURL=courselist.css.map */

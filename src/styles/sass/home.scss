@@ -3,7 +3,8 @@ $dk-yellow: rgb(167, 119, 31);
 $dk-red: rgb(73, 27, 27);
 $dk-blue: rgb(21, 50, 59);
 $dk-green: rgb(39, 52, 42);
-$dk-light-violet: rgb(122, 88, 88);
+$dk-pink: rgb(122, 88, 88);
+$dk-sky: rgb(110, 124, 139);
 
 .home-container {
   width: 100%;
@@ -60,8 +61,8 @@ $dk-light-violet: rgb(122, 88, 88);
       .home-row-2 {
         width: 100%;
         display: flex;
-        height: 70vh;
-
+        height: 50vw;
+        max-height: 70vh;
         .home-row-2-left {
           position: relative;
           transition: width 1s;
@@ -128,7 +129,8 @@ $dk-light-violet: rgb(122, 88, 88);
       .home-row-4 {
         width: 100%;
         display: flex;
-        height: 70vh;
+        height: 50vw;
+        max-height: 70vh;
         .home-row-4-left {
           display: inline-block;
           transition: width 1s;
@@ -182,7 +184,8 @@ $dk-light-violet: rgb(122, 88, 88);
       .home-row-5 {
         width: 100%;
         display: flex;
-        height: 70vh;
+        height: 50vw;
+        max-height: 70vh;
         .home-row-5-left {
           position: relative;
           transition: width 1s;
@@ -225,6 +228,76 @@ $dk-light-violet: rgb(122, 88, 88);
           .home-row-5-right {
             width: 40%;
           }
+        }
+      }
+    }
+
+    /////////////////////////// SIXTH ROW ///////////////////////////
+    .home-row-6-ct {
+      width: 100%;
+      .home-row-6 {
+        width: 100%;
+        padding: 10vw 6vw;
+        text-align: left;
+        color: lightgray;
+        background-color: $dk-pink;
+        h2 {
+          font-size: 3vw;
+          margin-bottom: 10px;
+        }
+        ul {
+          padding-left: 20px;
+          list-style: none inside url("../images/link.svg");
+          font-size: clamp(14px, 2vw, 2vw);
+          li {
+            a {
+              font-size: clamp(14px, 1.7vw, 1.7vw);
+              padding-left: 10px;
+              text-decoration: none;
+              color: rgb(156, 156, 156);
+              transition: padding-left 0.5s, color 0.5s;
+              -webkit-transition: padding-left 0.5s, color 0.5s;
+              &:hover {
+                padding-left: 20px;
+                color: $dk-violet;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    /////////////////////////// SEVENTH ROW ///////////////////////////
+    .home-row-7-ct {
+      .home-row-7 {
+        background: linear-gradient(
+            0deg,
+            rgba(90, 67, 67, 0.85),
+            rgba(53, 80, 97, 0.85)
+          ),
+          url("../images/boy_with_horse.jpg");
+        background-position: top;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 20vw;
+      }
+    }
+
+    /////////////////////////// EIGHTH ROW ///////////////////////////
+    .home-row-8-ct {
+      width: 100%;
+      .home-row-8 {
+        width: 100%;
+        padding: 10vw 6vw;
+        text-align: center;
+        color: lightgray;
+        background-color: $dk-sky;
+        p {
+          font-size: clamp(16px, 2.5vw, 2.5vw);
+        }
+        .home-sky-btn {
+          margin-top: 40px;
         }
       }
     }

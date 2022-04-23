@@ -10,7 +10,8 @@ import "../styles/footer.css";
 function Copyright() {
   return (
     <div className="copyright">
-      Copyright© {new Date().getFullYear()} by Didakta
+      Copyright© {new Date().getFullYear()} by Didakta | Implemented by Arsalan
+      Moharrebi
     </div>
   );
 }
@@ -64,7 +65,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="copyright">
+      <div>
         <Copyright />
       </div>
     </div>
