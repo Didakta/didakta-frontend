@@ -1,9 +1,79 @@
-.syllabusContainer {
-  min-height: 600px;
+.cl-icon-ct {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  margin-left: 40px;
+  z-index: 98;
 }
-.syllabusContainer .listAndHeaderContainer .oneLessonList {
-  font-size: 18px;
+.cl-icon-ct .cl-icon {
+  display: inline-block;
+  font-size: 40px;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+  border-style: none;
+  background-color: transparent;
+  color: rgb(167, 119, 31);
+  cursor: default;
+}
+
+.cl-ct {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99;
+  top: 63px;
+  left: 0;
+  background-color: rgb(167, 119, 31);
+  overflow-x: hidden;
+  transition: 1s;
+  color: lightgray;
+}
+.cl-ct .cl-close {
+  background-color: transparent;
+  border-style: none;
+  padding: 45px 32px 8px 8px;
+  position: absolute;
+  top: 0;
+  left: 38px;
+  font-size: 40px;
+  margin-right: 50px;
+  color: lightgray;
+  display: block;
+  cursor: default;
+  transition: 0.5s;
+}
+.cl-ct .cl-close:hover {
+  opacity: 0.4;
+}
+.cl-ct .cl-content-ct {
+  margin: 190px 0 30vh;
+}
+.cl-ct .cl-content-ct .cl-title {
   margin-bottom: 30px;
+  padding: 0 20px;
+  color: lightgray;
+}
+.cl-ct .cl-content-ct .cl-content .cl-collapsible {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.192);
+  font-size: 14px;
+  font-weight: bold;
+  color: lightgray;
+  text-align: left !important;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 2px;
+}
+.cl-ct .cl-content-ct .cl-content .cl-chapters {
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.11);
+  margin-bottom: 2px;
+}
+.cl-ct .cl-content-ct .cl-content .cl-chapters .cl-chapter-link a {
+  text-decoration: none;
+  color: lightgray;
+  margin-bottom: 5px;
 }
 
 /*# sourceMappingURL=courselist.css.map */

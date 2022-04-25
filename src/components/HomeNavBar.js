@@ -17,26 +17,22 @@ const HomeNavBar = () => {
     <>
       <div className="homenavbar-ct">
         <div className="homenavbar-icon-ct">
-          <a className="homenavbar-icon" href="javascript:void(0)">
-            <i
-              className="fa fa-bars"
-              onClick={() => {
-                navOpen === 0 ? setNavOpen(300) : setNavOpen(0);
-              }}
-            ></i>
-          </a>
+          <button
+            className="homenavbar-icon"
+            onClick={() => {
+              navOpen === 0 ? setNavOpen(300) : setNavOpen(0);
+            }}
+          >
+            ≡
+          </button>
         </div>
       </div>
 
       {/* Side Navigation */}
       <div style={{ width: `${navOpen}px` }} className="side-nav-ct">
-        <a
-          href="javascript:void(0)"
-          className="sidenav-close"
-          onClick={() => setNavOpen(0)}
-        >
+        <button className="sidenav-close" onClick={() => setNavOpen(0)}>
           &times;
-        </a>
+        </button>
         <NavLink
           style={({ isActive }) => {
             return {

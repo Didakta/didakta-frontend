@@ -51,7 +51,6 @@
   background-color: rgb(39, 39, 39);
   color: rgb(167, 119, 31);
   border-color: rgb(167, 119, 31);
-  cursor: none;
 }
 
 .home-green-btn {
@@ -70,7 +69,6 @@
   background-color: lightgray;
   color: rgb(39, 52, 42);
   border-color: rgb(39, 52, 42);
-  cursor: none;
 }
 
 .home-red-btn {
@@ -89,7 +87,6 @@
   background-color: lightgray;
   color: rgb(73, 27, 27);
   border-color: rgb(73, 27, 27);
-  cursor: none;
 }
 
 .home-blue-btn {
@@ -108,7 +105,6 @@
   background-color: lightgray;
   color: rgb(21, 50, 59);
   border-color: rgb(21, 50, 59);
-  cursor: none;
 }
 
 .home-sky-btn {
@@ -127,5 +123,4 @@
   background-color: lightgray;
   color: rgb(110, 124, 139);
   border-color: rgb(110, 124, 139);
-  cursor: none;
 }

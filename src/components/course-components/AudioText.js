@@ -3,7 +3,7 @@ const AudioText = ({ text }) => {
     <div className="chapter-text-ct">
       {text.map((paragraph, i) => {
         return (
-          <p key={i} className="chapter-text">
+          <p key={i.toString()} className="chapter-text">
             {paragraph}
           </p>
         );

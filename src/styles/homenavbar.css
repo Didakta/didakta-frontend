@@ -6,16 +6,18 @@
   position: sticky;
   top: 0;
   padding: 10px 40px 5px;
-  text-align: center;
+  text-align: right;
 }
 .homenavbar-ct .homenavbar-icon-ct {
   display: inline;
-  font-size: 32px;
 }
 .homenavbar-ct .homenavbar-icon-ct .homenavbar-icon {
-  text-decoration: none;
+  font-size: 40px;
+  font-weight: bold;
   color: lightgray;
-  cursor: none;
+  background: none;
+  border: none;
+  cursor: default;
   transition: color 0.5s;
   -webkit-transition: color 0.5s;
 }
@@ -56,6 +58,8 @@
   border: 1px solid rgb(122, 88, 88);
 }
 .side-nav-ct .sidenav-close {
+  background: none;
+  border: none;
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   position: absolute;

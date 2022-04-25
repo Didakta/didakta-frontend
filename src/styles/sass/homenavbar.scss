@@ -14,15 +14,17 @@ $dk-sky: rgb(110, 124, 139);
   position: sticky;
   top: 0;
   padding: 10px 40px 5px;
-  text-align: center;
+  text-align: right;
   .homenavbar-icon-ct {
     display: inline;
-    font-size: 32px;
 
     .homenavbar-icon {
-      text-decoration: none;
+      font-size: 40px;
+      font-weight: bold;
       color: lightgray;
-      cursor: none;
+      background: none;
+      border: none;
+      cursor: default;
       transition: color 0.5s;
       -webkit-transition: color 0.5s;
       &:hover {
@@ -64,6 +66,8 @@ $dk-sky: rgb(110, 124, 139);
     border: 1px solid $dk-pink;
   }
   .sidenav-close {
+    background: none;
+    border: none;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     position: absolute;

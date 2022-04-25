@@ -3,7 +3,7 @@ const Text = ({ text }) => {
     <div className="chapter-text-ct">
       {text.map((paragraph, i) => (
         <p
-          key={i}
+          key={i.toString()}
           className="chapter-text"
           dangerouslySetInnerHTML={{ __html: paragraph }}
         />

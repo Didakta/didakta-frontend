@@ -1,23 +1,24 @@
 .back-to-top-ct .back-to-top {
   position: fixed;
-  cursor: none;
+  cursor: default;
   bottom: 20px;
   right: 20px;
   z-index: 101;
-}
-.back-to-top-ct .back-to-top .back-to-top-btn {
-  width: 4.5vw;
-  margin: 0 auto 10px;
-  filter: gray;
+  font-size: 6vw;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  filter: drop-shadow(-6px 6px 3px black);
+  -webkit-filter: drop-shadow(-6px 6px 3px black);
+  color: rgb(167, 119, 31);
   opacity: 0.5;
-  transition: opacity 0.5s, filter 0.5s;
-  -webkit-transition: opacity 0.5s, filter 0.5s;
-  -webkit-filter: grayscale(100%);
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 1s;
 }
-.back-to-top-ct .back-to-top .back-to-top-btn:hover {
+.back-to-top-ct .back-to-top:hover {
   opacity: 1;
-  filter: none;
-  -webkit-filter: grayscale(0%);
 }
 
 /*# sourceMappingURL=backtotop.css.map */

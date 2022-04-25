@@ -287,20 +287,23 @@
 //   }
 // }
 
-$dk-violet: rgb(48, 41, 52);
-$dk-yellow: rgb(167, 119, 31);
-$dk-red: rgb(73, 27, 27);
-$dk-blue: rgb(21, 50, 59);
-$dk-green: rgb(39, 52, 42);
-$dk-pink: rgb(122, 88, 88);
-$dk-sky: rgb(110, 124, 139);
+$dk-violet: #302934;
+$dk-yellow: #a7771f;
+$dk-red: #491b1b;
+$dk-blue: #15323b;
+$dk-green: #27342a;
+$dk-pink: #7a5858;
+$dk-sky: #6e7c8b;
 
 .crs-ct {
-  display: flex;
-  .crs-list-ct {
-  }
+  // .crs-list-ct {
+  // }
   .crs-lsn-ct {
+    width: 100%;
+    margin: 0;
     .chapter-ct {
+      width: 100%;
+      padding: 50px 21vw;
       .chapter-title {
       }
       .chapter-text-ct {

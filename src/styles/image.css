@@ -1,0 +1,12 @@
+.chapter-img-ct {
+  width: 100%;
+}
+.chapter-img-ct .chapter-img {
+  height: 30vw;
+  background-position: top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*# sourceMappingURL=image.css.map */
