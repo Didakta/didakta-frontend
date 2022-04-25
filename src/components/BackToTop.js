@@ -26,8 +26,8 @@ const BackToTop = () => {
     <div className="back-to-top-ct">
       {goTop && (
         <div className="back-to-top" onClick={scrollToTop}>
-          <img className="back-to-top-btn" src={dkIcon} alt="Didakta icon" />
-          <p className="back-to-top-text"></p>
+          {/* <img className="back-to-top-btn" src={dkIcon} alt="Didakta icon" /> */}
+          ➤
         </div>
       )}
     </div>

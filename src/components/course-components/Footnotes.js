@@ -4,7 +4,7 @@ const Footnotes = ({ footnotes }) => {
       <hr className="chapter-fn-ruller" />
       {footnotes.map((footnote, i) => {
         return (
-          <p key={i} className="chapter-fn">
+          <p key={i.toString()} className="chapter-fn">
             {footnote}
           </p>
         );

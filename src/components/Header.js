@@ -16,25 +16,26 @@ const Header = () => {
   return (
     <>
       <div className="header-ct">
-        <div className="header-logo-ct" onClick={() => navigate("/")}>
+        <Link className="header-logo-ct" to="/">
           <img className="header-logo-btn" src={logo} alt="Didakta Logo" />
-        </div>
+        </Link>
         <div className="header-icon-ct">
-          <a className="header-icon" href="javascript:void(0)">
-            <i className="fa fa-bars" onClick={() => setNavOpen(300)}></i>
-          </a>
+          <button
+            className="header-icon"
+            onClick={() => {
+              setNavOpen(300);
+            }}
+          >
+            ≡
+          </button>
         </div>
       </div>
 
       {/* Side Navigation */}
       <div style={{ width: `${navOpen}px` }} className="side-nav-ct">
-        <a
-          href="javascript:void(0)"
-          className="sidenav-close"
-          onClick={() => setNavOpen(0)}
-        >
+        <button className="sidenav-close" onClick={() => setNavOpen(0)}>
           &times;
-        </a>
+        </button>
         <NavLink className="side-nav-link" to="/">
           Home
         </NavLink>

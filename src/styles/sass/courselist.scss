@@ -1,9 +1,88 @@
-.syllabusContainer {
-  min-height: 600px;
-  .listAndHeaderContainer {
-    .oneLessonList {
-      font-size: 18px;
+$dk-violet: rgb(48, 41, 52);
+$dk-yellow: rgb(167, 119, 31);
+$dk-red: rgb(73, 27, 27);
+$dk-blue: rgb(21, 50, 59);
+$dk-green: rgb(39, 52, 42);
+$dk-pink: rgb(122, 88, 88);
+$dk-sky: rgb(110, 124, 139);
+
+.cl-icon-ct {
+  position: fixed;
+  top: 100px;
+  left: 0;
+  margin-left: 40px;
+  z-index: 98;
+  .cl-icon {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    border-style: none;
+    background-color: transparent;
+    color: $dk-yellow;
+    cursor: default;
+  }
+}
+.cl-ct {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 99;
+  top: 63px;
+  left: 0;
+  background-color: $dk-yellow;
+  overflow-x: hidden;
+  transition: 1s;
+  color: lightgray;
+  .cl-close {
+    background-color: transparent;
+    border-style: none;
+    padding: 45px 32px 8px 8px;
+    position: absolute;
+    top: 0;
+    left: 38px;
+    font-size: 40px;
+    margin-right: 50px;
+    color: lightgray;
+    display: block;
+    cursor: default;
+    transition: 0.5s;
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+  .cl-content-ct {
+    margin: 190px 0 30vh;
+    .cl-title {
       margin-bottom: 30px;
+      padding: 0 20px;
+      color: lightgray;
+    }
+    .cl-content {
+      .cl-collapsible {
+        border: none;
+        background-color: rgba(0, 0, 0, 0.192);
+        font-size: 14px;
+        font-weight: bold;
+        color: lightgray;
+        text-align: left !important;
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 2px;
+      }
+      .cl-chapters {
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.11);
+        margin-bottom: 2px;
+        .cl-chapter-link {
+          a {
+            text-decoration: none;
+            color: lightgray;
+            margin-bottom: 5px;
+          }
+        }
+      }
     }
   }
 }

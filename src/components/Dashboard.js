@@ -3,6 +3,7 @@ import Header from "./Header";
 import BackToTop from "./BackToTop";
 import { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { ApiContext } from "../LessonsContext";
 import syllabusImage from "../images/Vase1.jpg";
 
@@ -26,16 +27,16 @@ const Dashboard = ({ lessonId, chapterId }) => {
                         return (
                           <div>
                             {lesson.number}.{chapter.number}.{" "}
-                            <Link
+                            <HashLink
                               style={
                                 chapterId === chapter._id
                                   ? { color: "black" }
                                   : { color: "green" }
                               }
-                              to={`/course/${lesson._id}/${chapter._id}`}
+                              to={`/course/${lesson._id}/#${chapter.title}`}
                             >
                               {chapter.title}
-                            </Link>
+                            </HashLink>
                           </div>
                         );
                       })}

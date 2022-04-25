@@ -4,8 +4,9 @@
   box-sizing: border-box;
   font-family: "Roboto";
   /* border: 1px solid red; */
+  scroll-behavior: smooth;
 }
 
-[class*="btn"] {
-  cursor: none;
+[class*="btn"]:hover {
+  /* filter: drop-shadow(4px 4px 5px black); */
 }

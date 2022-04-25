@@ -18,6 +18,7 @@ const Home = () => {
 
   return (
     <>
+      <HomeNavBar />
       <div className="home-container">
         <div className="home-rows">
           {/*/////////////////////////// FIRST ROW ///////////////////////////*/}
@@ -34,7 +35,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <HomeNavBar />
 
           {/*/////////////////////////// SECOND ROW /////////////////////////// */}
           <div className="home-row-2-ct">

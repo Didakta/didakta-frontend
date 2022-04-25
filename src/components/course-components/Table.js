@@ -5,7 +5,7 @@ const Table = ({ table }) => {
         <tbody>
           {table.map((row, i) => {
             return (
-              <tr key={i} className="chapter-table-row">
+              <tr key={i.toString()} className="chapter-table-row">
                 {row.map((e, itd) => {
                   return (
                     <td key={itd} className="chapter-table-cell">

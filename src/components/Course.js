@@ -16,12 +16,11 @@ import Alignment from "./course-components/Alignment";
 import Footnotes from "./course-components/Footnotes";
 import Questions from "./course-components/Questions";
 import QuestionText from "./course-components/QuestionText";
+import Image from "./course-components/Image";
 
 import { useState, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
-
-import { showImg } from "../functions/lessonFunctions";
 
 const Course = () => {
   const [showGoQuiz, setShowGoQuiz] = useState(false);
@@ -33,7 +32,6 @@ const Course = () => {
   const thisLesson = lessons.__html.filter(
     (lesson) => lesson._id === lessonId
   )[0];
-  console.log(thisLesson);
   //   (chapter) => chapter._id === chapterId
   // )[0];
 
@@ -67,18 +65,50 @@ const Course = () => {
     }
   };
 
+  const bgColors = [
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#6e7c8b",
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#6e7c8b",
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#6e7c8b",
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#6e7c8b",
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#6e7c8b",
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#6e7c8b",
+  ];
   return (
     <>
-      <Header />
+      <Header id="course-header" />
+      <CourseList lessonId={lessonId} />
       <div className="crs-ct">
-        <div className="crs-list-ct">
-          <CourseList lessonId={lessonId} />
-        </div>
         <div className="crs-lsn-ct">
           <LessonTitle title={thisLesson.title} number={thisLesson.number} />
           {thisLesson.chapters.map((chapter, i) => {
             return (
-              <div key={i} className="chapter-ct">
+              <div
+                style={{
+                  backgroundColor: `${bgColors[i]}`,
+                  color: "lightgray",
+                }}
+                key={crypto.randomUUID()}
+                id={chapter.title}
+                className="chapter-ct"
+              >
                 {/* GIVE IT AN ID LIKE: id={`${chapter._id}`} */}
                 {/* id cannot start with a number */}
                 {chapter.title && <ChapterTitle title={chapter.title} />}
@@ -106,7 +136,7 @@ const Course = () => {
                 {chapter.footnotes[0] && (
                   <Footnotes footnotes={chapter.footnotes} />
                 )}
-                {showImg(chapter)}
+                <Image index={i} />
                 {/* CHANGE FUNCTIONALITY TO ONE LESSON PER PAGE INSTEAD OF ONE CHAPTER PER PAGE */}
                 <div className="btnContainer">
                   {/* PREV/NEXT BUTTONS   */}
