@@ -74,6 +74,11 @@
   text-decoration: none;
   color: lightgray;
   margin-bottom: 5px;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+}
+.cl-ct .cl-content-ct .cl-content .cl-chapters .cl-chapter-link a:hover {
+  color: rgb(48, 41, 52);
 }
 
 /*# sourceMappingURL=courselist.css.map */

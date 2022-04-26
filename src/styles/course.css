@@ -6,5 +6,314 @@
   width: 100%;
   padding: 50px 21vw;
 }
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-title {
+  margin-bottom: 50px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-text-ct {
+  margin-bottom: 50px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-text-ct .chapter-text {
+  font-size: clamp(18px, 1.5vw, 2vw);
+  text-align: justify;
+  line-height: 1.5;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-text-ct .chapter-text a {
+  color: rgba(0, 0, 0, 0.705);
+  text-decoration: none;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-text-ct .chapter-text a:hover {
+  color: rgba(0, 0, 0, 0.336);
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-text-ct .chapter-text ol {
+  margin-top: 20px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-text-ct .chapter-text ul {
+  margin-top: 20px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-text-ct .chapter-text span {
+  color: #a7771f;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-audio-ct {
+  margin-bottom: 50px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-table-ct {
+  overflow-x: auto;
+  margin: 50px 0;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-table-ct .chapter-table {
+  font-size: clamp(20px, 1.7vw, 2vw);
+  border-collapse: collapse;
+  width: 100%;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-table-ct .chapter-table .chapter-table-row:nth-child(odd) {
+  transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+  background-color: rgba(0, 0, 0, 0.3764705882);
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-table-ct .chapter-table .chapter-table-row:nth-child(odd) .chapter-table-cell {
+  text-align: center;
+  border: 1px solid lightgray;
+  padding: 8px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-table-ct .chapter-table .chapter-table-row:nth-child(odd):hover {
+  background-color: rgba(255, 255, 255, 0.1176470588);
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-table-ct .chapter-table-row:nth-child(even) {
+  transition: background-color 0.5s;
+  -webkit-transition: background-color 0.5s;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-table-ct .chapter-table-row:nth-child(even) .chapter-table-cell {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-table-ct .chapter-table-row:nth-child(even):hover {
+  background-color: rgba(255, 255, 255, 0.1176470588);
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-video-ct {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 56.25%;
+  margin-bottom: 50px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-video-ct .chapter-videoplayer {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct {
+  margin-bottom: 50px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .dd-text {
+  font-size: clamp(18px, 1.5vw, 2vw);
+  padding-bottom: 20px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .dd-form .dd-select {
+  width: 200px;
+  margin: 50px 10px;
+  box-shadow: 0 0 3px 3px #d15c5c;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(236, 236, 236);
+  font-size: 22px;
+  padding: 5px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .dd-form .dd-select .dd-option {
+  font-size: 22px;
+  text-align: center;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .dd-form .dd-select:focus {
+  box-shadow: 0 0 3px 3px #522f2f;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .dd-form .dd-select:hover {
+  box-shadow: 0 0 3px 3px #522f2f;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .dd-form .dd-btn {
+  padding: 10px 20px;
+  margin-left: 50px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .dd-form .dd-btn:hover {
+  background-color: lightgray;
+  color: rgba(0, 0, 0, 0.589);
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .hint-btn {
+  padding: 10px 20px;
+  margin-left: 50px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .hint-btn:hover {
+  background-color: lightgray;
+  color: rgba(0, 0, 0, 0.589);
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct #hint {
+  font-size: 20px;
+  text-align: justify;
+  margin: 40px 0;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct #corr {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: green;
+  font-weight: bold;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct #incorr {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: #d15c5c;
+  font-weight: bold;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .dd-ct .explanation {
+  font-size: 20px;
+  text-align: justify;
+  margin: 40px 0;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .mc-text {
+  font-size: clamp(18px, 1.5vw, 2vw);
+  padding-bottom: 20px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .mc-form .mc-label {
+  font-size: 24px;
+  margin: 20px 20px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .mc-form .mc-label .mc-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border: 2px solid lightgray;
+  /* Adjusts the position of the checkboxes on the text baseline */
+  vertical-align: -2px;
+  outline: none;
+  margin: 0 10px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .mc-form .mc-label .mc-input::before {
+  display: block;
+  content: " ";
+  width: 10px;
+  height: 10px;
+  border-radius: 6px;
+  background-color: red;
+  font-size: 1.2em;
+  transform: translate(3px, 3px) scale(0);
+  transform-origin: center;
+  transition: all 0.3s ease-in;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .mc-form .mc-label .mc-input:checked::before {
+  transform: translate(3px, 3px) scale(1);
+  transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .mc-form .mc-btn {
+  padding: 10px 20px;
+  margin-left: 50px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .mc-form .mc-btn:hover {
+  background-color: lightgray;
+  color: rgba(0, 0, 0, 0.589);
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .hint-btn {
+  padding: 10px 20px;
+  margin-left: 50px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .hint-btn:hover {
+  background-color: lightgray;
+  color: rgba(0, 0, 0, 0.589);
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct #hint {
+  font-size: 20px;
+  text-align: justify;
+  margin: 40px 0;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct #corr {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: green;
+  font-weight: bold;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct #incorr {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  font-size: 24px;
+  color: #d15c5c;
+  font-weight: bold;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-question-ct .mc-ct .explanation {
+  font-size: 20px;
+  text-align: justify;
+  margin: 40px 0;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-align-ct {
+  width: 100%;
+  margin-bottom: 50px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-align-ct .chapter-align {
+  width: 100%;
+  min-height: 150px;
+  height: calc(320px - 10vw);
+  border: none;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-fn-ct .chapter-fn-ruller {
+  margin-bottom: 20px;
+}
+.crs-ct .crs-lsn-ct .chapter-ct .chapter-fn-ct .chapter-fn {
+  font-size: 14px;
+  margin-bottom: 50px;
+}
+.crs-ct .crs-lsn-ct .lesson-btn-ct {
+  background-color: #302934;
+  padding: 50px 21vw;
+  text-align: center;
+}
+.crs-ct .crs-lsn-ct .lesson-btn-ct .lesson-go-quiz-btn {
+  padding: 10px 20px;
+  margin-left: 50px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s;
+}
+.crs-ct .crs-lsn-ct .lesson-btn-ct .lesson-go-quiz-btn:hover {
+  background-color: lightgray;
+  color: rgba(0, 0, 0, 0.589);
+}
+.crs-ct .crs-lsn-ct .lesson-btn-ct .lesson-prev-next-btn-ct {
+  padding: 50px 21vw;
+}
 
 /*# sourceMappingURL=course.css.map */

@@ -36,7 +36,6 @@
 .home-container .home-rows .home-row-1-ct .home-row-1 .home-row-1-right .home-row-1-text {
   text-align: center;
   font-size: 3vw;
-  font-weight: bold;
   margin: 15vh 20px 20px;
   color: lightgray;
 }
@@ -233,7 +232,7 @@
   color: rgb(48, 41, 52);
 }
 .home-container .home-rows .home-row-7-ct .home-row-7 {
-  background: linear-gradient(0deg, rgba(90, 67, 67, 0.85), rgba(53, 80, 97, 0.85)), url("../images/boy_with_horse.jpg");
+  background: linear-gradient(0deg, rgba(90, 67, 67, 0.85), rgba(53, 80, 97, 0.85)), url("../images/225138.jpg");
   background-position: top;
   background-attachment: fixed;
   background-repeat: no-repeat;

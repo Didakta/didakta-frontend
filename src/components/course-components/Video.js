@@ -3,8 +3,6 @@ const Video = ({ video }) => {
     <div className="chapter-video-ct">
       <iframe
         className="chapter-videoplayer"
-        width="560"
-        height="315"
         src={video}
         title="YouTube video player"
         frameBorder="0"

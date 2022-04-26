@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
-
 import { handleMultipleChoiceSubmit } from "../../functions/quizFunctions";
 
 const Questions = ({ questions }) => {
@@ -20,201 +19,208 @@ const Questions = ({ questions }) => {
     setGoButton(true);
   }, [location]);
 
-  return questions.map((question) => {
-    if (question.tags === "dropDown") {
-      if (question.answers_1[0]) {
-        return (
-          // rendering the text of each question inside chapter + answers (Drop Down)
-          <div key={crypto.randomUUID()} className="dd-ct">
-            <p className="dd-text">{question.text[0]}</p>
-            <form
-              className="dd-form"
-              onSubmit={(event) => {
-                event.preventDefault();
-                if (
-                  question.answers[question.correctAnswer] === selectedAnswer &&
-                  question.answers_1[question.correctAnswer_1] ===
-                    selectedAnswer_1
-                ) {
-                  setCorrection("Correct!");
-                  setGoButton(false);
-                } else {
-                  setCorrection("Incorrect!");
-                  setGoButton(false);
-                }
-              }}
-            >
-              <select
-                className="dd-select"
-                id="questionDropDown"
-                name="questionDropDown"
-                onChange={(e) => setSelectedAnswer(e.target.value)}
-              >
-                {question.answers.map((answer) => {
-                  return (
-                    <option
-                      key={crypto.randomUUID()}
-                      className="dd-option"
-                      value={answer}
-                    >
-                      {answer}
-                    </option>
-                  );
-                })}
-              </select>
-              <select
-                className="dd-select"
-                id="questionDropDown_1"
-                name="questionDropDown_1"
-                onChange={(e) => setSelectedAnswer_1(e.target.value)}
-              >
-                {question.answers_1.map((answer_1) => {
-                  return (
-                    <option
-                      key={crypto.randomUUID()}
-                      className="dd-option"
-                      value={answer_1}
-                    >
-                      {answer_1}
-                    </option>
-                  );
-                })}
-              </select>
-              <input
-                className="dd-btn"
-                style={
-                  goButton ? { display: "inline-block" } : { display: "none" }
-                }
-                id="submitButton"
-                type="submit"
-                value="Go!"
-              />
-            </form>
-            {question.hint && (
-              <button
-                className="hint-btn"
-                onClick={(e) => {
+  return (
+    <div className="chapter-question-ct">
+      {questions.map((question) => {
+        if (question.tags === "dropDown") {
+          if (question.answers_1[0]) {
+            return (
+              // rendering the text of each question inside chapter + answers (Drop Down)
+              <div key={crypto.randomUUID()} className="dd-ct">
+                <p className="dd-text">{question.text[0]}</p>
+                <form
+                  className="dd-form"
+                  onSubmit={(event) => {
+                    event.preventDefault();
+                    if (
+                      question.answers[question.correctAnswer] ===
+                        selectedAnswer &&
+                      question.answers_1[question.correctAnswer_1] ===
+                        selectedAnswer_1
+                    ) {
+                      setCorrection("Correct!");
+                      setGoButton(false);
+                    } else {
+                      setCorrection("Incorrect!");
+                      setGoButton(false);
+                    }
+                  }}
+                >
+                  <select
+                    className="dd-select"
+                    id="questionDropDown"
+                    name="questionDropDown"
+                    onChange={(e) => setSelectedAnswer(e.target.value)}
+                  >
+                    {question.answers.map((answer) => {
+                      return (
+                        <option
+                          key={crypto.randomUUID()}
+                          className="dd-option"
+                          value={answer}
+                        >
+                          {answer}
+                        </option>
+                      );
+                    })}
+                  </select>
+                  <select
+                    className="dd-select"
+                    id="questionDropDown_1"
+                    name="questionDropDown_1"
+                    onChange={(e) => setSelectedAnswer_1(e.target.value)}
+                  >
+                    {question.answers_1.map((answer_1) => {
+                      return (
+                        <option
+                          key={crypto.randomUUID()}
+                          className="dd-option"
+                          value={answer_1}
+                        >
+                          {answer_1}
+                        </option>
+                      );
+                    })}
+                  </select>
+                  <input
+                    className="dd-btn"
+                    style={
+                      goButton
+                        ? { display: "inline-block" }
+                        : { display: "none" }
+                    }
+                    id="submitButton"
+                    type="submit"
+                    value="Go!"
+                  />
+                </form>
+                {question.hint && (
+                  <button
+                    className="hint-btn"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setHintToggle(hintToggle ? false : true);
+                    }}
+                  >
+                    Hint
+                  </button>
+                )}
+                <div id="hint">{hintToggle ? question.hint : ""}</div>
+                <div id={correction === "Correct!" ? "corr" : "incorr"}>
+                  {correction}
+                </div>
+                <div
+                  className="explanation"
+                  style={
+                    correction === "Incorrect!"
+                      ? { display: "block" }
+                      : { display: "none" }
+                  }
+                >
+                  {question.explanation}
+                </div>
+              </div>
+            );
+          } else {
+            return (
+              <div key={crypto.randomUUID()} className="dd-ct">
+                <form className="dd-form">
+                  <select
+                    className="dd-select"
+                    id="questionDropDown"
+                    name="questionDropDown"
+                  >
+                    {question.answers.map((answer) => {
+                      return (
+                        <option
+                          key={crypto.randomUUID()}
+                          className="dd-option"
+                          value={answer}
+                        >
+                          {answer}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </form>
+              </div>
+            );
+          }
+        } else {
+          // if tags === "MultipleChoice"
+          return (
+            <div key={crypto.randomUUID()} className="mc-ct">
+              <p className="mc-text">{question.text[0]}</p>
+              <form
+                className="mc-form"
+                onSubmit={(e) => {
                   e.preventDefault();
-                  setHintToggle(hintToggle ? false : true);
+                  handleMultipleChoiceSubmit(
+                    question,
+                    chosen,
+                    setCorrection,
+                    setGoButton,
+                    score,
+                    userAnswers
+                  );
                 }}
               >
-                Hint
-              </button>
-            )}
-            <div id="hint">{hintToggle ? question.hint : ""}</div>
-            <div id={correction === "Correct!" ? "corr" : "incorr"}>
-              {correction}
-            </div>
-            <div
-              id="answer-explanation"
-              style={
-                correction === "Incorrect!"
-                  ? { display: "block" }
-                  : { display: "none" }
-              }
-            >
-              {question.explanation}
-            </div>
-          </div>
-        );
-      } else {
-        return (
-          <div key={crypto.randomUUID()} className="dd-ct">
-            <form className="dd-form">
-              <select
-                className="dd-select"
-                id="questionDropDown"
-                name="questionDropDown"
-              >
                 {question.answers.map((answer) => {
                   return (
-                    <option
-                      key={crypto.randomUUID()}
-                      className="dd-option"
-                      value={answer}
-                    >
+                    <label key={crypto.randomUUID()} className="mc-label">
                       {answer}
-                    </option>
+                      <input
+                        className="mc-input"
+                        type="radio"
+                        id={answer}
+                        name={question.tags[0]}
+                        value={answer}
+                        onChange={(e) => setChosen(e.target.value)}
+                      />
+                    </label>
                   );
                 })}
-              </select>
-            </form>
-          </div>
-        );
-      }
-    } else {
-      // if tags === "MultipleChoice"
-      return (
-        <div key={crypto.randomUUID()} className="mc-ct">
-          <p className="mc-text">{question.text[0]}</p>
-          <form
-            className="mc-form"
-            onSubmit={(e) => {
-              e.preventDefault();
-              handleMultipleChoiceSubmit(
-                question,
-                chosen,
-                setCorrection,
-                setGoButton,
-                score,
-                userAnswers
-              );
-            }}
-          >
-            {question.answers.map((answer) => {
-              return (
-                <label key={crypto.randomUUID()} className="mc-label">
-                  {answer}
-                  <input
-                    className="mc-input"
-                    type="radio"
-                    id={answer}
-                    name={question.tags[0]}
-                    value={answer}
-                    onChange={(e) => setChosen(e.target.value)}
-                  />
-                </label>
-              );
-            })}
-            <input
-              className="mc-btn"
-              style={
-                goButton ? { display: "inline-block" } : { display: "none" }
-              }
-              id="submitButton"
-              type="submit"
-              value="Go!"
-            />
-          </form>
-          {question.hint && (
-            <button
-              className="hint-btn"
-              onClick={(e) => {
-                e.preventDefault();
-                setHintToggle(hintToggle ? false : true);
-              }}
-            >
-              Hint
-            </button>
-          )}
-          <div id="hint">{hintToggle ? question.hint : ""}</div>
-          <div id={correction === "Correct!" ? "corr" : "incorr"}>
-            {correction}
-          </div>
-          <div
-            id="answerExplanation"
-            style={
-              correction === "Incorrect!"
-                ? { display: "block" }
-                : { display: "none" }
-            }
-          >
-            {question.explanation}
-          </div>
-        </div>
-      );
-    }
-  });
+                <input
+                  className="mc-btn"
+                  style={
+                    goButton ? { display: "inline-block" } : { display: "none" }
+                  }
+                  id="submitButton"
+                  type="submit"
+                  value="Go!"
+                />
+              </form>
+              {question.hint && (
+                <button
+                  className="hint-btn"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setHintToggle(hintToggle ? false : true);
+                  }}
+                >
+                  Hint
+                </button>
+              )}
+              <div id="hint">{hintToggle ? question.hint : ""}</div>
+              <div id={correction === "Correct!" ? "corr" : "incorr"}>
+                {correction}
+              </div>
+              <div
+                className="explanation"
+                style={
+                  correction === "Incorrect!"
+                    ? { display: "block" }
+                    : { display: "none" }
+                }
+              >
+                {question.explanation}
+              </div>
+            </div>
+          );
+        }
+      })}
+    </div>
+  );
 };
 
 export default Questions;

@@ -296,77 +296,295 @@ $dk-pink: #7a5858;
 $dk-sky: #6e7c8b;
 
 .crs-ct {
-  // .crs-list-ct {
-  // }
   .crs-lsn-ct {
     width: 100%;
     margin: 0;
+    .lesson-title-ct {
+      .lesson-title {
+      }
+    }
     .chapter-ct {
       width: 100%;
       padding: 50px 21vw;
       .chapter-title {
+        margin-bottom: 50px;
       }
       .chapter-text-ct {
+        margin-bottom: 50px;
+
         .chapter-text {
+          font-size: clamp(18px, 1.5vw, 2vw);
+          text-align: justify;
+          line-height: 1.5;
+          a {
+            color: rgba(0, 0, 0, 0.705);
+            text-decoration: none;
+            transition: color 0.5s;
+            -webkit-transition: color 0.5s;
+
+            &:hover {
+              color: rgba(0, 0, 0, 0.336);
+            }
+          }
+          ol {
+            margin-top: 20px;
+          }
+          ul {
+            margin-top: 20px;
+          }
+          span {
+            color: $dk-yellow;
+          }
         }
       }
+
       .chapter-audio-ct {
+        margin-bottom: 50px;
         .chapter-audioplayer {
         }
       }
       .chapter-table-ct {
-        table.chapter-table {
-          tr.chapter-table-row {
-            td.chapter-table-cell {
+        overflow-x: auto;
+        margin: 50px 0;
+        .chapter-table {
+          font-size: clamp(20px, 1.7vw, 2vw);
+          border-collapse: collapse;
+          width: 100%;
+          .chapter-table-row:nth-child(odd) {
+            transition: background-color 0.5s;
+            -webkit-transition: background-color 0.5s;
+            background-color: #00000060;
+            .chapter-table-cell {
+              text-align: center;
+              border: 1px solid lightgray;
+              padding: 8px;
             }
+            &:hover {
+              background-color: #ffffff1e;
+            }
+          }
+        }
+        .chapter-table-row:nth-child(even) {
+          transition: background-color 0.5s;
+          -webkit-transition: background-color 0.5s;
+          .chapter-table-cell {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 8px;
+          }
+          &:hover {
+            background-color: #ffffff1e;
           }
         }
       }
       .chapter-video-ct {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding-top: 56.25%;
+        margin-bottom: 50px;
         .chapter-videoplayer {
+          z-index: 0;
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          border: none;
         }
       }
+
       .chapter-question-ct {
+        margin-bottom: 50px;
         .dd-ct {
           .dd-text {
+            font-size: clamp(18px, 1.5vw, 2vw);
+            padding-bottom: 20px;
           }
           .dd-form {
             .dd-select {
+              width: 200px;
+              // height: 30px;
+              margin: 50px 10px;
+              box-shadow: 0 0 3px 3px #d15c5c;
+              outline: none;
+              border-radius: 5px;
+              background-color: rgb(236, 236, 236);
+              font-size: 22px;
+              padding: 5px;
               .dd-option {
+                font-size: 22px;
+                text-align: center;
+              }
+              &:focus {
+                box-shadow: 0 0 3px 3px #522f2f;
+              }
+              &:hover {
+                box-shadow: 0 0 3px 3px #522f2f;
               }
             }
             .dd-btn {
+              padding: 10px 20px;
+              margin-left: 50px;
+              background-color: transparent;
+              border: 2px solid lightgray;
+              border-radius: 5px;
+              color: lightgray;
+              font-size: clamp(12px, 1.3vw, 1.5vw);
+              font-weight: bold;
+              text-transform: uppercase;
+              transition: background-color 0.5s, color 0.5s;
+              -webkit-transition: background-color 0.5s, color 0.5s;
+              &:hover {
+                background-color: lightgray;
+                color: rgba(0, 0, 0, 0.589);
+              }
             }
           }
           .hint-btn {
+            padding: 10px 20px;
+            margin-left: 50px;
+            background-color: transparent;
+            border: 2px solid lightgray;
+            border-radius: 5px;
+            color: lightgray;
+            font-size: clamp(12px, 1.3vw, 1.5vw);
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.5s, color 0.5s;
+            -webkit-transition: background-color 0.5s, color 0.5s;
+            &:hover {
+              background-color: lightgray;
+              color: rgba(0, 0, 0, 0.589);
+            }
           }
           #hint {
+            font-size: 20px;
+            text-align: justify;
+            margin: 40px 0;
           }
           #corr {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: green;
+            font-weight: bold;
           }
           #incorr {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: #d15c5c;
+            font-weight: bold;
           }
-          #answer-explanation {
+          .explanation {
+            font-size: 20px;
+            text-align: justify;
+            margin: 40px 0;
           }
         }
         .mc-ct {
           .mc-text {
+            font-size: clamp(18px, 1.5vw, 2vw);
+            padding-bottom: 20px;
           }
           .mc-form {
             .mc-label {
+              font-size: 24px;
+              margin: 20px 20px;
               .mc-input {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                border-radius: 10px;
+                border: 2px solid lightgray;
+                /* Adjusts the position of the checkboxes on the text baseline */
+                vertical-align: -2px;
+                outline: none;
+                margin: 0 10px;
+                &::before {
+                  display: block;
+                  content: " ";
+                  width: 10px;
+                  height: 10px;
+                  border-radius: 6px;
+                  background-color: red;
+                  font-size: 1.2em;
+                  transform: translate(3px, 3px) scale(0);
+                  transform-origin: center;
+                  transition: all 0.3s ease-in;
+                }
+                &:checked::before {
+                  transform: translate(3px, 3px) scale(1);
+                  transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
+                }
               }
             }
             .mc-btn {
+              padding: 10px 20px;
+              margin-left: 50px;
+              background-color: transparent;
+              border: 2px solid lightgray;
+              border-radius: 5px;
+              color: lightgray;
+              font-size: clamp(12px, 1.3vw, 1.5vw);
+              font-weight: bold;
+              text-transform: uppercase;
+              transition: background-color 0.5s, color 0.5s;
+              -webkit-transition: background-color 0.5s, color 0.5s;
+              &:hover {
+                background-color: lightgray;
+                color: rgba(0, 0, 0, 0.589);
+              }
             }
           }
           .hint-btn {
+            padding: 10px 20px;
+            margin-left: 50px;
+            background-color: transparent;
+            border: 2px solid lightgray;
+            border-radius: 5px;
+            color: lightgray;
+            font-size: clamp(12px, 1.3vw, 1.5vw);
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.5s, color 0.5s;
+            -webkit-transition: background-color 0.5s, color 0.5s;
+            &:hover {
+              background-color: lightgray;
+              color: rgba(0, 0, 0, 0.589);
+            }
           }
           #hint {
+            font-size: 20px;
+            text-align: justify;
+            margin: 40px 0;
           }
           #corr {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: green;
+            font-weight: bold;
           }
           #incorr {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+            font-size: 24px;
+            color: #d15c5c;
+            font-weight: bold;
+          }
+          .explanation {
+            font-size: 20px;
+            text-align: justify;
+            margin: 40px 0;
           }
         }
       }
@@ -375,13 +593,53 @@ $dk-sky: #6e7c8b;
         }
       }
       .chapter-align-ct {
+        width: 100%;
+        margin-bottom: 50px;
+
         .chapter-align {
+          width: 100%;
+          min-height: 150px;
+          height: calc(320px - 10vw);
+          border: none;
         }
       }
       .chapter-fn-ct {
         .chapter-fn-ruller {
+          margin-bottom: 20px;
         }
         .chapter-fn {
+          font-size: 14px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+    .lesson-btn-ct {
+      background-color: $dk-violet;
+      padding: 50px 21vw;
+      text-align: center;
+      .lesson-go-quiz-btn {
+        padding: 10px 20px;
+        margin-left: 50px;
+        background-color: transparent;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        color: lightgray;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s;
+        &:hover {
+          background-color: lightgray;
+          color: rgba(0, 0, 0, 0.589);
+        }
+      }
+      .lesson-prev-next-btn-ct {
+        padding: 50px 21vw;
+        .lesson-prev-btn {
+        }
+
+        .lesson-next-btn {
         }
       }
     }

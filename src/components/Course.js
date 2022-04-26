@@ -18,44 +18,46 @@ import Questions from "./course-components/Questions";
 import QuestionText from "./course-components/QuestionText";
 import Image from "./course-components/Image";
 
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
 
 const Course = () => {
-  const [showGoQuiz, setShowGoQuiz] = useState(false);
+  const [goQuiz, setGoQuiz] = useState(false);
+  const [showPrev, setShowPrev] = useState(false);
+  const [showNext, setShowNext] = useState(false);
 
   const { lessonId } = useParams();
-  const [lessons, setLessons] = useContext(ApiContext);
+  const [lessons] = useContext(ApiContext);
   const navigate = useNavigate();
 
   const thisLesson = lessons.__html.filter(
     (lesson) => lesson._id === lessonId
   )[0];
-  //   (chapter) => chapter._id === chapterId
-  // )[0];
 
-  // const [selectedAnswer, setSelectedAnswer] = useState(
-  //   thisChapter.questions[0] && thisChapter.questions[0].answers[0]
-  // );
-  // const [selectedAnswer_1, setSelectedAnswer_1] = useState(
-  //   thisChapter.questions[0] && thisChapter.questions[0].answers_1[0]
-  // );
+  const handlePrev = () => {
+    let prevLessonNumber = thisLesson.number - 1;
+    let prevLesson = lessons.__html.filter(
+      (lesson) => lesson.number == prevLessonNumber
+    );
+    navigate(`/course/${prevLesson[0]._id}`);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // for smoothly scrolling
+    });
+  };
 
-  // const handlePrev = () => {
-  //   let prevChapterNumber = thisChapter.number - 1;
-  //   let prevChapter = thisLesson.chapters.filter(
-  //     (chapter) => chapter.number == prevChapterNumber
-  //   );
-  //   navigate(`/course/${lessonId}/${prevChapter[0]._id}`);
-  // };
-  // const handleNext = () => {
-  //   let nextChapterNumber = thisChapter.number + 1;
-  //   let nextChapter = thisLesson.chapters.filter(
-  //     (chapter) => chapter.number == nextChapterNumber
-  //   );
-  //   navigate(`/course/${lessonId}/${nextChapter[0]._id}`);
-  // };
+  const handleNext = () => {
+    let nextLessonNumber = thisLesson.number + 1;
+    let nextLesson = lessons.__html.filter(
+      (lesson) => lesson.number == nextLessonNumber
+    );
+    navigate(`/course/${nextLesson[0]._id}`);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // for smoothly scrolling
+    });
+  };
 
   const handleGoQuiz = () => {
     if (thisLesson.quiz) {
@@ -64,6 +66,13 @@ const Course = () => {
       navigate("/dashboard");
     }
   };
+
+  useEffect(() => {
+    let prevLessonNumber = thisLesson.number - 1;
+    prevLessonNumber === 0 ? setShowPrev(false) : setShowPrev(true);
+    lessons.__html[thisLesson.number] ? setShowNext(true) : setShowNext(false);
+    thisLesson.quiz ? setGoQuiz(true) : setGoQuiz(false);
+  }, [lessonId]);
 
   const bgColors = [
     "#491b1b",
@@ -109,24 +118,22 @@ const Course = () => {
                 id={chapter.title}
                 className="chapter-ct"
               >
-                {/* GIVE IT AN ID LIKE: id={`${chapter._id}`} */}
-                {/* id cannot start with a number */}
                 {chapter.title && <ChapterTitle title={chapter.title} />}
-                {chapter.text[0] && <Text text={chapter.text} />}
-                {chapter.audioText && <AudioText text={chapter.audioText} />}
+                {chapter.text[0] !== "" && <Text text={chapter.text} />}
                 {chapter.audio && <Audio audio={chapter.audio} />}
-                {chapter.table && <Table table={chapter.table} />}
+                {chapter.audioText && <AudioText text={chapter.audioText} />}
+                {!chapter.table == [[""]] && <Table table={chapter.table} />}
                 {chapter.text_1[0] && <Text text={chapter.text_1} />}
-                {chapter.table_1 && <Table table={chapter.table_1} />}
+                {!chapter.table_1 === [[""]] && (
+                  <Table table={chapter.table_1} />
+                )}
                 {chapter.youtube && <Video video={chapter.youtube} />}
                 {chapter.questionText[0] && (
                   <QuestionText text={chapter.questionText} />
                 )}
-                <div className="chapter-question-ct">
-                  {chapter.questions[0] && (
-                    <Questions questions={chapter.questions} />
-                  )}
-                </div>
+                {chapter.questions[0] && (
+                  <Questions questions={chapter.questions} />
+                )}
                 {chapter.alignmentText && (
                   <AlignmentText text={chapter.alignmentText} />
                 )}
@@ -138,41 +145,39 @@ const Course = () => {
                 )}
                 <Image index={i} />
                 {/* CHANGE FUNCTIONALITY TO ONE LESSON PER PAGE INSTEAD OF ONE CHAPTER PER PAGE */}
-                <div className="btnContainer">
-                  {/* PREV/NEXT BUTTONS   */}
-                  {/* <button
-                      className="ChapPrevBtn"
-                      style={
-                        showPrev ? { display: "inline" } : { display: "none" }
-                      }
-                      onClick={handlePrev}
-                    >
-                      PREVIOUS
-                    </button>
-                    <button
-                      className="chapNextBtn"
-                      style={
-                        showNext ? { display: "inline" } : { display: "none" }
-                      }
-                      onClick={handleNext}
-                    >
-                      NEXT
-                    </button> */}
-                  <button
-                    className="chapQuizBtn"
-                    style={
-                      showGoQuiz ? { display: "inline" } : { display: "none" }
-                    }
-                    onClick={handleGoQuiz}
-                  >
-                    {thisLesson.quiz
-                      ? "Check your knowledge with a quiz"
-                      : "Back to dashboard"}
-                  </button>
-                </div>
               </div>
             );
           })}
+          <div className="lesson-btn-ct">
+            <button
+              className="lesson-go-quiz-btn"
+              style={goQuiz ? { display: "inline" } : { display: "none" }}
+              onClick={handleGoQuiz}
+            >
+              {thisLesson.quiz
+                ? "Check your knowledge with a quiz"
+                : "Back to dashboard"}
+            </button>
+            <div className="lesson-prev-next-btn-ct">
+              {/* PREV/NEXT BUTTONS   */}
+
+              <button
+                className="lesson-prev-btn"
+                style={showPrev ? { display: "inline" } : { display: "none" }}
+                onClick={handlePrev}
+              >
+                previous lesson
+              </button>
+
+              <button
+                className="lesson-next-btn"
+                style={showNext ? { display: "inline" } : { display: "none" }}
+                onClick={handleNext}
+              >
+                next lesson
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <BackToTop />
