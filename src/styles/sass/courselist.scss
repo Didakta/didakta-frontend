@@ -80,6 +80,11 @@ $dk-sky: rgb(110, 124, 139);
             text-decoration: none;
             color: lightgray;
             margin-bottom: 5px;
+            transition: color 0.5s;
+            -webkit-transition: color 0.5s;
+            &:hover {
+              color: $dk-violet;
+            }
           }
         }
       }

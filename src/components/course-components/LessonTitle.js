@@ -1,3 +1,5 @@
+import "../../styles/course.css";
+
 const LessonTitle = ({ title, number }) => {
   return (
     <div className="lesson-title-ct">

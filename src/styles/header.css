@@ -1,4 +1,5 @@
 .header-ct {
+  z-index: 98;
   width: 100%;
   overflow: hidden;
   background-color: rgb(48, 41, 52);

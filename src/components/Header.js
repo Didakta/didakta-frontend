@@ -74,6 +74,17 @@ const Header = () => {
         >
           Contact Us
         </NavLink>
+        {!localStorage.usertoken && (
+          <>
+            <hr className="h-ruller" />
+            <NavLink className="side-nav-link" to="/register">
+              Sign Up
+            </NavLink>
+            <NavLink className="side-nav-link" to="/login">
+              Log In
+            </NavLink>
+          </>
+        )}
         {localStorage.usertoken && (
           <>
             <hr className="h-ruller" />

@@ -1,3 +1,5 @@
+import "../../styles/course.css";
+
 const Text = ({ text }) => {
   return (
     <div className="chapter-text-ct">

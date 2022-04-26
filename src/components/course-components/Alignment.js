@@ -4,7 +4,7 @@ const Alignment = ({ alignment }) => {
       <iframe
         className="chapter-align"
         frameBorder="0"
-        seamless="seamless"
+        // seamless="seamless"
         allowtransparency="true"
         src={alignment}
         title="Ugarit | iAligner"
