@@ -3,7 +3,7 @@ import jwtDecode from "jwt-decode";
 
 export const register = (userData) => {
   return axios
-    .post("http://localhost:4000/user/register", {
+    .post("https://didakta-backend.herokuapp.com/user/register", {
       first: userData.first,
       last: userData.last,
       email: userData.email,
@@ -15,7 +15,7 @@ export const register = (userData) => {
 
 export const login = (user) => {
   return axios
-    .post("http://localhost:4000/user/login", {
+    .post("https://didakta-backend.herokuapp.com/user/login", {
       email: user.email,
       password: user.password,
     })
@@ -29,7 +29,7 @@ export const login = (user) => {
 export const updateProfile = (userData, userId) => {
   // !!! the function does NOT work !!! ////////////////////////////////
   return axios
-    .put(`http://localhost:4000/user/profile/${userId}`, {
+    .put(`https://didakta-backend.herokuapp.com/user/profile/${userId}`, {
       first: userData.first,
       last: userData.last,
       email: userData.email,
@@ -62,7 +62,7 @@ export const getUserProfile = async (setUserData) => {
 
 export const getUserProgress = (userId, token) => {
   return axios
-    .get(`http://localhost:4000/user/${userId}`, {
+    .get(`https://didakta-backend.herokuapp.com/user/${userId}`, {
       headers: {
         "authentication-token": token,
       },
