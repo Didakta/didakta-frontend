@@ -1,74 +1,129 @@
-import logo from "../images/logo-black.png";
+import logo from "../images/icon-white.png";
+import ugarit from "../images/ugarit.png";
+import perseus from "../images/Perseus.jpg";
 import github from "../images/github.svg";
 import telegram from "../images/telegram.svg";
 import twitter from "../images/twitter.svg";
 import envelope from "../images/envelope-fill.svg";
+import ccl from "../images/cc-l.png";
 
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import "../styles/footer.css";
 
 function Copyright() {
   return (
     <div className="copyright">
-      Copyright© {new Date().getFullYear()} by Didakta | Implemented by Arsalan
-      Moharrebi
+      <a
+        className="cc-icon"
+        href="https://creativecommons.org/licenses/by-sa/4.0/"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img src={ccl} alt="" />
+      </a>
+      <br />
+      Creative Commons Attribution-ShareAlike 4.0 International License©
+      {new Date().getFullYear()}
+      <br />
+      Implemented by{" "}
+      <a
+        className="mrclcyn"
+        href="https://github.com/mrclcyn"
+        target="_blank"
+        rel="noreferrer"
+      >
+        mrclcyn
+      </a>
     </div>
   );
 }
 
 const Footer = () => {
   return (
-    <div className="footerPalette">
-      <div className="footerContainer">
-        <div className="logoCol">
-          <div className="footerLogo">
-            <img className="logoImg" src={logo} width="100" />
+    <>
+      <div className="ft-ct">
+        <div className="ft-content-ct">
+          <div className="ft-col-1 col-3"></div>
+          <div className="ft-col-2 col-3">
+            <h3>Didakta</h3>
+            <ul>
+              <li>
+                <HashLink to="/why-didakta">Why Didakta</HashLink>
+              </li>
+              <li>
+                <HashLink to="/about#who">About us</HashLink>
+              </li>
+              <li>
+                <HashLink to="/about#touch">Contact us</HashLink>
+              </li>
+            </ul>
           </div>
-
-          <div className="social">
-            <div className="socialIcon">
-              <a href="https://github.com/mrclcyn/Didakta-Frontend.git">
-                <img src={github} width="30" alt="GitHub Link" />
-              </a>
-            </div>
-
-            <div className="socialIcon">
-              <a href="">
-                <img src={twitter} width="30" alt="Twitter Link" />
-              </a>
-            </div>
-            <div className="socialIcon">
-              <a href="">
-                <img src={telegram} width="30" alt="Telegram Link" />
-              </a>
-            </div>
-            <div className="socialIcon">
-              <a href="mailto:didakta.project@gmail.com">
-                <img src={envelope} width="30" alt="Email Link" />
-              </a>
-            </div>
+          <div className="ft-col-3 col-3">
+            <h3>Our Resources</h3>
+            <ul>
+              <li>
+                <a href="" target="_blank" rel="noreferrer">
+                  Modular Grammar
+                </a>
+              </li>
+              <li>
+                <a href="" target="_blank" rel="noreferrer">
+                  Glossary for Iliad One
+                </a>
+              </li>
+              <li>
+                <a href="" target="_blank" rel="noreferrer">
+                  Pinakedon: Greek Morphology
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="ft-col-4 col-3">
+            <a
+              href="http://ugarit.ialigner.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img src={ugarit} alt="Ugarit Logo" />
+            </a>
+            <a
+              href="https://scaife.perseus.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                style={{ borderRadius: "5px" }}
+                src={perseus}
+                alt="Perseus Logo"
+              />
+            </a>
           </div>
         </div>
-        <div className="emptyCol"></div>
-        <div className="linksCol">
-          <ul className="footerMenu">
-            <li>
-              <a href="http://ugarit.ialigner.com/" target="_blank">
-                Ugarit Project
-              </a>
-            </li>
-            <li>
-              <a href="https://scaife.perseus.org/" target="_blank">
-                Scaife Viewer
-              </a>
-            </li>
-          </ul>
+
+        <div className="ft-social">
+          <a
+            href="mailto:didakta.project@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={envelope} width="30" alt="Email Link" />
+          </a>
+          <a
+            href="https://github.com/mrclcyn/didakta-reactjs.git"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={github} width="30" alt="GitHub Link" />
+          </a>
+          <a href="" target="_blank" rel="noreferrer">
+            <img src={telegram} width="30" alt="Telegram Link" />
+          </a>
         </div>
       </div>
-      <div>
+      <div className="copyright-ct">
         <Copyright />
       </div>
-    </div>
+    </>
   );
 };
 
