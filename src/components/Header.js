@@ -77,10 +77,26 @@ const Header = () => {
         {!localStorage.usertoken && (
           <>
             <hr className="h-ruller" />
-            <NavLink className="side-nav-link" to="/register">
+            <NavLink
+              style={({ isActive }) => {
+                return {
+                  color: isActive && "#a7771f",
+                };
+              }}
+              className="side-nav-link"
+              to="/register"
+            >
               Sign Up
             </NavLink>
-            <NavLink className="side-nav-link" to="/login">
+            <NavLink
+              style={({ isActive }) => {
+                return {
+                  color: isActive && "#a7771f",
+                };
+              }}
+              className="side-nav-link"
+              to="/login"
+            >
               Log In
             </NavLink>
           </>

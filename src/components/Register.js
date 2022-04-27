@@ -1,26 +1,10 @@
-import * as React from "react";
+import "../styles/register.css";
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import TextField from "@mui/material/TextField";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-// import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-
-import "@fontsource/roboto/300.css";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto/700.css";
-
+import { useNavigate, Link } from "react-router-dom";
 import { register } from "../functions/userFunctions";
 
-const theme = createTheme();
+import Header from "./Header";
 
 const Register = () => {
   const [first, setFirst] = useState();
@@ -32,112 +16,82 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const userData = {
       first: first,
       last: last,
       email: email,
       password: password,
     };
-
     register(userData)
       .then((res) => navigate("/login"))
       .catch((err) => console.log(err));
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
-        <Box
-          sx={{
-            marginTop: 8,
-            marginBottom: 20,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            {/* <LockOutlinedIcon /> */}
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Registration
-          </Typography>
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            sx={{
-              mt: 3,
-            }}
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  autoComplete="given-name"
-                  name="first"
-                  required
-                  fullWidth
-                  id="first"
-                  label="First Name"
-                  autoFocus
-                  onChange={(e) => setFirst(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <TextField
-                  required
-                  fullWidth
-                  id="last"
-                  label="Last Name"
-                  name="last"
-                  autoComplete="family-name"
-                  onChange={(e) => setLast(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </Grid>
-              <Grid item xs={12}></Grid>
-            </Grid>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Register
-            </Button>
-            <Grid container justifyContent="center">
-              <Grid item>
-                <Link href="/login" variant="body2">
-                  Already have an account? Sign in
-                </Link>
-              </Grid>
-            </Grid>
-          </Box>
-        </Box>
-      </Container>
-    </ThemeProvider>
+    <>
+      <Header />
+      <div className="reg-ct">
+        <div className="reg-form-ct">
+          <h1 className="reg-title">Register to Didakta</h1>
+          <form className="reg-form" onSubmit={handleSubmit}>
+            <fieldset className="reg-form-fieldset">
+              <legend className="reg-input-legend">First Name</legend>
+              <input
+                className="reg-form-input"
+                id="firstName"
+                type="text"
+                name="first"
+                value={first}
+                onChange={(e) => setFirst(e.target.value)}
+                required
+              />
+            </fieldset>
+            <fieldset className="reg-form-fieldset">
+              <legend className="reg-input-legend">Last Name</legend>
+              <input
+                className="reg-form-input"
+                id="lastName"
+                type="text"
+                name="last"
+                value={last}
+                onChange={(e) => setLast(e.target.value)}
+                required
+              />
+            </fieldset>
+            <fieldset className="reg-form-fieldset">
+              <legend className="reg-input-legend">Email</legend>
+              <input
+                className="reg-form-input"
+                id="userEmail"
+                type="email"
+                name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </fieldset>
+            <fieldset className="reg-form-fieldset">
+              <legend className="reg-input-legend">Password</legend>
+              <input
+                className="reg-form-password"
+                id="password"
+                type="password"
+                name="password"
+                value={password}
+                placeholder="choose a strong password"
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+            </fieldset>
+            <input className="reg-form-submit" type="submit" value="REGISTER" />
+            <div className="reg-form-links-ct">
+              <Link to="/reset-password">Forgot your password?</Link>
+              <Link to="/login">Already have a Didakta account?</Link>
+            </div>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 

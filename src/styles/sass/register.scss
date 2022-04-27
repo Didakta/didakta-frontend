@@ -1,0 +1,132 @@
+$dk-violet: #302934;
+$dk-yellow: #a7771f;
+$dk-red: #491b1b;
+$dk-blue: #15323b;
+$dk-green: #27342a;
+$dk-pink: #7a5858;
+$dk-sky: #6e7c8b;
+
+.reg-ct {
+  background-color: $dk-pink;
+  padding: 100px 0 150px;
+  min-height: 80vh;
+  .reg-form-ct {
+    width: 400px;
+    margin: 0 auto;
+    .reg-title {
+      text-transform: uppercase;
+      color: rgba(211, 211, 211, 0.644);
+      text-align: center;
+      padding-bottom: 50px;
+    }
+    .reg-form {
+      width: 100%;
+      position: relative;
+
+      .reg-form-fieldset {
+        color: $dk-violet;
+        padding: 5px 0 5px 10px;
+        margin: 20px 0;
+        border: 2px solid $dk-violet;
+        border-radius: 5px;
+        .reg-input-legend {
+          margin-left: 10px;
+
+          &::after {
+            content: " *";
+          }
+        }
+        .reg-form-input {
+          margin: 5px 0px;
+          display: block;
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          height: 30px;
+          color: $dk-violet;
+          font-size: 18px;
+          &:-webkit-autofill {
+            box-shadow: 0 0 0 30px $dk-pink inset !important;
+            -webkit-box-shadow: 0 0 0 30px $dk-pink inset !important;
+            -webkit-text-fill-color: $dk-violet !important;
+            &:hover,
+            &:focus,
+            &:active {
+              box-shadow: 0 0 0 30px $dk-pink inset !important;
+              -webkit-box-shadow: 0 0 0 30px $dk-pink inset !important;
+            }
+          }
+          &:focus {
+            outline: none;
+          }
+          &::placeholder {
+            color: lightgray;
+            font-size: 18px;
+          }
+        }
+        .reg-form-password {
+          margin: 5px 0;
+          display: block;
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          height: 30px;
+          color: $dk-violet;
+          font-size: 32px;
+          &:-webkit-autofill {
+            box-shadow: 0 0 0 30px $dk-pink inset !important;
+            -webkit-box-shadow: 0 0 0 30px $dk-pink inset !important;
+            -webkit-text-fill-color: $dk-violet !important;
+            &:hover,
+            &:focus,
+            &:active {
+              box-shadow: 0 0 0 30px $dk-pink inset !important;
+              -webkit-box-shadow: 0 0 0 30px $dk-pink inset !important;
+            }
+          }
+          &:focus {
+            outline: none;
+          }
+          &::placeholder {
+            color: rgba(211, 211, 211, 0.37);
+            font-size: 18px;
+          }
+        }
+      }
+      .reg-form-submit {
+        display: block;
+        margin: 50px auto;
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid $dk-violet;
+        border-radius: 5px;
+        color: $dk-violet;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: $dk-violet;
+          color: $dk-pink;
+          border-color: $dk-pink;
+        }
+      }
+      .reg-form-links-ct {
+        text-align: center;
+        line-height: 1.5;
+        a {
+          display: block;
+          color: $dk-violet;
+          text-decoration: none;
+          font-weight: bold;
+          transition: color 0.5s;
+          -webkit-transition: color 0.5s;
+          &:hover {
+            color: #3029344d;
+          }
+        }
+      }
+    }
+  }
+}
