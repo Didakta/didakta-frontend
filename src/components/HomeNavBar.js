@@ -10,6 +10,8 @@ const HomeNavBar = () => {
   const logOut = (e) => {
     e.preventDefault();
     localStorage.removeItem("usertoken");
+    localStorage.removeItem("averageScore");
+    localStorage.removeItem("userAnswers");
     navigate(`/`);
   };
 

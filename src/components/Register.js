@@ -2,7 +2,7 @@ import "../styles/register.css";
 
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { register } from "../functions/userFunctions";
+import { register, login } from "../functions/userFunctions";
 
 import Header from "./Header";
 
@@ -23,8 +23,15 @@ const Register = () => {
       password: password,
     };
     register(userData)
-      .then((res) => navigate("/login"))
+      .then((res) =>
+        login({ email, password }).then((res) => {
+          if (res) {
+            navigate("/dashboard");
+          }
+        })
+      )
       .catch((err) => console.log(err));
+    navigate("/dashboard");
   };
 
   return (
@@ -85,7 +92,6 @@ const Register = () => {
             </fieldset>
             <input className="reg-form-submit" type="submit" value="REGISTER" />
             <div className="reg-form-links-ct">
-              <Link to="/reset-password">Forgot your password?</Link>
               <Link to="/login">Already have a Didakta account?</Link>
             </div>
           </form>
