@@ -1,0 +1,120 @@
+.reg-ct {
+  background-color: #7a5858;
+  padding: 100px 0 150px;
+  min-height: 80vh;
+}
+.reg-ct .reg-form-ct {
+  width: 400px;
+  margin: 0 auto;
+}
+.reg-ct .reg-form-ct .reg-title {
+  text-transform: uppercase;
+  color: rgba(211, 211, 211, 0.644);
+  text-align: center;
+  padding-bottom: 50px;
+}
+.reg-ct .reg-form-ct .reg-form {
+  width: 100%;
+  position: relative;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset {
+  color: #302934;
+  padding: 5px 0 5px 10px;
+  margin: 20px 0;
+  border: 2px solid #302934;
+  border-radius: 5px;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-input-legend {
+  margin-left: 10px;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-input-legend::after {
+  content: " *";
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-input {
+  margin: 5px 0px;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  color: #302934;
+  font-size: 18px;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-input:-webkit-autofill {
+  box-shadow: 0 0 0 30px #7a5858 inset !important;
+  -webkit-box-shadow: 0 0 0 30px #7a5858 inset !important;
+  -webkit-text-fill-color: #302934 !important;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-input:-webkit-autofill:hover, .reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-input:-webkit-autofill:focus, .reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #7a5858 inset !important;
+  -webkit-box-shadow: 0 0 0 30px #7a5858 inset !important;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-input:focus {
+  outline: none;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-input::placeholder {
+  color: lightgray;
+  font-size: 18px;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-password {
+  margin: 5px 0;
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  height: 30px;
+  color: #302934;
+  font-size: 32px;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-password:-webkit-autofill {
+  box-shadow: 0 0 0 30px #7a5858 inset !important;
+  -webkit-box-shadow: 0 0 0 30px #7a5858 inset !important;
+  -webkit-text-fill-color: #302934 !important;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-password:-webkit-autofill:hover, .reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-password:-webkit-autofill:focus, .reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-password:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #7a5858 inset !important;
+  -webkit-box-shadow: 0 0 0 30px #7a5858 inset !important;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-password:focus {
+  outline: none;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-fieldset .reg-form-password::placeholder {
+  color: rgba(211, 211, 211, 0.37);
+  font-size: 18px;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-submit {
+  display: block;
+  margin: 50px auto;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #302934;
+  border-radius: 5px;
+  color: #302934;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-submit:hover {
+  background-color: #302934;
+  color: #7a5858;
+  border-color: #7a5858;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-links-ct {
+  text-align: center;
+  line-height: 1.5;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-links-ct a {
+  display: block;
+  color: #302934;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+}
+.reg-ct .reg-form-ct .reg-form .reg-form-links-ct a:hover {
+  color: rgba(48, 41, 52, 0.3019607843);
+}
+
+/*# sourceMappingURL=register.css.map */
