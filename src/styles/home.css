@@ -35,8 +35,9 @@
 }
 .home-container .home-rows .home-row-1-ct .home-row-1 .home-row-1-right .home-row-1-text {
   text-align: center;
-  font-size: 3vw;
-  margin: 15vh 20px 20px;
+  font-size: 2.5vw;
+  margin: 15vh 5vw 20px;
+  font-weight: bold;
   color: lightgray;
 }
 .home-container .home-rows .home-row-2-ct {
