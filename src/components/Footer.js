@@ -51,10 +51,10 @@ const Footer = () => {
                 <HashLink to="/why-didakta">Why Didakta</HashLink>
               </li>
               <li>
-                <HashLink to="/about#who">About us</HashLink>
+                <HashLink to="/about">About us</HashLink>
               </li>
               <li>
-                <HashLink to="/about#touch">Contact us</HashLink>
+                <HashLink to="/about">Contact us</HashLink>
               </li>
             </ul>
           </div>

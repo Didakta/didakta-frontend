@@ -1,0 +1,91 @@
+$dk-violet: rgb(48, 41, 52);
+$dk-yellow: rgb(167, 119, 31);
+$dk-red: rgb(73, 27, 27);
+$dk-blue: rgb(21, 50, 59);
+$dk-green: rgb(39, 52, 42);
+$dk-pink: rgb(122, 88, 88);
+$dk-sky: rgb(110, 124, 139);
+// * {
+//   border: 1px dotted gray;
+// }
+.about-ct {
+  width: 100%;
+  .about-rows {
+    .about-row-ct {
+      padding: 5vw 15vw 5vw;
+      background-color: $dk-yellow;
+      .about-row {
+        h1 {
+          width: 100%;
+          text-align: center;
+          font-size: clamp(32px, 3.5vw, 3.5vw);
+          color: lightgray;
+          text-transform: uppercase;
+        }
+        .about-row-cell {
+          display: inline-block;
+          .about-card-ct {
+            text-align: center;
+            color: lightgray;
+            aspect-ratio: 2 / 3;
+            margin: 50px;
+            background-color: rgba(0, 0, 0, 0.329);
+            .about-card-img {
+              width: 100%;
+              display: block;
+            }
+            h2 {
+              margin: 5vw 0 0.5vw;
+              font-size: clamp(12px, 2vw, 2vw);
+            }
+            p {
+              font-size: clamp(12px, 1.2vw, 1.2vw);
+              margin-bottom: 2vw;
+            }
+          }
+        }
+        .about-thanks {
+          color: lightgray;
+          font-size: clamp(14px, 2vw, 2vw);
+          line-height: 1.4;
+          text-align: center;
+          a {
+            text-decoration: none;
+            color: rgba(0, 0, 0, 0.384);
+            transition: color 0.5s;
+            -webkit-transition: color 0.5s;
+            &:hover {
+              color: rgba(0, 0, 0, 0.185);
+            }
+          }
+        }
+        .about-ref-title {
+          color: lightgray;
+          margin: 3vw 0;
+          font-size: clamp(16px, 2vw, 2vw);
+        }
+        .about-ref-ul {
+          .about-ref-li {
+            color: lightgray;
+            padding: 0 0 15px 10px;
+            margin-left: 10px;
+            line-height: 1.4;
+            transition: color 0.5s, padding-left 0.5s;
+            &:hover {
+              color: $dk-yellow;
+              padding-left: 20px;
+            }
+          }
+        }
+      }
+    }
+    .about-row-head-ct {
+      background-image: url("../images/Head.jpg");
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 50vw;
+    }
+  }
+}
