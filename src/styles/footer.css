@@ -31,11 +31,12 @@
 .ft-ct .ft-content-ct .ft-col-2 ul li a {
   text-decoration: none;
   color: rgb(110, 124, 139);
-  transition: color 0.5s;
-  -webkit-transition: color 0.5s;
+  transition: color 0.5s, padding-left 0.5s;
+  -webkit-transition: color 0.5s, padding-left 0.5s;
 }
 .ft-ct .ft-content-ct .ft-col-2 ul li a:hover {
   color: rgb(167, 119, 31);
+  padding-left: 10px;
 }
 .ft-ct .ft-content-ct .ft-col-3 {
   margin: 0 20px;
@@ -54,11 +55,12 @@
 .ft-ct .ft-content-ct .ft-col-3 ul li a {
   text-decoration: none;
   color: rgb(110, 124, 139);
-  transition: color 0.5s;
-  -webkit-transition: color 0.5s;
+  transition: color 0.5s, padding-left 0.5s;
+  -webkit-transition: color 0.5s, padding-left 0.5s;
 }
 .ft-ct .ft-content-ct .ft-col-3 ul li a:hover {
   color: rgb(167, 119, 31);
+  padding-left: 10px;
 }
 .ft-ct .ft-content-ct .ft-col-4 {
   margin-left: 20px;

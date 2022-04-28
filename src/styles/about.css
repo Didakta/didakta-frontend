@@ -1,0 +1,77 @@
+.about-ct {
+  width: 100%;
+}
+.about-ct .about-rows .about-row-ct {
+  padding: 5vw 15vw 5vw;
+  background-color: rgb(167, 119, 31);
+}
+.about-ct .about-rows .about-row-ct .about-row h1 {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(32px, 3.5vw, 3.5vw);
+  color: lightgray;
+  text-transform: uppercase;
+}
+.about-ct .about-rows .about-row-ct .about-row .about-row-cell {
+  display: inline-block;
+}
+.about-ct .about-rows .about-row-ct .about-row .about-row-cell .about-card-ct {
+  text-align: center;
+  color: lightgray;
+  aspect-ratio: 2/3;
+  margin: 50px;
+  background-color: rgba(0, 0, 0, 0.329);
+}
+.about-ct .about-rows .about-row-ct .about-row .about-row-cell .about-card-ct .about-card-img {
+  width: 100%;
+  display: block;
+}
+.about-ct .about-rows .about-row-ct .about-row .about-row-cell .about-card-ct h2 {
+  margin: 5vw 0 0.5vw;
+  font-size: clamp(12px, 2vw, 2vw);
+}
+.about-ct .about-rows .about-row-ct .about-row .about-row-cell .about-card-ct p {
+  font-size: clamp(12px, 1.2vw, 1.2vw);
+  margin-bottom: 2vw;
+}
+.about-ct .about-rows .about-row-ct .about-row .about-thanks {
+  color: lightgray;
+  font-size: clamp(14px, 2vw, 2vw);
+  line-height: 1.4;
+  text-align: center;
+}
+.about-ct .about-rows .about-row-ct .about-row .about-thanks a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.384);
+  transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+}
+.about-ct .about-rows .about-row-ct .about-row .about-thanks a:hover {
+  color: rgba(0, 0, 0, 0.185);
+}
+.about-ct .about-rows .about-row-ct .about-row .about-ref-title {
+  color: lightgray;
+  margin: 3vw 0;
+  font-size: clamp(16px, 2vw, 2vw);
+}
+.about-ct .about-rows .about-row-ct .about-row .about-ref-ul .about-ref-li {
+  color: lightgray;
+  padding: 0 0 15px 10px;
+  margin-left: 10px;
+  line-height: 1.4;
+  transition: color 0.5s, padding-left 0.5s;
+}
+.about-ct .about-rows .about-row-ct .about-row .about-ref-ul .about-ref-li:hover {
+  color: rgb(167, 119, 31);
+  padding-left: 20px;
+}
+.about-ct .about-rows .about-row-head-ct {
+  background-image: url("../images/Head.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vw;
+}
+
+/*# sourceMappingURL=about.css.map */

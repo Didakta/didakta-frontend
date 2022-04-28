@@ -35,10 +35,11 @@ $dk-sky: rgb(110, 124, 139);
           a {
             text-decoration: none;
             color: $dk-sky;
-            transition: color 0.5s;
-            -webkit-transition: color 0.5s;
+            transition: color 0.5s, padding-left 0.5s;
+            -webkit-transition: color 0.5s, padding-left 0.5s;
             &:hover {
               color: $dk-yellow;
+              padding-left: 10px;
             }
           }
         }
@@ -60,10 +61,11 @@ $dk-sky: rgb(110, 124, 139);
           a {
             text-decoration: none;
             color: $dk-sky;
-            transition: color 0.5s;
-            -webkit-transition: color 0.5s;
+            transition: color 0.5s, padding-left 0.5s;
+            -webkit-transition: color 0.5s, padding-left 0.5s;
             &:hover {
               color: $dk-yellow;
+              padding-left: 10px;
             }
           }
         }
