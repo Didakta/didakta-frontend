@@ -1,9 +1,7 @@
-import logo from "../images/icon-white.png";
 import ugarit from "../images/ugarit.png";
 import perseus from "../images/Perseus.jpg";
 import github from "../images/github.svg";
 import telegram from "../images/telegram.svg";
-import twitter from "../images/twitter.svg";
 import envelope from "../images/envelope-fill.svg";
 import ccl from "../images/cc-l.png";
 
@@ -115,7 +113,7 @@ const Footer = () => {
           >
             <img src={github} width="30" alt="GitHub Link" />
           </a>
-          <a href="" target="_blank" rel="noreferrer">
+          <a href="https://t.me/didakta" target="_blank" rel="noreferrer">
             <img src={telegram} width="30" alt="Telegram Link" />
           </a>
         </div>

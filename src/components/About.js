@@ -1,5 +1,4 @@
 import "../styles/about.css";
-import { useState } from "react";
 
 import teacher from "../images/farnoush-shamsian.jpg";
 import webdev from "../images/mrclcyn.jpg";
@@ -10,11 +9,6 @@ import Header from "../components/Header";
 import BackToTop from "./BackToTop";
 
 const About = () => {
-  const [pedalionStyle, setPedalionStyle] = useState({
-    textDecoration: "none",
-    color: "rgb(21, 50, 59)",
-  });
-
   return (
     <>
       <Header />
