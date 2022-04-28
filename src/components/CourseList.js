@@ -65,7 +65,9 @@ const CourseList = ({ lessonId }) => {
         <button
           title="Table of content"
           className="cl-icon"
-          onClick={() => setNavOpen(20)}
+          onClick={() => {
+            navOpen === 0 ? setNavOpen(20) : setNavOpen(0);
+          }}
         >
           ➽
         </button>
@@ -73,7 +75,7 @@ const CourseList = ({ lessonId }) => {
       {/* Table of content navigation */}
       <div style={{ width: `${navOpen}vw` }} className="cl-ct">
         <button className="cl-close" onClick={() => setNavOpen(0)}>
-          &times;
+          ➽
         </button>
         <div className="cl-content-ct">
           <h2 className="cl-title">Table of content</h2>

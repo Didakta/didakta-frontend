@@ -8,20 +8,24 @@ $dk-sky: rgb(110, 124, 139);
 
 .cl-icon-ct {
   position: fixed;
-  top: 100px;
+  top: 63px;
   left: 0;
-  margin-left: 40px;
-  z-index: 98;
+  z-index: 90;
   .cl-icon {
     display: inline-block;
     font-size: 40px;
     font-weight: bold;
-    padding: 0;
+    padding: 5px 37px 8px;
+    border-radius: 0 0 5px 0;
     margin: 0;
     border-style: none;
-    background-color: transparent;
+    background-color: $dk-violet;
     color: $dk-yellow;
     cursor: default;
+    transition: 0.5s;
+    &:hover {
+      opacity: 0.7;
+    }
   }
 }
 .cl-ct {
@@ -36,24 +40,26 @@ $dk-sky: rgb(110, 124, 139);
   transition: 1s;
   color: lightgray;
   .cl-close {
-    background-color: transparent;
+    transform: rotate(-180deg);
+    background-color: $dk-violet;
     border-style: none;
-    padding: 45px 32px 8px 8px;
-    position: absolute;
+    border-radius: 5px 0 0 0;
+    padding: 5px 37px 8px;
+    position: sticky;
     top: 0;
-    left: 38px;
+    left: 0;
     font-size: 40px;
     margin-right: 50px;
-    color: lightgray;
+    color: $dk-yellow;
     display: block;
     cursor: default;
     transition: 0.5s;
     &:hover {
-      opacity: 0.4;
+      opacity: 0.7;
     }
   }
   .cl-content-ct {
-    margin: 190px 0 30vh;
+    margin: 125px 0 30vh;
     .cl-title {
       margin-bottom: 30px;
       padding: 0 20px;
@@ -62,28 +68,34 @@ $dk-sky: rgb(110, 124, 139);
     .cl-content {
       .cl-collapsible {
         border: none;
-        background-color: rgba(0, 0, 0, 0.192);
+        background-color: rgba(0, 0, 0, 0.13);
         font-size: 14px;
         font-weight: bold;
         color: lightgray;
         text-align: left !important;
         width: 100%;
         padding: 20px;
-        margin-bottom: 2px;
+        margin-top: 1px;
+        transition: background-color 0.5s;
+        -webkit-transition: background-color 0.5s;
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.226);
+        }
       }
       .cl-chapters {
         padding: 20px;
-        background-color: rgba(0, 0, 0, 0.11);
+        // background-color: rgba(0, 0, 0, 0.11);
         margin-bottom: 2px;
         .cl-chapter-link {
           a {
             text-decoration: none;
             color: lightgray;
             margin-bottom: 5px;
-            transition: color 0.5s;
-            -webkit-transition: color 0.5s;
+            transition: 0.5s;
+            -webkit-transition: 0.5s;
             &:hover {
               color: $dk-violet;
+              margin-left: 10px;
             }
           }
         }
