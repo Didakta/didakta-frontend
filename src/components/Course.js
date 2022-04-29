@@ -70,7 +70,9 @@ const Course = () => {
   useEffect(() => {
     let prevLessonNumber = thisLesson.number - 1;
     prevLessonNumber === 0 ? setShowPrev(false) : setShowPrev(true);
-    lessons.__html[thisLesson.number] ? setShowNext(true) : setShowNext(false);
+
+    ///////////////////////////// MUST BE INCREMENTED EACH TIME A LESSEON HAS BEEN ADDED TO SHOW THE NEXT BUTTON  /////////////////////////////
+    thisLesson.number < 2 ? setShowNext(true) : setShowNext(false);
     thisLesson.quiz ? setGoQuiz(true) : setGoQuiz(false);
   }, [lessonId]);
 
