@@ -78,26 +78,32 @@ const Course = () => {
     "#491b1b",
     "#15323b",
     "#7a5858",
+    "#27342a",
     "#6e7c8b",
     "#491b1b",
     "#15323b",
     "#7a5858",
+    "#27342a",
     "#6e7c8b",
     "#491b1b",
     "#15323b",
     "#7a5858",
+    "#27342a",
     "#6e7c8b",
     "#491b1b",
     "#15323b",
     "#7a5858",
+    "#27342a",
     "#6e7c8b",
     "#491b1b",
     "#15323b",
     "#7a5858",
+    "#27342a",
     "#6e7c8b",
     "#491b1b",
     "#15323b",
     "#7a5858",
+    "#27342a",
     "#6e7c8b",
   ];
   return (
@@ -108,44 +114,48 @@ const Course = () => {
         <div className="crs-lsn-ct">
           <LessonTitle title={thisLesson.title} number={thisLesson.number} />
           {thisLesson.chapters.map((chapter, i) => {
+            const bgColor = bgColors[i];
             return (
-              <div
-                style={{
-                  backgroundColor: `${bgColors[i]}`,
-                  color: "lightgray",
-                }}
-                key={crypto.randomUUID()}
-                id={chapter.title}
-                className="chapter-ct"
-              >
-                {chapter.title && <ChapterTitle title={chapter.title} />}
-                {chapter.text[0] !== "" && <Text text={chapter.text} />}
-                {chapter.audio && <Audio audio={chapter.audio} />}
-                {chapter.audioText && <AudioText text={chapter.audioText} />}
-                {!chapter.table == [[""]] && <Table table={chapter.table} />}
-                {chapter.text_1[0] && <Text text={chapter.text_1} />}
-                {!chapter.table_1 === [[""]] && (
-                  <Table table={chapter.table_1} />
-                )}
-                {chapter.youtube && <Video video={chapter.youtube} />}
-                {chapter.questionText[0] && (
-                  <QuestionText text={chapter.questionText} />
-                )}
-                {chapter.questions[0] && (
-                  <Questions questions={chapter.questions} />
-                )}
-                {chapter.alignmentText && (
-                  <AlignmentText text={chapter.alignmentText} />
-                )}
-                {chapter.alignment && (
-                  <Alignment alignment={chapter.alignment} />
-                )}
-                {chapter.footnotes[0] && (
-                  <Footnotes footnotes={chapter.footnotes} />
-                )}
-                <Image index={i} />
-                {/* CHANGE FUNCTIONALITY TO ONE LESSON PER PAGE INSTEAD OF ONE CHAPTER PER PAGE */}
-              </div>
+              <>
+                <div
+                  style={{
+                    backgroundColor: `${bgColors[i]}`,
+                    color: "lightgray",
+                  }}
+                  key={crypto.randomUUID()}
+                  id={chapter.title}
+                  className="chapter-ct"
+                >
+                  {chapter.title && <ChapterTitle title={chapter.title} />}
+                  {chapter.text[0] !== "" && <Text text={chapter.text} />}
+                  {chapter.audio && <Audio audio={chapter.audio} />}
+                  {chapter.audioText && <AudioText text={chapter.audioText} />}
+                  {!chapter.table == [[""]] && <Table table={chapter.table} />}
+                  {chapter.text_1[0] && <Text text={chapter.text_1} />}
+                  {!chapter.table_1 === [[""]] && (
+                    <Table table={chapter.table_1} />
+                  )}
+                  {chapter.youtube && <Video video={chapter.youtube} />}
+                  {chapter.questionText[0] && (
+                    <QuestionText text={chapter.questionText} />
+                  )}
+                  {chapter.questions[0] && (
+                    <Questions questions={chapter.questions} />
+                  )}
+                  {chapter.alignmentText && (
+                    <AlignmentText text={chapter.alignmentText} />
+                  )}
+                  {chapter.alignment && (
+                    <Alignment alignment={chapter.alignment} />
+                  )}
+                  {chapter.footnotes[0] && (
+                    <Footnotes footnotes={chapter.footnotes} />
+                  )}
+
+                  <Image index={i} />
+                  {/* CHANGE FUNCTIONALITY TO ONE LESSON PER PAGE INSTEAD OF ONE CHAPTER PER PAGE */}
+                </div>
+              </>
             );
           })}
           <div className="lesson-btn-ct">

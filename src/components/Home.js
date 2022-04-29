@@ -15,9 +15,16 @@ const Home = () => {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
-      <HomeNavBar />
+      <HomeNavBar id="home-top" />
       <div className="home-container">
         <div className="home-rows">
           {/*/////////////////////////// FIRST ROW ///////////////////////////*/}
@@ -74,7 +81,15 @@ const Home = () => {
                 <div className="block-ct">
                   <h1>Why Didakta?</h1>
                   <p>Learn more about our method of teaching</p>
-                  <button className="home-red-btn">Discover</button>
+                  <button
+                    className="home-red-btn"
+                    onClick={() => {
+                      navigate("/about");
+                      scrollToTop();
+                    }}
+                  >
+                    Discover
+                  </button>
                 </div>
               </div>
             </div>
@@ -87,7 +102,18 @@ const Home = () => {
                 <div className="block-ct">
                   <h1>About us</h1>
                   <p>Learn more about the Didakta team</p>
-                  <button className="home-blue-btn">Discover</button>
+                  <button
+                    className="home-blue-btn"
+                    onClick={() => {
+                      navigate("/about");
+                      window.scrollTo({
+                        top: 1300,
+                        behavior: "smooth",
+                      });
+                    }}
+                  >
+                    Discover
+                  </button>
                 </div>
               </div>
               <div className="home-row-5-right col-6">

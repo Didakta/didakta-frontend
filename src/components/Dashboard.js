@@ -2,18 +2,88 @@ import "../styles/dashboard.css";
 import Header from "./Header";
 import BackToTop from "./BackToTop";
 import { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { ApiContext } from "../LessonsContext";
-import syllabusImage from "../images/Vase1.jpg";
 
 const Dashboard = ({ lessonId, chapterId }) => {
-  const [lessons, setLessons] = useContext(ApiContext);
+  const navigate = useNavigate();
+  const [lessons] = useContext(ApiContext);
+
+  const bgColors = [
+    "#a7771f",
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#27342a",
+    "#6e7c8b",
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#27342a",
+    "#6e7c8b",
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#27342a",
+    "#6e7c8b",
+    "#491b1b",
+    "#15323b",
+    "#7a5858",
+    "#27342a",
+    "#6e7c8b",
+  ];
 
   return (
     <>
       <Header />
-      <div className="dashboardContainer">
+      <div className="dash-ct">
+        <div className="dash-tabs-ct">
+          <h1>Homeric Greek course syllabus</h1>
+          {lessons.__html.map((lesson, i) => {
+            return (
+              <div
+                onClick={() => {
+                  lesson.number < 3
+                    ? navigate(`/course/${lesson._id}`)
+                    : navigate("");
+                }}
+                key={crypto.randomUUID}
+                className="dash-tab-ct"
+                style={{ backgroundColor: bgColors[i] }}
+              >
+                <div className="dash-tab">
+                  <h2>Lesson {lesson.number}</h2>
+                  <h3
+                    style={
+                      lesson.number > 2
+                        ? { display: "none" }
+                        : { display: "block" }
+                    }
+                  >
+                    {lesson.title}
+                  </h3>
+                  <p
+                    className="pending"
+                    style={
+                      lesson.number > 2
+                        ? { display: "block" }
+                        : { display: "none" }
+                    }
+                  >
+                    ⏳ Pending ...
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+
+          <div className="dash-tab-content-ct">
+            <div className="das-tab-content"></div>
+          </div>
+        </div>
+      </div>
+      {/* <div className="dashboardContainer">
         <div className="syllabusContainer">
           <div className="listAndHeaderContainer">
             <h2>Lessons & Chapters</h2>
@@ -57,11 +127,8 @@ const Dashboard = ({ lessonId, chapterId }) => {
               })}
             </div>
           </div>
-          <div className="syllabusImageContainer">
-            <img src={syllabusImage} className="syllabusImage" />
-          </div>
         </div>
-      </div>
+      </div> */}
       <BackToTop />
     </>
   );

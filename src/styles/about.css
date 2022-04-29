@@ -12,6 +12,20 @@
   color: lightgray;
   text-transform: uppercase;
 }
+.about-ct .about-rows .about-row-ct .about-row .why-p {
+  color: lightgray;
+  text-align: justify;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.about-ct .about-rows .about-row-ct .about-row .why-p a {
+  color: rgb(167, 119, 31);
+  text-decoration: none;
+  transition: 0.5s;
+}
+.about-ct .about-rows .about-row-ct .about-row .why-p a:hover {
+  color: rgba(255, 255, 255, 0.267);
+}
 .about-ct .about-rows .about-row-ct .about-row .about-row-cell {
   display: inline-block;
 }
@@ -71,6 +85,14 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 50vw;
+}
+.about-ct .about-rows .about-row-terra-ct {
+  background-image: url("../images/terracotta.jfif");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
   height: 50vw;
 }
 

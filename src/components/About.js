@@ -14,9 +14,50 @@ const About = () => {
       <Header />
       <div className="about-ct">
         <div className="about-rows">
+          {/* WHY DIDAKTA */}
           <div className="about-row-ct">
             <div className="about-row">
-              <h1>Who we are</h1>
+              <h1 id="why">WHY DIDAKTA</h1>
+            </div>
+          </div>
+          <div
+            className="about-row-ct"
+            style={{ backgroundColor: "rgb(39, 52, 42)" }}
+          >
+            <div className="about-row">
+              <p className="why-p">
+                Didakta is a platform for data-driven learning of the Ancient
+                Greek Language. It uses treebank data to form a frequency-based
+                syllabus by calculating which word forms are the most common.
+                Each course begins with the most common forms in a chosen body
+                of text (for example, Homeric epics) and each lesson includes
+                frequency statistics so you can spend your time learning the
+                most recurrent words and forms.
+              </p>
+              <p className="why-p">
+                Didakta does not use non-authentic texts. Every text and
+                exercise in Didakta is taken from the selected corpus and you
+                will be reading authentic Greek texts from the very first
+                lesson. If your goal is to fluently read an Ancient Greek text,
+                what better way than actually reading Greek to help you reach
+                your goal.
+              </p>
+              <p className="why-p">
+                Didakta integrates the traditional sources and textbooks into
+                the corpus-based syllabus. It's free, open-source and only uses
+                open data. More importantly, it is designed to be localizable
+                with minimum effort. A Persian version is almost ready, and we
+                hope to add other languages soon. If you would like to
+                contribute another translation, please{" "}
+                <a href="#contact">contact us!</a>
+              </p>
+            </div>
+          </div>
+          <div className="about-row-terra-ct"></div>
+          {/* WHO WE ARE */}
+          <div className="about-row-ct">
+            <div className="about-row">
+              <h1 id="who">Who we are</h1>
             </div>
           </div>
 
@@ -169,21 +210,3 @@ const About = () => {
 };
 
 export default About;
-
-{
-  /* <div>
-        <p>
-          Didakta does not use non-authentic texts. Every text and exercise in
-          Didakta is taken from the selected corpus and you will be reading
-          authentic Greek texts from the very first lesson. If your goal is to
-          fluently read an Ancient Greek text, what better way than actually
-          reading Greek to help you reach your goal. Didakta integrates the
-          traditional sources and textbooks into the corpus-based syllabus. It’s
-          free, open-source and only uses open data. More importantly, it is
-          designed to be localizable with minimum effort. A Persian version is
-          almost ready, and we hope to add other languages soon. If you would
-          like to contribute another translation, please contact us!
-        </p>
-        
-      </div> */
-}
