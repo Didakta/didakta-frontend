@@ -30,19 +30,23 @@ export const OneList = ({ index, lesson }) => {
         Lesson {lesson.number}: {lesson.title}
       </button>
       <div className="cl-chapters" style={collBlock}>
-        {lesson.chapters.map((chapter, i2) => {
-          return (
-            <div key={i2.toString()} className="cl-chapter-link">
-              <HashLink
-                style={{ display: "flex" }}
-                to={`/course/${lesson._id}#${chapter.title}`}
-              >
-                <span style={{ color: "#d3d3d366" }}>{chapter.number}.</span>
-                <span style={{ marginLeft: "5px" }}>{chapter.title}</span>
-              </HashLink>
-            </div>
-          );
-        })}
+        {lesson.number < 3 ? (
+          lesson.chapters.map((chapter, i2) => {
+            return (
+              <div key={i2.toString()} className="cl-chapter-link">
+                <HashLink
+                  style={{ display: "flex" }}
+                  to={`/course/${lesson._id}#${chapter.title}`}
+                >
+                  <span style={{ color: "#d3d3d366" }}>{chapter.number}.</span>
+                  <span style={{ marginLeft: "5px" }}>{chapter.title}</span>
+                </HashLink>
+              </div>
+            );
+          })
+        ) : (
+          <div className="cl-chapter-link">⏳ Pending ...</div>
+        )}
         {lesson.quiz && (
           <div className="cl-chapter-link">
             <Link to={`/quiz/${lesson._id}/${lesson.quiz.questions[0]._id}`}>

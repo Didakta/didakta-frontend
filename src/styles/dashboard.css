@@ -1,25 +1,52 @@
-.syllabusContainer {
-  width: 70%;
-  margin: 100px auto;
-  display: flex;
-}
-.syllabusContainer .listAndHeaderContainer {
-  display: block;
-}
-.syllabusContainer .listAndHeaderContainer .listContainer {
-  display: flex;
+.dash-ct {
   width: 100%;
+  background-color: #302934;
 }
-.syllabusContainer .listAndHeaderContainer .listContainer .oneLessonList {
-  font-size: 17px;
-  margin: 100px 30px;
-}
-.syllabusContainer .syllabusImageContainer {
-  width: 50%;
-  margin-top: 50px;
-}
-.syllabusContainer .syllabusImageContainer .syllabusImage {
+.dash-ct .dash-tabs-ct {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dash-ct .dash-tabs-ct h1 {
+  padding: 50px 0;
+  text-align: center;
+  width: 100%;
+  color: lightgray;
+}
+.dash-ct .dash-tabs-ct .dash-tab-ct {
+  aspect-ratio: 5/4;
+  display: inline-block;
+  min-width: 200px;
+  width: 25%;
+  color: lightgray;
+  cursor: pointer;
+}
+.dash-ct .dash-tabs-ct .dash-tab-ct h2 {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(20px, 2.3vw, 2.3vw);
+  padding: 25% 0 10%;
+  text-transform: uppercase;
+  font-weight: 100;
+}
+.dash-ct .dash-tabs-ct .dash-tab-ct h3 {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(16px, 1.8vw, 1.8vw);
+  font-weight: 400;
+  padding: 0 4vw 50px;
+}
+.dash-ct .dash-tabs-ct .dash-tab-ct p.pending {
+  text-align: center;
+}
+.dash-ct .dash-tabs-ct .dash-tab-ct .dash-tab {
+  height: 100%;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.dash-ct .dash-tabs-ct .dash-tab-ct .dash-tab:hover {
+  background-color: rgba(0, 0, 0, 0.568627451);
 }
 
 /*# sourceMappingURL=dashboard.css.map */
