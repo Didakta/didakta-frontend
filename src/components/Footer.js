@@ -46,13 +46,13 @@ const Footer = () => {
             <h3>Didakta</h3>
             <ul>
               <li>
-                <HashLink to="/why-didakta">Why Didakta</HashLink>
+                <HashLink to="/about#why">Why Didakta</HashLink>
               </li>
               <li>
-                <HashLink to="/about">About us</HashLink>
+                <HashLink to="/about#who">About us</HashLink>
               </li>
               <li>
-                <HashLink to="/about">Contact us</HashLink>
+                <HashLink to="/contact">Contact us</HashLink>
               </li>
             </ul>
           </div>
