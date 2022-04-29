@@ -7,7 +7,7 @@ export const ApiController = (props) => {
   const [lessons, setLessons] = useState();
   const [loading, setLoading] = useState(true);
 
-  const lessonsUrl = `https://didakta-backend.herokuapp.com/lesson`;
+  const lessonsUrl = `https://didakta.herokuapp.com/lesson`;
 
   const fetchAllLessons = async () => {
     try {
