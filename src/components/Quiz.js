@@ -3,6 +3,8 @@ import { useState, useContext, useEffect, useRef } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
 
+import Header from "../components/Header";
+
 ///////////////// IMPORTING QUIZ FUNCTIONS /////////////////
 import {
   showQuestionTitle,
@@ -311,53 +313,60 @@ const Quiz = () => {
   };
 
   return (
-    <div className="quizContainer">
-      {showQuestionTitle(thisQuestion)}
+    <>
+      <Header />
+      <div className="quiz-ct">
+        <div className="quizContainer">
+          {showQuestionTitle(thisQuestion)}
 
-      {/************ SHOW QUESTION TEXT ************/}
-      {thisQuestion.text[0] &&
-        thisQuestion.text.map((paragraph) => {
-          return (
-            <div className="questionTextContainer">
-              <p className="questionText">{paragraph}</p>
-            </div>
-          );
-        })}
-      {showQuestionTable(thisQuestion)}
+          {/************ SHOW QUESTION TEXT ************/}
+          {thisQuestion.text[0] &&
+            thisQuestion.text.map((paragraph) => {
+              return (
+                <div className="questionTextContainer">
+                  <p className="questionText">{paragraph}</p>
+                </div>
+              );
+            })}
+          {showQuestionTable(thisQuestion)}
 
-      {thisQuestion.text_1[0] &&
-        thisQuestion.text_1.map((paragraph) => {
-          return (
-            <div className="questionTextContainer">
-              <p className="questionText">{paragraph}</p>
-            </div>
-          );
-        })}
+          {thisQuestion.text_1[0] &&
+            thisQuestion.text_1.map((paragraph) => {
+              return (
+                <div className="questionTextContainer">
+                  <p className="questionText">{paragraph}</p>
+                </div>
+              );
+            })}
 
-      {showQuestion(thisQuestion)}
-      {showQuestionAlignment(thisQuestion)}
+          {showQuestion(thisQuestion)}
+          {showQuestionAlignment(thisQuestion)}
 
-      {/************ NEXT BUTTON  ************/}
-      <div className="quizButtonContainer">
-        <button
-          className="quizNextBtn"
-          style={showNext ? { display: "inline" } : { display: "none" }}
-          onClick={handleNext}
-        >
-          Next
-        </button>
+          {/************ NEXT BUTTON  ************/}
+          <div className="quizButtonContainer">
+            <button
+              className="quizNextBtn"
+              style={showNext ? { display: "inline" } : { display: "none" }}
+              onClick={handleNext}
+            >
+              Next
+            </button>
 
-        <button
-          className="finishQuizBtn"
-          style={showFinishQuiz ? { display: "inline" } : { display: "none" }}
-          onClick={() => {
-            navigate(`/quiz/result/${lessonId}`);
-          }}
-        >
-          Submit quiz result
-        </button>
+            <button
+              className="finishQuizBtn"
+              style={
+                showFinishQuiz ? { display: "inline" } : { display: "none" }
+              }
+              onClick={() => {
+                navigate(`/quiz/result/${lessonId}`);
+              }}
+            >
+              Submit quiz result
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
