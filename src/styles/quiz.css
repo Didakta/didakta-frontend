@@ -1,15 +1,20 @@
-.quizContainer {
+.quiz-ct {
+  background-color: rgb(48, 41, 52);
+  padding: 10vw 0 10vw;
+}
+.quiz-ct .quizContainer {
   max-width: 50%;
   min-height: 650px;
-  margin: 100px auto 0;
+  margin: 0 auto;
 }
-.quizContainer .questionTextContainer {
+.quiz-ct .quizContainer .questionTextContainer {
   margin-bottom: 50px;
 }
-.quizContainer .questionTextContainer .questionText {
+.quiz-ct .quizContainer .questionTextContainer .questionText {
   font-size: 24px;
+  color: lightgray;
 }
-.quizContainer .ddQContainer .ddQForm .ddQSelect {
+.quiz-ct .quizContainer .ddQContainer .ddQForm .ddQSelect {
   width: 200px;
   margin: 50px 10px;
   box-shadow: 0 0 3px 3px #d15c5c;
@@ -19,17 +24,17 @@
   font-size: 22px;
   padding: 5px;
 }
-.quizContainer .ddQContainer .ddQForm .ddQSelect .ddQOption {
+.quiz-ct .quizContainer .ddQContainer .ddQForm .ddQSelect .ddQOption {
   font-size: 22px;
   text-align: center;
 }
-.quizContainer .ddQContainer .ddQForm .ddQSelect:focus {
+.quiz-ct .quizContainer .ddQContainer .ddQForm .ddQSelect:focus {
   box-shadow: 0 0 3px 3px #522f2f;
 }
-.quizContainer .ddQContainer .ddQForm .ddQSelect:hover {
+.quiz-ct .quizContainer .ddQContainer .ddQForm .ddQSelect:hover {
   box-shadow: 0 0 3px 3px #522f2f;
 }
-.quizContainer .ddQContainer .ddQForm .ddQGoBtn {
+.quiz-ct .quizContainer .ddQContainer .ddQForm .ddQGoBtn {
   padding: 10px 32px 8px 32px;
   text-align: center;
   text-decoration: none;
@@ -44,29 +49,29 @@
   border-radius: 5px;
   margin-top: 70px;
 }
-.quizContainer .ddQContainer .ddQForm .ddQGoBtn:hover {
+.quiz-ct .quizContainer .ddQContainer .ddQForm .ddQGoBtn:hover {
   background-color: #555555;
   color: white;
 }
-.quizContainer .ddQContainer #corr {
+.quiz-ct .quizContainer .ddQContainer #corr {
   width: 200px;
   height: 100px;
   font-size: 24px;
   color: green;
   font-weight: bold;
 }
-.quizContainer .ddQContainer #incorr {
+.quiz-ct .quizContainer .ddQContainer #incorr {
   width: 200px;
   height: 100px;
   font-size: 24px;
   color: #d15c5c;
   font-weight: bold;
 }
-.quizContainer .mcQContainer .mcQForm .mcQLabel {
+.quiz-ct .quizContainer .mcQContainer .mcQForm .mcQLabel {
   font-size: 26px;
   margin: 20px 20px;
 }
-.quizContainer .mcQContainer .mcQForm .mcQLabel .mcQRadio {
+.quiz-ct .quizContainer .mcQContainer .mcQForm .mcQLabel .mcQRadio {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -78,7 +83,7 @@
   outline: none;
   margin: 0 10px;
 }
-.quizContainer .mcQContainer .mcQForm .mcQLabel .mcQRadio::before {
+.quiz-ct .quizContainer .mcQContainer .mcQForm .mcQLabel .mcQRadio::before {
   display: block;
   content: " ";
   width: 10px;
@@ -90,11 +95,11 @@
   transform-origin: center;
   transition: all 0.3s ease-in;
 }
-.quizContainer .mcQContainer .mcQForm .mcQLabel .mcQRadio:checked::before {
+.quiz-ct .quizContainer .mcQContainer .mcQForm .mcQLabel .mcQRadio:checked::before {
   transform: translate(3px, 3px) scale(1);
   transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
 }
-.quizContainer .mcQContainer .mcQForm .mcQGoBtn {
+.quiz-ct .quizContainer .mcQContainer .mcQForm .mcQGoBtn {
   padding: 8px 32px;
   text-align: center;
   text-decoration: none;
@@ -109,38 +114,38 @@
   border-radius: 5px;
   margin-top: 70px;
 }
-.quizContainer .mcQContainer .mcQForm .mcQGoBtn:hover {
+.quiz-ct .quizContainer .mcQContainer .mcQForm .mcQGoBtn:hover {
   background-color: #555555;
   color: white;
 }
-.quizContainer .mcQContainer #corr {
+.quiz-ct .quizContainer .mcQContainer #corr {
   width: 200px;
   height: 100px;
   font-size: 24px;
   color: green;
   font-weight: bold;
 }
-.quizContainer .mcQContainer #incorr {
+.quiz-ct .quizContainer .mcQContainer #incorr {
   width: 200px;
   height: 100px;
   font-size: 24px;
   color: #d15c5c;
   font-weight: bold;
 }
-.quizContainer .alignmentContainer {
+.quiz-ct .quizContainer .alignmentContainer {
   width: 100%;
   height: 25vh;
 }
-.quizContainer .alignmentContainer .alignment {
+.quiz-ct .quizContainer .alignmentContainer .alignment {
   width: 100%;
   height: 100%;
 }
-.quizContainer .quizButtonContainer {
+.quiz-ct .quizContainer .quizButtonContainer {
   width: 50vw;
   display: block;
   margin-bottom: 40px;
 }
-.quizContainer .quizButtonContainer .quizNextBtn {
+.quiz-ct .quizContainer .quizButtonContainer .quizNextBtn {
   padding: 8px 32px;
   text-decoration: none;
   font-weight: bold;
@@ -154,11 +159,11 @@
   border-radius: 5px;
   width: 150px;
 }
-.quizContainer .quizButtonContainer .quizNextBtn:hover {
+.quiz-ct .quizContainer .quizButtonContainer .quizNextBtn:hover {
   background-color: #555555;
   color: white;
 }
-.quizContainer .quizButtonContainer .finishQuizBtn {
+.quiz-ct .quizContainer .quizButtonContainer .finishQuizBtn {
   padding: 8px 32px;
   text-decoration: none;
   font-weight: bold;
@@ -172,7 +177,7 @@
   border-radius: 5px;
   width: 150px;
 }
-.quizContainer .quizButtonContainer .finishQuizBtn:hover {
+.quiz-ct .quizContainer .quizButtonContainer .finishQuizBtn:hover {
   background-color: #555555;
   color: white;
 }
