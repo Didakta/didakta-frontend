@@ -124,7 +124,7 @@ const Course = () => {
                     backgroundColor: `${bgColors[i]}`,
                     color: "lightgray",
                   }}
-                  key={crypto.randomUUID()}
+                  key={i.toString()}
                   id={chapter.title}
                   className="chapter-ct"
                 >
