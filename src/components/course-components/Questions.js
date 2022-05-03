@@ -165,9 +165,9 @@ const Questions = ({ questions }) => {
                   );
                 }}
               >
-                {question.answers.map((answer) => {
+                {question.answers.map((answer, i) => {
                   return (
-                    <label key={crypto.randomUUID()} className="mc-label">
+                    <label key={i.toString()} className="mc-label">
                       {answer}
                       <input
                         className="mc-input"
