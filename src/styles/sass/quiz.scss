@@ -5,51 +5,76 @@ $dk-blue: rgb(21, 50, 59);
 $dk-green: rgb(39, 52, 42);
 $dk-pink: rgb(122, 88, 88);
 $dk-sky: rgb(110, 124, 139);
-.quiz-ct {
+
+.quiz-page-ct {
   background-color: $dk-violet;
   padding: 10vw 0 10vw;
-  .quizContainer {
+  .quiz-ct {
     max-width: 50%;
     min-height: 650px;
     margin: 0 auto;
-    .questionTextContainer {
+    .question-text-ct {
       margin-bottom: 50px;
-      .questionText {
-        font-size: 24px;
+      .question-text {
+        font-size: clamp(18px, 1.5vw, 2vw);
+        text-align: justify;
+        line-height: 1.5;
         color: lightgray;
+        a {
+          color: rgba(0, 0, 0, 0.705);
+          text-decoration: none;
+          transition: color 0.5s;
+          -webkit-transition: color 0.5s;
+
+          &:hover {
+            color: rgba(0, 0, 0, 0.336);
+          }
+        }
+        ol {
+          margin-top: 20px;
+        }
+        ul {
+          margin-top: 20px;
+        }
+        span {
+          color: $dk-yellow;
+        }
       }
     }
-    //   .questionTableContainer {
-    //     overflow-x: auto;
-    //     margin: 30px 0;
-    //     .questionTable {
-    //       font-size: 22px;
-    //       border-collapse: collapse;
-    //       width: 100%;
-    //       .questionTableRow:nth-child(odd) {
-    //         background-color: #c9c9c9;
-    //         .questionTableCell {
-    //           text-align: center;
-    //           border: 1px solid #ffffff;
-    //           padding: 8px;
-    //         }
-    //         &:hover {
-    //           background-color: #e9abab;
-    //         }
-    //       }
-    //       .questionTableRow:nth-child(even) {
-    //         background-color: #f2f2f2;
-    //         .questionTableCell {
-    //           text-align: center;
-    //           border: 1px solid #ddd;
-    //           padding: 8px;
-    //         }
-    //         &:hover {
-    //           background-color: #e9abab;
-    //         }
-    //       }
-    //     }
-    //   }
+    .question-table-ct {
+      overflow-x: auto;
+      margin: 50px 0;
+      .question-table {
+        font-size: clamp(20px, 1.7vw, 2vw);
+        border-collapse: collapse;
+        width: 100%;
+        .question-table-row:nth-child(odd) {
+          transition: background-color 0.5s;
+          -webkit-transition: background-color 0.5s;
+          background-color: #00000060;
+          .question-table-cell {
+            text-align: center;
+            border: 1px solid lightgray;
+            padding: 8px;
+          }
+          &:hover {
+            background-color: #ffffff1e;
+          }
+        }
+      }
+      .question-table-row:nth-child(even) {
+        transition: background-color 0.5s;
+        -webkit-transition: background-color 0.5s;
+        .question-table-cell {
+          text-align: center;
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        &:hover {
+          background-color: #ffffff1e;
+        }
+      }
+    }
     .ddQContainer {
       .ddQForm {
         .ddQSelect {
@@ -59,7 +84,7 @@ $dk-sky: rgb(110, 124, 139);
           outline: none;
           border-radius: 5px;
           background-color: rgb(236, 236, 236);
-          font-size: 22px;
+          font-size: 18px;
           padding: 5px;
           .ddQOption {
             font-size: 22px;
@@ -178,12 +203,15 @@ $dk-sky: rgb(110, 124, 139);
       }
     }
 
-    .alignmentContainer {
+    .question-align-ct {
       width: 100%;
-      height: 25vh;
-      .alignment {
+      margin-bottom: 50px;
+
+      .question-align {
         width: 100%;
-        height: 100%;
+        min-height: 150px;
+        height: calc(320px - 10vw);
+        border: none;
       }
     }
     .quizButtonContainer {
@@ -214,14 +242,12 @@ $dk-sky: rgb(110, 124, 139);
         font-weight: bold;
         display: inline-block;
         font-size: 16px;
-        // margin-left: 50%;
         transition-duration: 0.4s;
         cursor: pointer;
         background-color: white;
         color: #555555;
         border: 2px solid #555555;
         border-radius: 5px;
-        width: 150px;
         &:hover {
           background-color: #555555;
           color: white;

@@ -1,12 +1,12 @@
 import "../../styles/course.css";
 
-const Text = ({ text }) => {
+const Text = ({ text, classprefix }) => {
   return (
-    <div className="chapter-text-ct">
+    <div className={`${classprefix}-text-ct`}>
       {text.map((paragraph, i) => (
         <p
           key={i.toString()}
-          className="chapter-text"
+          className={`${classprefix}-text`}
           dangerouslySetInnerHTML={{ __html: paragraph }}
         />
       ))}

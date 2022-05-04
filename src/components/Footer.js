@@ -99,11 +99,7 @@ const Footer = () => {
         </div>
 
         <div className="ft-social">
-          <a
-            href="mailto:didakta.project@gmail.com"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="mailto:info@didakta.org" target="_blank" rel="noreferrer">
             <img src={envelope} width="30" alt="Email Link" />
           </a>
           <a

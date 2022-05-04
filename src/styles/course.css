@@ -5,6 +5,7 @@
 .crs-ct .crs-lsn-ct .chapter-ct {
   width: 100%;
   padding: 50px 21vw;
+  color: lightgray;
 }
 .crs-ct .crs-lsn-ct .chapter-ct .chapter-title {
   margin-bottom: 50px;

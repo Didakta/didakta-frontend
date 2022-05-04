@@ -65,39 +65,45 @@ $dk-sky: rgb(110, 124, 139);
       padding: 0 20px;
       color: lightgray;
     }
-    .cl-content {
-      .cl-collapsible {
-        border: none;
-        background-color: rgba(0, 0, 0, 0.13);
-        font-size: 14px;
-        font-weight: bold;
-        color: lightgray;
-        text-align: left !important;
-        width: 100%;
-        padding: 20px;
-        margin-top: 1px;
-        transition: background-color 0.5s;
-        -webkit-transition: background-color 0.5s;
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.226);
+
+    .cl-chapters {
+      padding: 20px;
+      margin-bottom: 2px;
+      h4 {
+        color: rgba(211, 211, 211, 0.432);
+        padding: 10px;
+      }
+      .cl-chapter-link {
+        a {
+          text-decoration: none;
+          color: lightgray;
+          margin-bottom: 5px;
+          transition: 0.5s;
+          -webkit-transition: 0.5s;
+          &:hover {
+            color: $dk-violet;
+            margin-left: 10px;
+          }
         }
       }
-      .cl-chapters {
-        padding: 20px;
-        // background-color: rgba(0, 0, 0, 0.11);
-        margin-bottom: 2px;
-        .cl-chapter-link {
-          a {
-            text-decoration: none;
-            color: lightgray;
-            margin-bottom: 5px;
-            transition: 0.5s;
-            -webkit-transition: 0.5s;
-            &:hover {
-              color: $dk-violet;
-              margin-left: 10px;
-            }
-          }
+
+      .back-to-dash-btn {
+        display: block;
+        padding: 7px 10px;
+        margin: 40px auto;
+        background-color: transparent;
+        border: 2px solid rgb(39, 39, 39);
+        border-radius: 5px;
+        color: rgb(39, 39, 39);
+        font-size: clamp(12px, 1.1vw, 1.1vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: rgb(39, 39, 39);
+          color: rgb(167, 119, 31);
+          border-color: rgb(167, 119, 31);
         }
       }
     }

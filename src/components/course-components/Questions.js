@@ -21,12 +21,12 @@ const Questions = ({ questions }) => {
 
   return (
     <div className="chapter-question-ct">
-      {questions.map((question) => {
+      {questions.map((question, i) => {
         if (question.tags === "dropDown") {
           if (question.answers_1[0]) {
             return (
               // rendering the text of each question inside chapter + answers (Drop Down)
-              <div key={crypto.randomUUID()} className="dd-ct">
+              <div key={i.toString()} className="dd-ct">
                 <p className="dd-text">{question.text[0]}</p>
                 <form
                   className="dd-form"
@@ -52,10 +52,10 @@ const Questions = ({ questions }) => {
                     name="questionDropDown"
                     onChange={(e) => setSelectedAnswer(e.target.value)}
                   >
-                    {question.answers.map((answer) => {
+                    {question.answers.map((answer, i2) => {
                       return (
                         <option
-                          key={crypto.randomUUID()}
+                          key={i2.toString()}
                           className="dd-option"
                           value={answer}
                         >
@@ -70,10 +70,10 @@ const Questions = ({ questions }) => {
                     name="questionDropDown_1"
                     onChange={(e) => setSelectedAnswer_1(e.target.value)}
                   >
-                    {question.answers_1.map((answer_1) => {
+                    {question.answers_1.map((answer_1, i2) => {
                       return (
                         <option
-                          key={crypto.randomUUID()}
+                          key={i2.toString()}
                           className="dd-option"
                           value={answer_1}
                         >
@@ -123,17 +123,17 @@ const Questions = ({ questions }) => {
             );
           } else {
             return (
-              <div key={crypto.randomUUID()} className="dd-ct">
+              <div key={i.toString()} className="dd-ct">
                 <form className="dd-form">
                   <select
                     className="dd-select"
                     id="questionDropDown"
                     name="questionDropDown"
                   >
-                    {question.answers.map((answer) => {
+                    {question.answers.map((answer, i2) => {
                       return (
                         <option
-                          key={crypto.randomUUID()}
+                          key={i2.toString()}
                           className="dd-option"
                           value={answer}
                         >
@@ -149,7 +149,7 @@ const Questions = ({ questions }) => {
         } else {
           // if tags === "MultipleChoice"
           return (
-            <div key={crypto.randomUUID()} className="mc-ct">
+            <div key={i.toString()} className="mc-ct">
               <p className="mc-text">{question.text[0]}</p>
               <form
                 className="mc-form"
@@ -165,9 +165,9 @@ const Questions = ({ questions }) => {
                   );
                 }}
               >
-                {question.answers.map((answer) => {
+                {question.answers.map((answer, i2) => {
                   return (
-                    <label key={crypto.randomUUID()} className="mc-label">
+                    <label key={i2.toString()} className="mc-label">
                       {answer}
                       <input
                         className="mc-input"

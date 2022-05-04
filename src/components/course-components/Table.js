@@ -1,14 +1,17 @@
-const Table = ({ table }) => {
+const Table = ({ table, classprefix }) => {
   return (
-    <div className="chapter-table-ct">
-      <table className="chapter-table">
+    <div className={`${classprefix}-table-ct`}>
+      <table className={`${classprefix}-table`}>
         <tbody>
           {table.map((row, i) => {
             return (
-              <tr key={i.toString()} className="chapter-table-row">
+              <tr key={i.toString()} className={`${classprefix}-table-row`}>
                 {row.map((e, itd) => {
                   return (
-                    <td key={itd} className="chapter-table-cell">
+                    <td
+                      key={itd.toString()}
+                      className={`${classprefix}-table-cell`}
+                    >
                       {e}
                     </td>
                   );

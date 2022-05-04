@@ -1,17 +1,22 @@
 import "../styles/quizResult.css";
 import { useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
-import { showQuestionAlignment } from "../functions/quizFunctions";
+
+import Alignment from "./course-components/Alignment";
 
 const QuizResult = () => {
   const [lessons, setLessons] = useContext(ApiContext);
   const { lessonId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const quizResult = location.state.current;
 
   const thisLesson = lessons.__html.filter((lesson) => lesson._id == lessonId);
 
-  const quizResult = JSON.parse(localStorage.userAnswers);
+  // const quizResult = JSON.parse(localStorage.userAnswers);
+  console.log(quizResult);
 
   console.log("thisLesson", thisLesson);
   // console.log("quizResult", quizResult);
@@ -41,7 +46,12 @@ const QuizResult = () => {
               <div className="resQText">
                 {thisQuestion.text[0] && thisQuestion.text[0]}
               </div>
-              {thisQuestion.alignment && showQuestionAlignment(thisQuestion)}
+              {thisQuestion.alignment && (
+                <Alignment
+                  alignment={thisQuestion.alignment}
+                  classprefix="result"
+                />
+              )}
               <div className="ResQRight">
                 {"Right answer: "}
                 {thisQuestion.answers[thisQuestion.correctAnswer]}{" "}

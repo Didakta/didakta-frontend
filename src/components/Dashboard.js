@@ -51,7 +51,7 @@ const Dashboard = ({ lessonId, chapterId }) => {
                     ? navigate(`/course/${lesson._id}`)
                     : navigate("");
                 }}
-                key={crypto.randomUUID}
+                key={i.toString()}
                 className="dash-tab-ct"
                 style={{ backgroundColor: bgColors[i] }}
               >

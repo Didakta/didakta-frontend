@@ -1,10 +1,9 @@
-const Alignment = ({ alignment }) => {
+const Alignment = ({ alignment, classprefix }) => {
   return (
-    <div className="chapter-align-ct">
+    <div className={`${classprefix}-align-ct`}>
       <iframe
-        className="chapter-align"
+        className={`${classprefix}-align`}
         frameBorder="0"
-        // seamless="seamless"
         allowtransparency="true"
         src={alignment}
         title="Ugarit | iAligner"
