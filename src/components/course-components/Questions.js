@@ -73,7 +73,7 @@ const Questions = ({ questions }) => {
                     {question.answers_1.map((answer_1, i2) => {
                       return (
                         <option
-                          key={i2.tString()}
+                          key={i2.toString()}
                           className="dd-option"
                           value={answer_1}
                         >
@@ -133,7 +133,7 @@ const Questions = ({ questions }) => {
                     {question.answers.map((answer, i2) => {
                       return (
                         <option
-                          key={i.toString()}
+                          key={i2.toString()}
                           className="dd-option"
                           value={answer}
                         >
@@ -165,9 +165,9 @@ const Questions = ({ questions }) => {
                   );
                 }}
               >
-                {question.answers.map((answer, i4) => {
+                {question.answers.map((answer, i2) => {
                   return (
-                    <label key={i4.toString()} className="mc-label">
+                    <label key={i2.toString()} className="mc-label">
                       {answer}
                       <input
                         className="mc-input"

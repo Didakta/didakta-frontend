@@ -60,36 +60,43 @@
   padding: 0 20px;
   color: lightgray;
 }
-.cl-ct .cl-content-ct .cl-content .cl-collapsible {
-  border: none;
-  background-color: rgba(0, 0, 0, 0.13);
-  font-size: 14px;
-  font-weight: bold;
-  color: lightgray;
-  text-align: left !important;
-  width: 100%;
-  padding: 20px;
-  margin-top: 1px;
-  transition: background-color 0.5s;
-  -webkit-transition: background-color 0.5s;
-}
-.cl-ct .cl-content-ct .cl-content .cl-collapsible:hover {
-  background-color: rgba(0, 0, 0, 0.226);
-}
-.cl-ct .cl-content-ct .cl-content .cl-chapters {
+.cl-ct .cl-content-ct .cl-chapters {
   padding: 20px;
   margin-bottom: 2px;
 }
-.cl-ct .cl-content-ct .cl-content .cl-chapters .cl-chapter-link a {
+.cl-ct .cl-content-ct .cl-chapters h4 {
+  color: rgba(211, 211, 211, 0.432);
+  padding: 10px;
+}
+.cl-ct .cl-content-ct .cl-chapters .cl-chapter-link a {
   text-decoration: none;
   color: lightgray;
   margin-bottom: 5px;
   transition: 0.5s;
   -webkit-transition: 0.5s;
 }
-.cl-ct .cl-content-ct .cl-content .cl-chapters .cl-chapter-link a:hover {
+.cl-ct .cl-content-ct .cl-chapters .cl-chapter-link a:hover {
   color: rgb(48, 41, 52);
   margin-left: 10px;
 }
+.cl-ct .cl-content-ct .cl-chapters .back-to-dash-btn {
+  display: block;
+  padding: 7px 10px;
+  margin: 40px auto;
+  background-color: transparent;
+  border: 2px solid rgb(39, 39, 39);
+  border-radius: 5px;
+  color: rgb(39, 39, 39);
+  font-size: clamp(12px, 1.1vw, 1.1vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.cl-ct .cl-content-ct .cl-chapters .back-to-dash-btn:hover {
+  background-color: rgb(39, 39, 39);
+  color: rgb(167, 119, 31);
+  border-color: rgb(167, 119, 31);
+}
 
-/*# sourceMappingURL=courselist.css.map */
+/*# sourceMappingURL=table-of-content.css.map */

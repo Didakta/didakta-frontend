@@ -49,12 +49,12 @@ $dk-sky: rgb(110, 124, 139);
               display: block;
             }
             h2 {
-              margin: 5vw 0 0.5vw;
-              font-size: clamp(12px, 2vw, 2vw);
+              padding: 5vw 5px 0.5vw;
+              font-size: clamp(14px, 2vw, 2vw);
             }
             p {
               font-size: clamp(12px, 1.2vw, 1.2vw);
-              margin-bottom: 2vw;
+              padding-bottom: 2vw;
             }
           }
         }

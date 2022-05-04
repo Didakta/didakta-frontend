@@ -1,7 +1,7 @@
 import "../styles/course.css";
 
 import Header from "./Header";
-import CourseList from "./CourseList";
+import TableOfContent from "./TableOfContent";
 import BackToTop from "./BackToTop";
 
 import LessonTitle from "./course-components/LessonTitle";
@@ -62,8 +62,14 @@ const Course = () => {
   const handleGoQuiz = () => {
     if (thisLesson.quiz) {
       navigate(`/quiz/${lessonId}/${thisLesson.quiz.questions[0]._id}`);
+      window.scrollTo({
+        top: 0,
+      });
     } else {
       navigate("/dashboard");
+      window.scrollTo({
+        top: 0,
+      });
     }
   };
 
@@ -111,31 +117,35 @@ const Course = () => {
   return (
     <>
       <Header id="course-header" />
-      <CourseList lessonId={lessonId} />
+      <TableOfContent lessonId={lessonId} />
       <div className="crs-ct">
         <div className="crs-lsn-ct">
           <LessonTitle title={thisLesson.title} number={thisLesson.number} />
           {thisLesson.chapters.map((chapter, i) => {
-            const bgColor = bgColors[i];
             return (
               <>
                 <div
                   style={{
                     backgroundColor: `${bgColors[i]}`,
-                    color: "lightgray",
                   }}
                   key={i.toString()}
                   id={chapter.title}
                   className="chapter-ct"
                 >
                   {chapter.title && <ChapterTitle title={chapter.title} />}
-                  {chapter.text[0] !== "" && <Text text={chapter.text} />}
+                  {chapter.text[0] !== "" && (
+                    <Text text={chapter.text} classprefix="chapter" />
+                  )}
                   {chapter.audio && <Audio audio={chapter.audio} />}
                   {chapter.audioText && <AudioText text={chapter.audioText} />}
-                  {!chapter.table == [[""]] && <Table table={chapter.table} />}
-                  {chapter.text_1[0] && <Text text={chapter.text_1} />}
-                  {!chapter.table_1 === [[""]] && (
-                    <Table table={chapter.table_1} />
+                  {chapter.table[[0]] && (
+                    <Table table={chapter.table} classprefix="chapter" />
+                  )}
+                  {chapter.text_1[0] && (
+                    <Text text={chapter.text_1} classprefix="chapter" />
+                  )}
+                  {chapter.table_1[[0]] && (
+                    <Table table={chapter.table_1} classprefix="chapter" />
                   )}
                   {chapter.youtube && <Video video={chapter.youtube} />}
                   {chapter.questionText[0] && (
@@ -148,7 +158,10 @@ const Course = () => {
                     <AlignmentText text={chapter.alignmentText} />
                   )}
                   {chapter.alignment && (
-                    <Alignment alignment={chapter.alignment} />
+                    <Alignment
+                      alignment={chapter.alignment}
+                      classprefix="chapter"
+                    />
                   )}
                   {chapter.footnotes[0] && (
                     <Footnotes footnotes={chapter.footnotes} />
