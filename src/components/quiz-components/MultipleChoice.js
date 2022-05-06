@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 
 import {
   handleMultipleChoiceSubmit,
@@ -11,6 +11,7 @@ import {
 const MultipleChoice = ({ question, lesson }) => {
   const navigate = useNavigate();
   const { lessonId, questionId } = useParams();
+  const location = useLocation();
 
   const [chosen, setChosen] = useState("");
   const [hintToggle, setHintToggle] = useState(false);
@@ -46,15 +47,30 @@ const MultipleChoice = ({ question, lesson }) => {
     });
   }, [goButton]);
 
+  useEffect(() => {
+    setChosen("");
+  }, [location]);
+
   return (
     <>
-      <div className="mcQContainer">
-        <div className="mcQForm">
+      <div className="hint-ct">
+        {question.hint && (
+          <>
+            <button onClick={() => setHintToggle(hintToggle ? false : true)}>
+              Hint
+            </button>
+            <div id="hint">{hintToggle ? question.hint : ""}</div>
+          </>
+        )}
+      </div>
+
+      <div className="mcq-ct">
+        <div className="mcq-btn-ct">
           {question.answers.map((answer, i) => {
             return (
               <button
                 key={i.toString()}
-                className="mcQRadio"
+                className="mcq-btn"
                 id={answer}
                 onClick={() => setChosen(answer)}
               >
@@ -62,47 +78,40 @@ const MultipleChoice = ({ question, lesson }) => {
               </button>
             );
           })}
-          <button
-            onClick={() => {
-              handleMultipleChoiceSubmit(
-                question,
-                chosen,
-                setCorrection,
-                setGoButton,
-                setShowNext
-              );
-            }}
-            className="mcQGoBtn"
-            style={goButton ? { display: "inline-block" } : { display: "none" }}
-          >
-            GO!
-          </button>
-        </div>
-        {question.hint && (
-          <button onClick={() => setHintToggle(hintToggle ? false : true)}>
-            Hint
-          </button>
-        )}
-        <div id="hint">{hintToggle ? question.hint : ""}</div>
-        <div id={correction === "Correct!" ? "corr" : "incorr"}>
-          {correction}
-        </div>
-        <div
-          id="answerExplanation"
-          style={
-            correction === "Incorrect!"
-              ? { display: "block" }
-              : { display: "none" }
-          }
-        >
-          {question.explanation}
         </div>
       </div>
-
-      {/************  BUTTONS  ************/}
-      <div className="quizButtonContainer">
+      <div className="mcq-go-ct">
         <button
-          className="quizNextBtn"
+          onClick={() => {
+            handleMultipleChoiceSubmit(
+              question,
+              chosen,
+              setCorrection,
+              setGoButton,
+              setShowNext
+            );
+          }}
+          className="mcq-go-btn"
+          style={goButton ? { display: "inline-block" } : { display: "none" }}
+        >
+          GO!
+        </button>
+      </div>
+      <div id={correction === "Correct!" ? "corr" : "incorr"}>{correction}</div>
+      <div
+        className="explanation"
+        style={
+          correction === "Incorrect!"
+            ? { display: "block" }
+            : { display: "none" }
+        }
+      >
+        {question.explanation}
+      </div>
+      {/************  BUTTONS  ************/}
+      <div className="quiz-btn-ct">
+        <button
+          className="quiz-next-btn"
           style={showNext ? { display: "inline" } : { display: "none" }}
           onClick={handleNext}
         >
@@ -112,7 +121,7 @@ const MultipleChoice = ({ question, lesson }) => {
           style={
             showFinishQuiz ? { display: "inline-block" } : { display: "none" }
           }
-          className="finishQuizBtn"
+          className="quiz-finish-btn"
           onClick={() => navigate(`/quiz/result/${lessonId}`)}
         >
           Submit quiz

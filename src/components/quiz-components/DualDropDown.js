@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 
 import {
   handleDualDropdownSubmit,
@@ -11,6 +11,7 @@ import {
 const DualDropDown = ({ question, lesson }) => {
   const navigate = useNavigate();
   const { lessonId, questionId } = useParams();
+  const location = useLocation();
 
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [selectedAnswer_1, setSelectedAnswer_1] = useState("");
@@ -47,82 +48,92 @@ const DualDropDown = ({ question, lesson }) => {
     });
   }, [goButton]);
 
+  useEffect(() => {
+    setSelectedAnswer("");
+    setSelectedAnswer_1("");
+  }, [location]);
   return (
     <>
-      <div className="ddQContainer">
-        {/* set of answers */}
-        <div className="ddQForm">
-          {/* first set of answers */}
-          <div className="ddQSelect">
-            {question.answers.map((answer, i) => {
-              return (
-                <button
-                  key={i.toString()}
-                  className="ddQOption"
-                  onClick={() => setSelectedAnswer(answer)}
-                >
-                  {answer}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* second set of answers */}
-          <div className="ddQSelect">
-            {question.answers_1.map((answer_1, i) => {
-              return (
-                <button
-                  key={i.toString()}
-                  className="ddQOption"
-                  onClick={() => setSelectedAnswer_1(answer_1)}
-                >
-                  {answer_1}
-                </button>
-              );
-            })}
-          </div>
-
-          <button
-            className="ddQGoBtn"
-            style={goButton ? { display: "inline-block" } : { display: "none" }}
-            onClick={() =>
-              handleDualDropdownSubmit(
-                question,
-                selectedAnswer,
-                selectedAnswer_1,
-                setCorrection,
-                setGoButton,
-                setShowNext
-              )
-            }
-          >
-            GO!
-          </button>
-        </div>
+      <div className="hint-ct">
         {question.hint && (
-          <button onClick={() => setHintToggle(hintToggle ? false : true)}>
-            Hint
-          </button>
+          <>
+            <button onClick={() => setHintToggle(hintToggle ? false : true)}>
+              Hint
+            </button>
+            <div id="hint">{hintToggle ? question.hint : ""}</div>
+          </>
         )}
-        <div id="hint">{hintToggle ? question.hint : ""}</div>
-        <div id={correction === "Correct!" ? "corr" : "incorr"}>
-          {correction}
+      </div>
+
+      <div className="ddq-ct">
+        {/* first set of answers */}
+        <div className="ddq-btn-ct">
+          {question.answers.map((answer, i) => {
+            return (
+              <button
+                key={i.toString()}
+                className="ddq-btn"
+                onClick={() => setSelectedAnswer(answer)}
+              >
+                {answer}
+              </button>
+            );
+          })}
         </div>
-        <div
-          id="answerExplanation"
-          style={
-            correction === "Incorrect!"
-              ? { display: "block" }
-              : { display: "none" }
-          }
-        >
-          {question.explanation}
+        {/* second set of answers */}
+        <div className="ddq-btn-ct">
+          {question.answers_1.map((answer_1, i) => {
+            return (
+              <button
+                key={i.toString()}
+                className="ddq-btn"
+                onClick={() => setSelectedAnswer_1(answer_1)}
+              >
+                {answer_1}
+              </button>
+            );
+          })}
         </div>
       </div>
-      {/************  BUTTONS  ************/}
-      <div className="quizButtonContainer">
+
+      <div className="ddq-user-answer">
+        {selectedAnswer && selectedAnswer}{" "}
+        {selectedAnswer_1 && selectedAnswer_1}
+      </div>
+      <div className="ddq-go-ct">
         <button
-          className="quizNextBtn"
+          className="ddq-go-btn"
+          style={goButton ? { display: "inline-block" } : { display: "none" }}
+          onClick={() =>
+            handleDualDropdownSubmit(
+              question,
+              selectedAnswer,
+              selectedAnswer_1,
+              setCorrection,
+              setGoButton,
+              setShowNext
+            )
+          }
+        >
+          GO!
+        </button>
+      </div>
+      <div id={correction === "Correct!" ? "corr" : "incorr"}>{correction}</div>
+      <div
+        className="explanation"
+        style={
+          correction === "Incorrect!"
+            ? { display: "block" }
+            : { display: "none" }
+        }
+      >
+        {question.explanation}
+      </div>
+
+      {/************  BUTTONS  ************/}
+      <div className="quiz-btn-ct">
+        <button
+          className="quiz-next-btn"
           style={showNext ? { display: "inline" } : { display: "none" }}
           onClick={handleNext}
         >
@@ -132,7 +143,7 @@ const DualDropDown = ({ question, lesson }) => {
           style={
             showFinishQuiz ? { display: "inline-block" } : { display: "none" }
           }
-          className="finishQuizBtn"
+          className="quiz-finish-btn"
           onClick={() => navigate(`/quiz/result/${lessonId}`)}
         >
           Submit quiz

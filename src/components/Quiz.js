@@ -1,6 +1,6 @@
 import "../styles/quiz.css";
 import "../styles/course.css";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
 
@@ -25,8 +25,6 @@ const Quiz = () => {
   const thisLesson = filterThisLesson(lessons, lessonId);
   const thisQuestion = filterThisQuestion(thisLesson, questionId);
 
-  // AVERAGE CALCULATION /////////////////
-  // averageScore.current = (score.current / thisQuiz.questions.length) * 100;
   console.log(thisQuestion);
 
   return (

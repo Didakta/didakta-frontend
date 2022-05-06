@@ -279,10 +279,25 @@
   margin-bottom: 50px;
 }
 .crs-ct .crs-lsn-ct .chapter-ct .chapter-align-ct .chapter-align {
-  width: 100%;
+  padding: 0.7vw;
+  background-color: white;
+  width: 80%;
   min-height: 150px;
-  height: calc(320px - 10vw);
+  height: calc(350px - 15vw);
   border: none;
+  border-radius: 5px;
+  filter: hue-rotate(180deg) invert(82%);
+  -webkit-filter: hue-rotate(180deg) invert(82%);
+  zoom: 1.25;
+  transform: scale(1.25);
+  transform-origin: 0 0;
+  -moz-transform: scale(1.25);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(1.25);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(1.25);
+  -webkit-transform-origin: 0 0;
+  margin-bottom: 3vw;
 }
 .crs-ct .crs-lsn-ct .chapter-ct .chapter-fn-ct .chapter-fn-ruller {
   margin-bottom: 20px;
