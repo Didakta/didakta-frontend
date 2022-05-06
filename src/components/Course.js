@@ -166,9 +166,7 @@ const Course = () => {
                   {chapter.footnotes[0] && (
                     <Footnotes footnotes={chapter.footnotes} />
                   )}
-
                   <Image index={i} />
-                  {/* CHANGE FUNCTIONALITY TO ONE LESSON PER PAGE INSTEAD OF ONE CHAPTER PER PAGE */}
                 </div>
               </>
             );

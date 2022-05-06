@@ -7,7 +7,7 @@ $dk-pink: rgb(122, 88, 88);
 $dk-sky: rgb(110, 124, 139);
 
 .quiz-page-ct {
-  background-color: $dk-violet;
+  background-color: $dk-blue;
   padding: 10vw 0 10vw;
   .quiz-ct {
     max-width: 50%;
@@ -75,182 +75,234 @@ $dk-sky: rgb(110, 124, 139);
         }
       }
     }
-    .ddQContainer {
-      .ddQForm {
-        .ddQSelect {
-          width: 200px;
-          margin: 50px 10px;
-          box-shadow: 0 0 3px 3px #d15c5c;
-          outline: none;
-          border-radius: 5px;
-          background-color: rgb(236, 236, 236);
-          font-size: 18px;
+    .hint-ct {
+      width: 100%;
+      margin: 20px 0;
+      text-align: left;
+      button {
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        padding: 10px;
+        background-color: transparent;
+        color: lightgray;
+        border: 2px solid lightgray;
+        transition: 0.5s;
+        border-radius: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+        &:hover {
+          color: $dk-violet;
+          border-color: $dk-violet;
+          background-color: lightgray;
+        }
+      }
+    }
+    .ddq-ct {
+      display: flex;
+      margin: 20px auto;
+      width: 100%;
+      justify-content: center;
+      .ddq-btn-ct {
+        width: 45%;
+        margin: 0 10px;
+        .ddq-btn {
+          font-size: clamp(12px, 1.3vw, 1.5vw);
+          display: block;
+          width: 100%;
           padding: 5px;
-          .ddQOption {
-            font-size: 22px;
-            text-align: center;
+          background-color: transparent;
+          color: $dk-sky;
+          border: 2px solid $dk-sky;
+          transition: 0.5s;
+          border-radius: 5px;
+          font-weight: bold;
+          text-transform: lowercase;
+          margin: 3px 0;
+          &:hover {
+            color: $dk-blue;
+            border-color: $dk-blue;
+            background-color: $dk-sky;
           }
           &:focus {
-            box-shadow: 0 0 3px 3px #522f2f;
-          }
-          &:hover {
-            box-shadow: 0 0 3px 3px #522f2f;
-          }
-        }
-        .ddQGoBtn {
-          padding: 10px 32px 8px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 0 50px;
-          transition-duration: 0.4s;
-          cursor: pointer;
-          background-color: white;
-          color: black;
-          border: 2px solid #555555;
-          border-radius: 5px;
-          margin-top: 70px;
-          &:hover {
-            background-color: #555555;
-            color: white;
+            color: $dk-blue;
+            border-color: $dk-blue;
+            background-color: $dk-pink;
           }
         }
       }
-      #corr {
-        width: 200px;
-        height: 100px;
-        font-size: 24px;
-        color: green;
+    }
+    .ddq-user-answer {
+      width: 100%;
+      text-align: center;
+      color: lightgray;
+      font-weight: bold;
+      font-size: clamp(20px, 1.7vw, 2vw);
+      margin-bottom: 20px;
+    }
+    .ddq-go-ct {
+      width: 100%;
+      text-align: center;
+      .ddq-go-btn {
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid $dk-pink;
+        border-radius: 5px;
+        color: $dk-pink;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
         font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: $dk-pink;
+          color: $dk-blue;
+          border-color: $dk-blue;
+        }
       }
-      #incorr {
-        width: 200px;
-        height: 100px;
-        font-size: 24px;
-        color: #d15c5c;
+    }
+    #corr {
+      width: 100%;
+      text-align: center;
+      margin: 20px 0;
+      font-size: 24px;
+      color: #acff2f65;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    #incorr {
+      width: 100%;
+      text-align: center;
+      margin: 20px 0;
+      font-size: 24px;
+      color: #d15c5c;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .explanation {
+      font-size: 24px;
+      text-align: justify;
+      margin: 20px 0;
+    }
+    .quiz-btn-ct {
+      width: 100%;
+      text-align: center;
+      .quiz-next-btn {
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid $dk-yellow;
+        border-radius: 5px;
+        color: $dk-yellow;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
         font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: $dk-yellow;
+          color: $dk-blue;
+          border-color: $dk-blue;
+        }
+      }
+      .quiz-finish-btn {
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid #acff2f65;
+        border-radius: 5px;
+        color: #acff2f65;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: #acff2f65;
+          color: $dk-blue;
+          border-color: $dk-blue;
+        }
       }
     }
 
-    .mcQContainer {
-      .mcQForm {
-        .mcQLabel {
-          font-size: 26px;
-          margin: 20px 20px;
-          .mcQRadio {
-            -webkit-appearance: none;
-            appearance: none;
-            width: 20px;
-            height: 20px;
-            border-radius: 10px;
-            border: 2px solid gray;
-            /* Adjusts the position of the checkboxes on the text baseline */
-            vertical-align: -2px;
-            outline: none;
-            margin: 0 10px;
-            &::before {
-              display: block;
-              content: " ";
-              width: 10px;
-              height: 10px;
-              border-radius: 6px;
-              background-color: red;
-              font-size: 1.2em;
-              transform: translate(3px, 3px) scale(0);
-              transform-origin: center;
-              transition: all 0.3s ease-in;
-            }
-            &:checked::before {
-              transform: translate(3px, 3px) scale(1);
-              transition: all 0.3s cubic-bezier(0.25, 0.25, 0.56, 2);
-            }
-          }
-        }
-        .mcQGoBtn {
-          padding: 8px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 0 50px;
-          transition-duration: 0.4s;
-          cursor: pointer;
-          background-color: white;
-          color: black;
-          border: 2px solid #555555;
-          border-radius: 5px;
-          margin-top: 70px;
-          &:hover {
-            background-color: #555555;
-            color: white;
-          }
-        }
-      }
-      #corr {
-        width: 200px;
-        height: 100px;
-        font-size: 24px;
-        color: green;
-        font-weight: bold;
-      }
-      #incorr {
-        width: 200px;
-        height: 100px;
-        font-size: 24px;
-        color: #d15c5c;
-        font-weight: bold;
-      }
+    .explanation {
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
     }
-
     .question-align-ct {
       width: 100%;
       margin-bottom: 50px;
 
       .question-align {
-        width: 100%;
+        padding: 0.7vw;
+        background-color: white;
+        width: 80%;
         min-height: 150px;
-        height: calc(320px - 10vw);
+        height: calc(350px - 11vw);
         border: none;
+        border-radius: 5px;
+        filter: hue-rotate(180deg) invert(82%);
+        -webkit-filter: hue-rotate(180deg) invert(82%);
+        zoom: 1.2;
+        transform: scale(1.25);
+        transform-origin: 0 0;
+        -moz-transform: scale(1.25);
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(1.25);
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(1.25);
+        -webkit-transform-origin: 0 0;
+        padding-bottom: 4vw;
       }
     }
-    .quizButtonContainer {
-      width: 50vw;
-      display: block;
-      margin-bottom: 40px;
-      .quizNextBtn {
-        padding: 8px 32px;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-        font-size: 16px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        background-color: white;
-        color: #555555;
-        border: 2px solid #555555;
-        border-radius: 5px;
-        width: 150px;
-        &:hover {
-          background-color: #555555;
-          color: white;
+    .mcq-ct {
+      padding: 20px 3vw;
+      width: 100%;
+      .mcq-btn-ct {
+        display: block;
+        padding: 20px;
+        text-align: center;
+        .mcq-btn {
+          font-size: clamp(12px, 1.3vw, 1.5vw);
+          display: inline-block;
+          width: 40%;
+          padding: 5px;
+          background-color: transparent;
+          color: $dk-sky;
+          border: 2px solid $dk-sky;
+          transition: 0.5s;
+          border-radius: 5px;
+          font-weight: bold;
+          text-transform: lowercase;
+          margin: 5px 5px;
+          &:hover {
+            color: $dk-blue;
+            border-color: $dk-blue;
+            background-color: $dk-sky;
+          }
+          &:focus {
+            color: $dk-blue;
+            border-color: $dk-blue;
+            background-color: $dk-pink;
+          }
         }
       }
-      .finishQuizBtn {
-        padding: 8px 32px;
-        text-decoration: none;
-        font-weight: bold;
-        display: inline-block;
-        font-size: 16px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-        background-color: white;
-        color: #555555;
-        border: 2px solid #555555;
+    }
+    .mcq-go-ct {
+      width: 100%;
+      text-align: center;
+      .mcq-go-btn {
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid $dk-pink;
         border-radius: 5px;
+        color: $dk-pink;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
         &:hover {
-          background-color: #555555;
-          color: white;
+          background-color: $dk-pink;
+          color: $dk-blue;
+          border-color: $dk-blue;
         }
       }
     }
