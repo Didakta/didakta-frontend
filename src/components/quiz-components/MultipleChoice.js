@@ -45,7 +45,7 @@ const MultipleChoice = ({ question, lesson }) => {
       setShowNext,
       setShowFinishQuiz,
     });
-  }, [goButton]);
+  }, [goButton, questionId, lesson]);
 
   useEffect(() => {
     setChosen("");

@@ -1,6 +1,6 @@
 import "../styles/quiz.css";
 import "../styles/course.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
 
@@ -24,6 +24,12 @@ const Quiz = () => {
   // FILTERING CONTEXT FOR QUESTION RELATED DATA /////////////////
   const thisLesson = filterThisLesson(lessons, lessonId);
   const thisQuestion = filterThisQuestion(thisLesson, questionId);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  });
 
   console.log(thisQuestion);
 

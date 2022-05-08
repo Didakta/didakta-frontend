@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
+import { HashLink } from "react-router-hash-link";
 import { ApiContext } from "../LessonsContext";
 import "../styles/table-of-content.css";
 
@@ -42,7 +42,7 @@ const TableOfContent = () => {
             {thisLesson.chapters.map((chapter, i) => {
               return (
                 <div key={i.toString()} className="cl-chapter-link">
-                  <NavHashLink
+                  <HashLink
                     style={{ display: "flex" }}
                     to={`#${chapter.title}`}
                   >
@@ -50,7 +50,7 @@ const TableOfContent = () => {
                       {chapter.number}.
                     </span>
                     <span style={{ marginLeft: "5px" }}>{chapter.title}</span>
-                  </NavHashLink>
+                  </HashLink>
                 </div>
               );
             })}

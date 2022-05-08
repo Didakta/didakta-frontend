@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto";
-  /* border: 1px solid red; */
   scroll-behavior: smooth;
 }
 *::-webkit-scrollbar {

@@ -6,7 +6,7 @@
 }
 .home-container .home-rows .home-row-1-ct {
   width: 100%;
-  background-color: rgb(48, 41, 52);
+  background-color: #302934;
   aspect-ratio: 6/1;
 }
 .home-container .home-rows .home-row-1-ct .home-row-1 {
@@ -42,7 +42,7 @@
 }
 .home-container .home-rows .home-row-2-ct {
   width: 100%;
-  background-color: rgb(167, 119, 31);
+  background-color: #a7771f;
 }
 .home-container .home-rows .home-row-2-ct .home-row-2 {
   width: 100%;
@@ -94,7 +94,7 @@
   width: 100%;
   padding: 20vh 6vw;
   text-align: center;
-  background-color: rgb(39, 52, 42);
+  background-color: #27342a;
   color: lightgray;
   font-size: clamp(16px, 2.3vw, 2.3vw);
 }
@@ -103,7 +103,7 @@
 }
 .home-container .home-rows .home-row-4-ct {
   width: 100%;
-  background-color: rgb(73, 27, 27);
+  background-color: #491b1b;
 }
 .home-container .home-rows .home-row-4-ct .home-row-4 {
   width: 100%;
@@ -153,7 +153,7 @@
 }
 .home-container .home-rows .home-row-5-ct {
   width: 100%;
-  background-color: rgb(21, 50, 59);
+  background-color: #15323b;
 }
 .home-container .home-rows .home-row-5-ct .home-row-5 {
   width: 100%;
@@ -209,7 +209,7 @@
   padding: 10vw 6vw;
   text-align: left;
   color: lightgray;
-  background-color: rgb(122, 88, 88);
+  background-color: #7a5858;
 }
 .home-container .home-rows .home-row-6-ct .home-row-6 h2 {
   font-size: 3vw;
@@ -230,7 +230,7 @@
 }
 .home-container .home-rows .home-row-6-ct .home-row-6 ul li a:hover {
   padding-left: 20px;
-  color: rgb(48, 41, 52);
+  color: #302934;
 }
 .home-container .home-rows .home-row-7-ct .home-row-7 {
   background: linear-gradient(0deg, rgba(90, 67, 67, 0.85), rgba(53, 80, 97, 0.85)), url("../images/225138.jpg");
@@ -248,7 +248,7 @@
   padding: 10vw 6vw;
   text-align: center;
   color: lightgray;
-  background-color: rgb(110, 124, 139);
+  background-color: #6e7c8b;
 }
 .home-container .home-rows .home-row-8-ct .home-row-8 p {
   font-size: clamp(16px, 2.5vw, 2.5vw);

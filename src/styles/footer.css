@@ -4,7 +4,7 @@
   background-position: left 30px bottom 150px;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-color: rgb(48, 41, 52);
+  background-color: #302934;
   padding: 0 7vw;
 }
 .ft-ct .ft-content-ct {
@@ -19,7 +19,7 @@
 }
 .ft-ct .ft-content-ct .ft-col-2 h3 {
   text-transform: uppercase;
-  color: rgb(110, 124, 139);
+  color: #6e7c8b;
   margin-bottom: 20px;
 }
 .ft-ct .ft-content-ct .ft-col-2 ul {
@@ -30,12 +30,12 @@
 }
 .ft-ct .ft-content-ct .ft-col-2 ul li a {
   text-decoration: none;
-  color: rgb(110, 124, 139);
+  color: #6e7c8b;
   transition: color 0.5s, padding-left 0.5s;
   -webkit-transition: color 0.5s, padding-left 0.5s;
 }
 .ft-ct .ft-content-ct .ft-col-2 ul li a:hover {
-  color: rgb(167, 119, 31);
+  color: #a7771f;
   padding-left: 10px;
 }
 .ft-ct .ft-content-ct .ft-col-3 {
@@ -43,7 +43,7 @@
 }
 .ft-ct .ft-content-ct .ft-col-3 h3 {
   text-transform: uppercase;
-  color: rgb(110, 124, 139);
+  color: #6e7c8b;
   margin-bottom: 20px;
 }
 .ft-ct .ft-content-ct .ft-col-3 ul {
@@ -54,12 +54,12 @@
 }
 .ft-ct .ft-content-ct .ft-col-3 ul li a {
   text-decoration: none;
-  color: rgb(110, 124, 139);
+  color: #6e7c8b;
   transition: color 0.5s, padding-left 0.5s;
   -webkit-transition: color 0.5s, padding-left 0.5s;
 }
 .ft-ct .ft-content-ct .ft-col-3 ul li a:hover {
-  color: rgb(167, 119, 31);
+  color: #a7771f;
   padding-left: 10px;
 }
 .ft-ct .ft-content-ct .ft-col-4 {
@@ -95,7 +95,7 @@
 .copyright-ct {
   font-size: 14px;
   background-color: rgb(16, 13, 17);
-  color: rgb(110, 124, 139);
+  color: #6e7c8b;
   padding: 20px 0;
 }
 .copyright-ct .copyright {

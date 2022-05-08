@@ -2,7 +2,7 @@
   z-index: 99;
   width: 100%;
   overflow: hidden;
-  background-color: rgb(48, 41, 52);
+  background-color: #302934;
   position: sticky;
   top: 0;
   padding: 10px 40px 5px;
@@ -33,7 +33,7 @@
   z-index: 100;
   top: 0;
   right: 0;
-  background-color: rgb(48, 41, 52);
+  background-color: #302934;
   overflow-x: hidden;
   transition: 1s;
   padding-top: 60px;
@@ -48,14 +48,14 @@
   cursor: default;
 }
 .side-nav-ct .side-nav-link:hover {
-  color: rgb(122, 88, 88);
+  color: #7a5858;
 }
 .side-nav-ct .side-nav-link:active {
   color: red;
 }
 .side-nav-ct .h-ruller {
   margin: 50px 10px;
-  border: 1px solid rgb(122, 88, 88);
+  border: 1px solid #7a5858;
 }
 .side-nav-ct .sidenav-close {
   background: none;
@@ -74,7 +74,7 @@
   transition: 0.5s;
 }
 .side-nav-ct .sidenav-close:hover {
-  color: rgb(122, 88, 88);
+  color: #7a5858;
 }
 
 /*# sourceMappingURL=homenavbar.css.map */

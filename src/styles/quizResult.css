@@ -1,84 +1,153 @@
-.resultContainer {
-  width: 40%;
-  margin: 100px auto;
-}
-.resultContainer .average {
-  padding-bottom: 20px;
-}
-.resultContainer .recommendation {
-  font-size: 20px;
-  padding-bottom: 50px;
-}
-.resultContainer .resOneQuestion .yourResult {
-  padding-bottom: 20px;
-}
-.resultContainer .resOneQuestion .wrongAnswer {
-  background-color: rgb(238, 213, 213);
-  border: 2px solid rgb(235, 119, 119);
-  border-radius: 5px;
-  margin: 5px 0;
-  padding: 20px;
-}
-.resultContainer .resOneQuestion .wrongAnswer .resQText {
-  font-size: 18px;
-  padding-bottom: 20px;
-}
-.resultContainer .resOneQuestion .wrongAnswer .alignmentContainer {
-  width: 90%;
-  height: 15vh;
-  margin: 0 auto 20px;
-}
-.resultContainer .resOneQuestion .wrongAnswer .alignmentContainer .alignment {
+.results-ct {
+  color: lightgray;
   width: 100%;
-  height: 100%;
 }
-.resultContainer .resOneQuestion .wrongAnswer .ResQRight {
-  font-size: 22px;
-  color: green;
-  padding: 5px 0;
-}
-.resultContainer .resOneQuestion .rightAnswer {
-  background-color: rgb(221, 238, 213);
-  border: 2px solid rgb(142, 223, 96);
-  border-radius: 5px;
-  margin: 5px 0;
-  padding: 20px;
-}
-.resultContainer .resOneQuestion .rightAnswer .resQText {
-  font-size: 18px;
-  padding-bottom: 20px;
-}
-.resultContainer .resOneQuestion .rightAnswer .alignmentContainer {
-  width: 90%;
-  height: 15vh;
-  margin: 0 auto 20px;
-}
-.resultContainer .resOneQuestion .rightAnswer .alignmentContainer .alignment {
+.results-ct .results-header {
+  background-color: #302934;
   width: 100%;
-  height: 100%;
+  padding: 100px 20vw;
 }
-.resultContainer .resOneQuestion .rightAnswer .ResQRight {
-  font-size: 22px;
-  color: green;
-  padding: 5px 0;
+.results-ct .results-header .quiz-title {
+  margin-bottom: 30px;
+  font-size: clamp(28px, 2.8vw, 2.8vw);
 }
-.resultContainer .backDash {
-  margin-top: 50px;
-  padding: 8px 20px;
+.results-ct .results-header .average {
+  font-size: clamp(24px, 2.2vw, 2.2vw);
+  line-height: 1.5;
+}
+.results-ct .results-header .recommendation {
+  font-size: clamp(16px, 1.5vw, 1.5vw);
+  line-height: 1.5;
+}
+.results-ct .results-header .recommendation p a {
+  color: #a7771f;
   text-decoration: none;
+  transition: 0.5s;
   font-weight: bold;
-  display: inline-block;
-  font-size: 16px;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  background-color: white;
-  color: #555555;
-  border: 2px solid #555555;
-  border-radius: 5px;
 }
-.resultContainer .backDash:hover {
-  background-color: #555555;
-  color: white;
+.results-ct .results-header .recommendation p a:hover {
+  color: #6e7c8b;
+}
+.results-ct .result-ct .right-ans-ct {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #27342a;
+  padding: 40px 5vw calc(300px - 15vw);
+}
+.results-ct .result-ct .right-ans-ct .qNa-ct {
+  min-width: 500px;
+}
+.results-ct .result-ct .right-ans-ct .qNa-ct .result-text-ct {
+  line-height: 1.5;
+  font-size: clamp(16px, 1.5vw, 1.5vw);
+}
+.results-ct .result-ct .right-ans-ct .qNa-ct .result-text-ct .result-text {
+  margin-bottom: 3vw;
+}
+.results-ct .result-ct .right-ans-ct .qNa-ct .question-result {
+  line-height: 1.5;
+  font-size: clamp(16px, 1.5vw, 1.5vw);
+}
+.results-ct .result-ct .right-ans-ct .align-ct {
+  min-width: 500px;
+  padding-left: 1vw;
+}
+.results-ct .result-ct .right-ans-ct .align-ct .result-align-ct {
+  width: 100%;
+  padding-left: 1vw;
+}
+.results-ct .result-ct .right-ans-ct .align-ct .result-align-ct .result-align {
+  padding: 0.7vw;
+  background-color: white;
+  width: 80%;
+  min-height: 200px;
+  height: calc(350px - 15vw);
+  border: none;
+  border-radius: 5px;
+  filter: hue-rotate(90deg) invert(100%) opacity(0.8);
+  -webkit-filter: hue-rotate(90deg) invert(100%) opacity(0.8);
+  zoom: 1.25;
+  transform: scale(1.25);
+  transform-origin: 0 0;
+  -moz-transform: scale(1.25);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(1.25);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(1.25);
+  -webkit-transform-origin: 0 0;
+  margin-bottom: 3vw;
+}
+.results-ct .result-ct .wrong-ans-ct {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #491b1b;
+  padding: 40px 5vw calc(300px - 15vw);
+}
+.results-ct .result-ct .wrong-ans-ct .qNa-ct {
+  min-width: 500px;
+}
+.results-ct .result-ct .wrong-ans-ct .qNa-ct .result-text-ct {
+  line-height: 1.5;
+  font-size: clamp(16px, 1.5vw, 1.5vw);
+}
+.results-ct .result-ct .wrong-ans-ct .qNa-ct .result-text-ct .result-text {
+  margin-bottom: 3vw;
+}
+.results-ct .result-ct .wrong-ans-ct .qNa-ct .question-result {
+  line-height: 1.5;
+  font-size: clamp(16px, 1.5vw, 1.5vw);
+}
+.results-ct .result-ct .wrong-ans-ct .align-ct {
+  min-width: 500px;
+  padding-left: 1vw;
+}
+.results-ct .result-ct .wrong-ans-ct .align-ct .result-align-ct {
+  min-width: 500px;
+  padding-left: 1vw;
+}
+.results-ct .result-ct .wrong-ans-ct .align-ct .result-align-ct .result-align {
+  padding: 0.7vw;
+  background-color: white;
+  width: 80%;
+  min-height: 200px;
+  height: calc(350px - 15vw);
+  border: none;
+  border-radius: 5px;
+  filter: hue-rotate(270deg) invert(100%) opacity(0.8);
+  -webkit-filter: hue-rotate(270deg) invert(100%) opacity(0.8);
+  zoom: 1.25;
+  transform: scale(1.25);
+  transform-origin: 0 0;
+  -moz-transform: scale(1.25);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(1.25);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(1.25);
+  -webkit-transform-origin: 0 0;
+  margin-bottom: 3vw;
+}
+.results-ct .results-dash-ct {
+  width: 100%;
+  background-color: #302934;
+  text-align: center;
+}
+.results-ct .results-dash-ct .results-dash {
+  margin: 50px 0 100px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.results-ct .results-dash-ct .results-dash:hover {
+  background-color: lightgray;
+  color: #302934;
+  border-color: #302934;
 }
 
 /*# sourceMappingURL=quizResult.css.map */

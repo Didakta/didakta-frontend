@@ -1,9 +1,3 @@
-export const showQuizTitle = (quiz) => {
-  if (quiz.title) {
-    return <h1 className="quizTitle">Quiz: {quiz.title}</h1>;
-  }
-};
-
 export const showQuizText = (quiz) => {
   if (quiz.text) {
     quiz.text.map((paragraph) => {
@@ -59,6 +53,8 @@ export const handleDualDropdownSubmit = (
       const userAnswers = JSON.parse(localStorage.useranswers);
       userAnswers.push({
         question: question._id,
+        userAnswer: selectedAnswer,
+        userAnswer_1: selectedAnswer_1,
         score: 1,
       });
       localStorage.setItem("useranswers", JSON.stringify(userAnswers));
@@ -66,6 +62,8 @@ export const handleDualDropdownSubmit = (
       const userAnswers = [
         {
           question: question._id,
+          userAnswer: selectedAnswer,
+          userAnswer_1: selectedAnswer_1,
           score: 1,
         },
       ];
@@ -82,6 +80,8 @@ export const handleDualDropdownSubmit = (
       const userAnswers = JSON.parse(localStorage.useranswers);
       userAnswers.push({
         question: question._id,
+        userAnswer: selectedAnswer,
+        userAnswer_1: selectedAnswer_1,
         score: 0,
       });
       localStorage.setItem("useranswers", JSON.stringify(userAnswers));
@@ -89,6 +89,8 @@ export const handleDualDropdownSubmit = (
       const userAnswers = [
         {
           question: question._id,
+          userAnswer: selectedAnswer,
+          userAnswer_1: selectedAnswer_1,
           score: 0,
         },
       ];
@@ -119,6 +121,7 @@ export const handleSingleDropdownSubmit = (
       const userAnswers = JSON.parse(localStorage.useranswers);
       userAnswers.push({
         question: question._id,
+        userAnswer: selectedAnswer,
         score: 1,
       });
       localStorage.setItem("useranswers", JSON.stringify(userAnswers));
@@ -126,6 +129,7 @@ export const handleSingleDropdownSubmit = (
       const userAnswers = [
         {
           question: question._id,
+          userAnswer: selectedAnswer,
           score: 1,
         },
       ];
@@ -142,6 +146,7 @@ export const handleSingleDropdownSubmit = (
       const userAnswers = JSON.parse(localStorage.useranswers);
       userAnswers.push({
         question: question._id,
+        userAnswer: selectedAnswer,
         score: 0,
       });
       localStorage.setItem("useranswers", JSON.stringify(userAnswers));
@@ -149,6 +154,7 @@ export const handleSingleDropdownSubmit = (
       const userAnswers = [
         {
           question: question._id,
+          userAnswer: selectedAnswer,
           score: 0,
         },
       ];
@@ -179,6 +185,7 @@ export const handleMultipleChoiceSubmit = (
       const userAnswers = JSON.parse(localStorage.useranswers);
       userAnswers.push({
         question: question._id,
+        userAnswer: chosen,
         score: 1,
       });
       localStorage.setItem("useranswers", JSON.stringify(userAnswers));
@@ -186,6 +193,7 @@ export const handleMultipleChoiceSubmit = (
       const userAnswers = [
         {
           question: question._id,
+          userAnswer: chosen,
           score: 1,
         },
       ];
@@ -202,6 +210,7 @@ export const handleMultipleChoiceSubmit = (
       const userAnswers = JSON.parse(localStorage.useranswers);
       userAnswers.push({
         question: question._id,
+        userAnswer: chosen,
         score: 0,
       });
       localStorage.setItem("useranswers", JSON.stringify(userAnswers));
@@ -209,6 +218,7 @@ export const handleMultipleChoiceSubmit = (
       const userAnswers = [
         {
           question: question._id,
+          userAnswer: chosen,
           score: 0,
         },
       ];

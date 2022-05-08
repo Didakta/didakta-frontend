@@ -1,85 +1,167 @@
-.resultContainer {
-  width: 40%;
-  margin: 100px auto;
-  .average {
-    padding-bottom: 20px;
-  }
-  .recommendation {
-    font-size: 20px;
-    padding-bottom: 50px;
-  }
-  .resOneQuestion {
-    .yourResult {
-      padding-bottom: 20px;
+@import "colors";
+
+.results-ct {
+  color: lightgray;
+  width: 100%;
+  .results-header {
+    background-color: $dk-violet;
+    width: 100%;
+    padding: 100px 20vw;
+    .quiz-title {
+      margin-bottom: 30px;
+      font-size: clamp(28px, 2.8vw, 2.8vw);
     }
-    .wrongAnswer {
-      background-color: rgb(238, 213, 213);
-      border: 2px solid rgb(235, 119, 119);
-      border-radius: 5px;
-      margin: 5px 0;
-      padding: 20px;
-      .resQText {
-        font-size: 18px;
-        padding-bottom: 20px;
-      }
-      .alignmentContainer {
-        width: 90%;
-        height: 15vh;
-        margin: 0 auto 20px;
-        .alignment {
-          width: 100%;
-          height: 100%;
+    .average {
+      font-size: clamp(24px, 2.2vw, 2.2vw);
+      line-height: 1.5;
+    }
+    .recommendation {
+      font-size: clamp(16px, 1.5vw, 1.5vw);
+      line-height: 1.5;
+      p {
+        a {
+          color: $dk-yellow;
+          text-decoration: none;
+          transition: 0.5s;
+          font-weight: bold;
+          &:hover {
+            color: $dk-sky;
+          }
         }
       }
-      .ResQRight {
-        font-size: 22px;
-        color: green;
-        padding: 5px 0;
-      }
     }
-    .rightAnswer {
-      background-color: rgb(221, 238, 213);
-      border: 2px solid rgb(142, 223, 96);
-      border-radius: 5px;
-      margin: 5px 0;
-      padding: 20px;
-      .resQText {
-        font-size: 18px;
-        padding-bottom: 20px;
-      }
-      .alignmentContainer {
-        width: 90%;
-        height: 15vh;
-        margin: 0 auto 20px;
-        .alignment {
-          width: 100%;
-          height: 100%;
+  }
+
+  .result-ct {
+    .right-ans-ct {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: $dk-green;
+      padding: 40px 5vw calc(300px - 15vw);
+      .qNa-ct {
+        min-width: 500px;
+        .question-title {
+        }
+        .result-text-ct {
+          line-height: 1.5;
+          font-size: clamp(16px, 1.5vw, 1.5vw);
+          .result-text {
+            margin-bottom: 3vw;
+          }
+        }
+
+        .question-result {
+          line-height: 1.5;
+          font-size: clamp(16px, 1.5vw, 1.5vw);
         }
       }
-      .ResQRight {
-        font-size: 22px;
-        color: green;
-        padding: 5px 0;
+      .align-ct {
+        min-width: 500px;
+        padding-left: 1vw;
+        .result-align-ct {
+          width: 100%;
+          padding-left: 1vw;
+
+          .result-align {
+            padding: 0.7vw;
+            background-color: white;
+            width: 80%;
+            min-height: 200px;
+            height: calc(350px - 15vw);
+            border: none;
+            border-radius: 5px;
+            filter: hue-rotate(90deg) invert(100%) opacity(0.8);
+            -webkit-filter: hue-rotate(90deg) invert(100%) opacity(0.8);
+            zoom: 1.25;
+            transform: scale(1.25);
+            transform-origin: 0 0;
+            -moz-transform: scale(1.25);
+            -moz-transform-origin: 0 0;
+            -o-transform: scale(1.25);
+            -o-transform-origin: 0 0;
+            -webkit-transform: scale(1.25);
+            -webkit-transform-origin: 0 0;
+            margin-bottom: 3vw;
+          }
+        }
+      }
+    }
+    .wrong-ans-ct {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: $dk-red;
+      padding: 40px 5vw calc(300px - 15vw);
+      .qNa-ct {
+        min-width: 500px;
+
+        .question-title {
+        }
+        .result-text-ct {
+          line-height: 1.5;
+          font-size: clamp(16px, 1.5vw, 1.5vw);
+          .result-text {
+            margin-bottom: 3vw;
+          }
+        }
+
+        .question-result {
+          line-height: 1.5;
+          font-size: clamp(16px, 1.5vw, 1.5vw);
+        }
+      }
+      .align-ct {
+        min-width: 500px;
+        padding-left: 1vw;
+
+        .result-align-ct {
+          min-width: 500px;
+          padding-left: 1vw;
+          .result-align {
+            padding: 0.7vw;
+            background-color: white;
+            width: 80%;
+            min-height: 200px;
+            height: calc(350px - 15vw);
+            border: none;
+            border-radius: 5px;
+            filter: hue-rotate(270deg) invert(100%) opacity(0.8);
+            -webkit-filter: hue-rotate(270deg) invert(100%) opacity(0.8);
+            zoom: 1.25;
+            transform: scale(1.25);
+            transform-origin: 0 0;
+            -moz-transform: scale(1.25);
+            -moz-transform-origin: 0 0;
+            -o-transform: scale(1.25);
+            -o-transform-origin: 0 0;
+            -webkit-transform: scale(1.25);
+            -webkit-transform-origin: 0 0;
+            margin-bottom: 3vw;
+          }
+        }
       }
     }
   }
-  .backDash {
-    margin-top: 50px;
-    padding: 8px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
-    font-size: 16px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    background-color: white;
-    color: #555555;
-    border: 2px solid #555555;
-    border-radius: 5px;
-    // width: 250px;
-    &:hover {
-      background-color: #555555;
-      color: white;
+  .results-dash-ct {
+    width: 100%;
+    background-color: $dk-violet;
+    text-align: center;
+    .results-dash {
+      margin: 50px 0 100px;
+      padding: 10px 20px;
+      background-color: transparent;
+      border: 2px solid lightgray;
+      border-radius: 5px;
+      color: lightgray;
+      font-size: clamp(12px, 1.3vw, 1.5vw);
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+      -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+      &:hover {
+        background-color: lightgray;
+        color: $dk-violet;
+        border-color: $dk-violet;
+      }
     }
   }
 }
