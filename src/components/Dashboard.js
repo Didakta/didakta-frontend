@@ -1,7 +1,7 @@
 import "../styles/dashboard.css";
 import Header from "./Header";
 import BackToTop from "./BackToTop";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { ApiContext } from "../LessonsContext";
@@ -36,6 +36,12 @@ const Dashboard = ({ lessonId, chapterId }) => {
     "#27342a",
     "#6e7c8b",
   ];
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  });
 
   return (
     <>

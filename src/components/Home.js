@@ -2,6 +2,7 @@ import "../styles/home.css";
 import BackToTop from "./BackToTop";
 import HomeNavBar from "./HomeNavBar";
 
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
@@ -21,6 +22,12 @@ const Home = () => {
       behavior: "smooth",
     });
   };
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  });
 
   return (
     <>

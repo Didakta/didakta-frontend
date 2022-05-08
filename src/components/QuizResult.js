@@ -1,78 +1,97 @@
 import "../styles/quizResult.css";
-import { useContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useContext, useEffect } from "react";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
 
+import QuizTitle from "./quiz-components/QuizTitle";
+import QuestionTitle from "./quiz-components/QuestionTitle";
 import Alignment from "./course-components/Alignment";
 import Header from "./Header";
+import Text from "./course-components/Text";
+import UserResult from "./quiz-components/UserResult";
+import BackToTop from "./BackToTop";
 
-import {
-  filterThisLesson,
-  filterThisQuestion,
-} from "../functions/quizFunctions";
+import { filterThisLesson } from "../functions/quizFunctions";
 
 const QuizResult = () => {
   const [lessons] = useContext(ApiContext);
   const { lessonId } = useParams();
   const navigate = useNavigate();
 
-  const thisLesson = filterThisLesson(lessons, lessonId);
-  const thisQuestion = filterThisQuestion(thisLesson, lessonId);
-  console.log(thisLesson);
-  console.log(thisQuestion);
   const userAnswers = JSON.parse(localStorage.useranswers);
   const score = Number(localStorage.score);
-  console.log(score);
-  console.log(userAnswers);
+  const thisLesson = filterThisLesson(lessons, lessonId);
 
   const averageScore = (score / thisLesson.quiz.questions.length) * 100;
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  });
   return (
     <>
       <Header />
-      <div className="result-ct">
-        <h2 className="average">
-          Your average Score: {localStorage.averageScore}%
-        </h2>
-        <div className="recommendation">
+      <div className="results-ct">
+        <div className="results-header">
+          {thisLesson.quiz.title !== "" && <QuizTitle lesson={thisLesson} />}
+          <h3 className="average">Your average Score is {averageScore}%</h3>
           {averageScore < thisLesson.quiz.minPassingPercentage && (
-            <p>
-              We recommend you to review this lesson and take the quiz again.
-              The minimum passing score of this quiz is{" "}
-              {thisLesson[0].quiz.minPassingPercentage}%.
-            </p>
+            <div className="recommendation">
+              <p>
+                The minimum passing score for this quiz is{" "}
+                {thisLesson.quiz.minPassingPercentage}%.
+                <br />
+                We recommend you to review{" "}
+                <Link to={`/course/${thisLesson._id}`}>this lesson</Link> and
+                take the quiz again.
+              </p>
+            </div>
           )}
         </div>
-        <div className="question-result-ct">
-          <h3 className="yourResult">Your results:</h3>
-          {userAnswers.map((result) => {
+        <div className="result-ct">
+          {userAnswers.map((userAnswer, i) => {
+            const thisQuestion = thisLesson.quiz.questions.filter(
+              (question) => question._id === userAnswer.question
+            )[0];
             return (
               <div
-                className={result.score === 0 ? "wrongAnswer" : "rightAnswer"}
+                key={i.toString()}
+                className={
+                  userAnswer.score === 1 ? "right-ans-ct" : "wrong-ans-ct"
+                }
               >
-                <div className="resQText">
-                  {thisQuestion.text[0] && thisQuestion.text[0]}
+                <div className="qNa-ct col-6">
+                  {thisQuestion.title !== "" && (
+                    <QuestionTitle title={thisQuestion.title} />
+                  )}
+                  {thisQuestion.text[0] && (
+                    <Text text={thisQuestion.text} classprefix="result" />
+                  )}
+                  <UserResult userAnswer={userAnswer} question={thisQuestion} />
                 </div>
-                {thisQuestion.alignment && (
-                  <Alignment
-                    alignment={thisQuestion.alignment}
-                    classprefix="result"
-                  />
-                )}
-                <div className="ResQRight">
-                  {"Right answer: "}
-                  {thisQuestion.answers[thisQuestion.correctAnswer]}{" "}
-                  {thisQuestion.answers_1 &&
-                    thisQuestion.answers_1[thisQuestion.correctAnswer_1]}
+                <div className="align-ct col-6">
+                  {thisQuestion.alignment && (
+                    <Alignment
+                      alignment={thisQuestion.alignment}
+                      classprefix="result"
+                    />
+                  )}
                 </div>
               </div>
             );
           })}
         </div>
-        <button className="backDash" onClick={() => navigate("/dashboard")}>
-          Back to dashboard
-        </button>
+        <div className="results-dash-ct">
+          <button
+            className="results-dash"
+            onClick={() => navigate("/dashboard")}
+          >
+            Back to dashboard
+          </button>
+        </div>
       </div>
+      <BackToTop />
     </>
   );
 };

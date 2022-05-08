@@ -123,52 +123,50 @@ const Course = () => {
           <LessonTitle title={thisLesson.title} number={thisLesson.number} />
           {thisLesson.chapters.map((chapter, i) => {
             return (
-              <>
-                <div
-                  style={{
-                    backgroundColor: `${bgColors[i]}`,
-                  }}
-                  key={i.toString()}
-                  id={chapter.title}
-                  className="chapter-ct"
-                >
-                  {chapter.title && <ChapterTitle title={chapter.title} />}
-                  {chapter.text[0] !== "" && (
-                    <Text text={chapter.text} classprefix="chapter" />
-                  )}
-                  {chapter.audio && <Audio audio={chapter.audio} />}
-                  {chapter.audioText && <AudioText text={chapter.audioText} />}
-                  {chapter.table[[0]] && (
-                    <Table table={chapter.table} classprefix="chapter" />
-                  )}
-                  {chapter.text_1[0] && (
-                    <Text text={chapter.text_1} classprefix="chapter" />
-                  )}
-                  {chapter.table_1[[0]] && (
-                    <Table table={chapter.table_1} classprefix="chapter" />
-                  )}
-                  {chapter.youtube && <Video video={chapter.youtube} />}
-                  {chapter.questionText[0] && (
-                    <QuestionText text={chapter.questionText} />
-                  )}
-                  {chapter.questions[0] && (
-                    <Questions questions={chapter.questions} />
-                  )}
-                  {chapter.alignmentText && (
-                    <AlignmentText text={chapter.alignmentText} />
-                  )}
-                  {chapter.alignment && (
-                    <Alignment
-                      alignment={chapter.alignment}
-                      classprefix="chapter"
-                    />
-                  )}
-                  {chapter.footnotes[0] && (
-                    <Footnotes footnotes={chapter.footnotes} />
-                  )}
-                  <Image index={i} />
-                </div>
-              </>
+              <div
+                key={i.toString()}
+                style={{
+                  backgroundColor: `${bgColors[i]}`,
+                }}
+                id={chapter.title}
+                className="chapter-ct"
+              >
+                {chapter.title && <ChapterTitle title={chapter.title} />}
+                {chapter.text[0] !== "" && (
+                  <Text text={chapter.text} classprefix="chapter" />
+                )}
+                {chapter.audio && <Audio audio={chapter.audio} />}
+                {chapter.audioText && <AudioText text={chapter.audioText} />}
+                {chapter.table[[0]] && (
+                  <Table table={chapter.table} classprefix="chapter" />
+                )}
+                {chapter.text_1[0] && (
+                  <Text text={chapter.text_1} classprefix="chapter" />
+                )}
+                {chapter.table_1[[0]] && (
+                  <Table table={chapter.table_1} classprefix="chapter" />
+                )}
+                {chapter.youtube && <Video video={chapter.youtube} />}
+                {chapter.questionText[0] && (
+                  <QuestionText text={chapter.questionText} />
+                )}
+                {chapter.questions[0] && (
+                  <Questions questions={chapter.questions} />
+                )}
+                {chapter.alignmentText && (
+                  <AlignmentText text={chapter.alignmentText} />
+                )}
+                {chapter.alignment && (
+                  <Alignment
+                    alignment={chapter.alignment}
+                    classprefix="chapter"
+                  />
+                )}
+                {chapter.footnotes[0] && (
+                  <Footnotes footnotes={chapter.footnotes} />
+                )}
+                <Image index={i} />
+              </div>
             );
           })}
           <div className="lesson-btn-ct">

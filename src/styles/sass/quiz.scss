@@ -1,10 +1,4 @@
-$dk-violet: rgb(48, 41, 52);
-$dk-yellow: rgb(167, 119, 31);
-$dk-red: rgb(73, 27, 27);
-$dk-blue: rgb(21, 50, 59);
-$dk-green: rgb(39, 52, 42);
-$dk-pink: rgb(122, 88, 88);
-$dk-sky: rgb(110, 124, 139);
+@import "colors";
 
 .quiz-page-ct {
   background-color: $dk-blue;
@@ -164,7 +158,7 @@ $dk-sky: rgb(110, 124, 139);
       text-align: center;
       margin: 20px 0;
       font-size: 24px;
-      color: #acff2f65;
+      color: $dk-correct;
       font-weight: bold;
       text-transform: uppercase;
     }
@@ -173,7 +167,7 @@ $dk-sky: rgb(110, 124, 139);
       text-align: center;
       margin: 20px 0;
       font-size: 24px;
-      color: #d15c5c;
+      color: $dk-incorrect;
       font-weight: bold;
       text-transform: uppercase;
     }
@@ -205,16 +199,16 @@ $dk-sky: rgb(110, 124, 139);
       .quiz-finish-btn {
         padding: 10px 20px;
         background-color: transparent;
-        border: 2px solid #acff2f65;
+        border: 2px solid $dk-correct;
         border-radius: 5px;
-        color: #acff2f65;
+        color: $dk-correct;
         font-size: clamp(12px, 1.3vw, 1.5vw);
         font-weight: bold;
         text-transform: uppercase;
         transition: background-color 0.5s, color 0.5s, border-color 0.5s;
         -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
         &:hover {
-          background-color: #acff2f65;
+          background-color: $dk-correct;
           color: $dk-blue;
           border-color: $dk-blue;
         }
@@ -249,7 +243,7 @@ $dk-sky: rgb(110, 124, 139);
         -o-transform-origin: 0 0;
         -webkit-transform: scale(1.25);
         -webkit-transform-origin: 0 0;
-        padding-bottom: 4vw;
+        margin-bottom: 3vw;
       }
     }
     .mcq-ct {

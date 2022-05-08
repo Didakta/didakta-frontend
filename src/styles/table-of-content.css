@@ -12,8 +12,8 @@
   border-radius: 0 0 5px 0;
   margin: 0;
   border-style: none;
-  background-color: rgb(48, 41, 52);
-  color: rgb(167, 119, 31);
+  background-color: #302934;
+  color: #a7771f;
   cursor: default;
   transition: 0.5s;
 }
@@ -28,14 +28,14 @@
   z-index: 99;
   top: 63px;
   left: 0;
-  background-color: rgb(167, 119, 31);
+  background-color: #a7771f;
   overflow-x: hidden;
   transition: 1s;
   color: lightgray;
 }
 .cl-ct .cl-close {
   transform: rotate(-180deg);
-  background-color: rgb(48, 41, 52);
+  background-color: #302934;
   border-style: none;
   border-radius: 5px 0 0 0;
   padding: 5px 37px 8px;
@@ -44,7 +44,7 @@
   left: 0;
   font-size: 40px;
   margin-right: 50px;
-  color: rgb(167, 119, 31);
+  color: #a7771f;
   display: block;
   cursor: default;
   transition: 0.5s;
@@ -76,7 +76,7 @@
   -webkit-transition: 0.5s;
 }
 .cl-ct .cl-content-ct .cl-chapters .cl-chapter-link a:hover {
-  color: rgb(48, 41, 52);
+  color: #302934;
   margin-left: 10px;
 }
 .cl-ct .cl-content-ct .cl-chapters .back-to-dash-btn {

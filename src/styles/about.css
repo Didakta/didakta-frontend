@@ -3,7 +3,7 @@
 }
 .about-ct .about-rows .about-row-ct {
   padding: 5vw 15vw 5vw;
-  background-color: rgb(167, 119, 31);
+  background-color: #a7771f;
 }
 .about-ct .about-rows .about-row-ct .about-row h1 {
   width: 100%;
@@ -19,7 +19,7 @@
   line-height: 1.5;
 }
 .about-ct .about-rows .about-row-ct .about-row .why-p a {
-  color: rgb(167, 119, 31);
+  color: #a7771f;
   text-decoration: none;
   transition: 0.5s;
 }
@@ -76,7 +76,7 @@
   transition: color 0.5s, padding-left 0.5s;
 }
 .about-ct .about-rows .about-row-ct .about-row .about-ref-ul .about-ref-li:hover {
-  color: rgb(167, 119, 31);
+  color: #a7771f;
   padding-left: 20px;
 }
 .about-ct .about-rows .about-row-head-ct {
