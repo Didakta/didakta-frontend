@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import Text from "./course-components/Text";
 import Table from "./course-components/Table";
 import Alignment from "./course-components/Alignment";
+import QuizTitle from "./quiz-components/QuizTitle";
 import QuestionTitle from "./quiz-components/QuestionTitle";
 import Question from "./quiz-components/Question";
 
@@ -38,6 +39,7 @@ const Quiz = () => {
       <Header />
       <div className="quiz-page-ct">
         <div className="quiz-ct">
+          {thisLesson.quiz.title && <QuizTitle lesson={thisLesson} />}
           {thisQuestion.title !== "" && (
             <QuestionTitle title={thisQuestion.title} />
           )}
