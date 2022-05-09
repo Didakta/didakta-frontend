@@ -26,9 +26,9 @@ export const login = (user) => {
     .catch((err) => console.error(err));
 };
 
-export const updateProfile = (userData, userId) => {
+export const updateProfile = async (userData, userId) => {
   // !!! the function does NOT work !!! ////////////////////////////////
-  return axios
+  return await axios
     .put(`https://didakta.herokuapp.com/user/profile/${userId}`, {
       first: userData.first,
       last: userData.last,
