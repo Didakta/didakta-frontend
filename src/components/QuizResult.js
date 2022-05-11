@@ -1,5 +1,7 @@
 import "../styles/quizResult.css";
-import { useContext, useEffect } from "react";
+import axios from "axios";
+import jwtDecode from "jwt-decode";
+import { useContext, useEffect, useRef } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
 
@@ -15,20 +17,40 @@ import { filterThisLesson } from "../functions/quizFunctions";
 
 const QuizResult = () => {
   const [lessons] = useContext(ApiContext);
+  const score = useRef(
+    localStorage.score
+      ? Number(localStorage.score)
+      : Number(localStorage.scoreOLD)
+  );
+  const userAnswers = useRef(
+    localStorage.useranswers
+      ? JSON.parse(localStorage.useranswers)
+      : JSON.parse(localStorage.userOLDanswers)
+  );
   const { lessonId } = useParams();
   const navigate = useNavigate();
 
-  const userAnswers = JSON.parse(localStorage.useranswers);
-  const score = Number(localStorage.score);
   const thisLesson = filterThisLesson(lessons, lessonId);
 
-  const averageScore = (score / thisLesson.quiz.questions.length) * 100;
+  const averageScore = (score.current / thisLesson.quiz.questions.length) * 100;
+  // setUserAnswers(JSON.parse(localStorage.useranswers));
 
   useEffect(() => {
     window.scrollTo({
       top: 0,
     });
   });
+
+  useEffect(() => {
+    const useranswers = JSON.stringify(userAnswers.current);
+
+    localStorage.setItem("userOLDanswers", useranswers);
+    localStorage.setItem("scoreOLD", score.current);
+
+    localStorage.removeItem("useranswers");
+    localStorage.removeItem("score");
+  }, []);
+
   return (
     <>
       <Header />
@@ -50,7 +72,7 @@ const QuizResult = () => {
           )}
         </div>
         <div className="result-ct">
-          {userAnswers.map((userAnswer, i) => {
+          {userAnswers.current.map((userAnswer, i) => {
             const thisQuestion = thisLesson.quiz.questions.filter(
               (question) => question._id === userAnswer.question
             )[0];
@@ -85,7 +107,9 @@ const QuizResult = () => {
         <div className="results-dash-ct">
           <button
             className="results-dash"
-            onClick={() => navigate("/dashboard")}
+            onClick={() => {
+              navigate("/dashboard");
+            }}
           >
             Back to dashboard
           </button>

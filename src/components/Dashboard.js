@@ -37,6 +37,11 @@ const Dashboard = ({ lessonId, chapterId }) => {
     "#6e7c8b",
   ];
 
+  const handleNavigation = (lesson) => {
+    localStorage.setItem("lessonProgress", lesson._id);
+    navigate(`/course/${localStorage.lessonProgress}`);
+  };
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -53,9 +58,7 @@ const Dashboard = ({ lessonId, chapterId }) => {
             return (
               <div
                 onClick={() => {
-                  lesson.number < 3
-                    ? navigate(`/course/${lesson._id}`)
-                    : navigate("");
+                  lesson.number < 3 ? handleNavigation(lesson) : navigate("");
                 }}
                 key={i.toString()}
                 className="dash-tab-ct"
@@ -92,52 +95,7 @@ const Dashboard = ({ lessonId, chapterId }) => {
           </div>
         </div>
       </div>
-      {/* <div className="dashboardContainer">
-        <div className="syllabusContainer">
-          <div className="listAndHeaderContainer">
-            <h2>Lessons & Chapters</h2>
-            <div className="listContainer">
-              {lessons.__html.map((lesson) => {
-                return (
-                  <div className="oneLessonList">
-                    <div>
-                      {lesson.number}. {lesson.title}
-                      {lesson.chapters.map((chapter) => {
-                        return (
-                          <div>
-                            {lesson.number}.{chapter.number}.{" "}
-                            <HashLink
-                              style={
-                                chapterId === chapter._id
-                                  ? { color: "black" }
-                                  : { color: "green" }
-                              }
-                              to={`/course/${lesson._id}/#${chapter.title}`}
-                            >
-                              {chapter.title}
-                            </HashLink>
-                          </div>
-                        );
-                      })}
-                    </div>
-                    {lesson.quiz && (
-                      <div>
-                        {lesson.number}.{" "}
-                        <Link
-                          style={{ color: "green" }}
-                          to={`/quiz/${lesson._id}/${lesson.quiz.questions[0]._id}`}
-                        >
-                          Quiz: {lesson.quiz.title}
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div> */}
+
       <BackToTop />
     </>
   );

@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { ApiController } from "./LessonsContext";
 
 import Login from "./components/Login";
@@ -16,7 +16,6 @@ import NotFound from "./components/NotFound";
 import Defaultsite from "./components/Defaultsite";
 
 const AppRouter = () => {
-  const navigate = useNavigate();
   return (
     <ApiController>
       <>

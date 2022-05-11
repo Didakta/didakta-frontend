@@ -5,10 +5,12 @@ import { ApiContext } from "../LessonsContext";
 import "../styles/table-of-content.css";
 
 const TableOfContent = () => {
+  const navigate = useNavigate();
+  // const location = useLocation();
+
   const [lessons] = useContext(ApiContext);
   const [navOpen, setNavOpen] = useState(0);
   const { lessonId } = useParams();
-  const navigate = useNavigate();
 
   const thisLesson = lessons.__html.filter(
     (lesson) => lesson._id === lessonId
@@ -42,10 +44,7 @@ const TableOfContent = () => {
             {thisLesson.chapters.map((chapter, i) => {
               return (
                 <div key={i.toString()} className="cl-chapter-link">
-                  <HashLink
-                    style={{ display: "flex" }}
-                    to={`#${chapter.title}`}
-                  >
+                  <HashLink style={{ display: "flex" }} to={`#${chapter._id}`}>
                     <span style={{ color: "#d3d3d366" }}>
                       {chapter.number}.
                     </span>

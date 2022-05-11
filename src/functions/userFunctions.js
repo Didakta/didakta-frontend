@@ -1,8 +1,8 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 
-export const register = (userData) => {
-  return axios
+export const register = async (userData) => {
+  return await axios
     .post("https://didakta.herokuapp.com/user/register", {
       first: userData.first,
       last: userData.last,
@@ -13,17 +13,38 @@ export const register = (userData) => {
     .catch((err) => console.error(err));
 };
 
-export const login = (user) => {
-  return axios
+export const login = async (user) => {
+  return await axios
     .post("https://didakta.herokuapp.com/user/login", {
       email: user.email,
       password: user.password,
     })
     .then((res) => {
       localStorage.setItem("usertoken", res.data.token);
+      localStorage.setItem("lessonProgress", res.data.data.lessonProgress);
       return res.data;
     })
     .catch((err) => console.error(err));
+};
+
+export const logOut = async (event, navigate) => {
+  event.preventDefault();
+  const userToken = localStorage.usertoken;
+  const decodedToken = jwtDecode(userToken);
+  await axios.put(
+    `https://didakta.herokuapp.com/user/${decodedToken.user._id}/progress/update`,
+    {
+      lessonProgress: localStorage.lessonProgress,
+    }
+  );
+  localStorage.removeItem("lessonProgress");
+  localStorage.removeItem("usertoken");
+  localStorage.removeItem("score");
+  localStorage.removeItem("useranswers");
+  localStorage.removeItem("scoreOLD");
+  localStorage.removeItem("userOLDanswers");
+
+  navigate(`/`);
 };
 
 export const updateProfile = async (userData, userId) => {
@@ -60,8 +81,8 @@ export const getUserProfile = async (setUserData) => {
   });
 };
 
-export const getUserProgress = (userId, token) => {
-  return axios
+export const getUserProgress = async (userId, token) => {
+  return await axios
     .get(`https://didakta.herokuapp.com/user/${userId}`, {
       headers: {
         "authentication-token": token,

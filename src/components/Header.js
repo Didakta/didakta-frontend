@@ -1,19 +1,14 @@
 import "../styles/header.css";
+import logo from "../images/icon-white.png";
+
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import logo from "../images/icon-white.png";
+
+import { logOut } from "../functions/userFunctions";
 
 const Header = () => {
   const navigate = useNavigate();
   const [navOpen, setNavOpen] = useState(0);
-
-  const logOut = (e) => {
-    e.preventDefault();
-    localStorage.removeItem("usertoken");
-    localStorage.removeItem("averageScore");
-    localStorage.removeItem("userAnswers");
-    navigate(`/`);
-  };
 
   return (
     <>
@@ -109,7 +104,11 @@ const Header = () => {
             <NavLink className="side-nav-link" to="/user">
               Your Profile
             </NavLink>
-            <Link className="side-nav-link" to="/" onClick={logOut}>
+            <Link
+              className="side-nav-link"
+              to="/"
+              onClick={(e) => logOut(e, navigate)}
+            >
               Log Out
             </Link>
           </>

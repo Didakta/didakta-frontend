@@ -6,6 +6,7 @@ import {
   verifyAnswersInStorageAndSetStates,
   findNextQuestionIndex,
   setStatesIfLastQuestion,
+  submitQuiz,
 } from "../../functions/quizFunctions";
 
 const SingleDropDown = ({ question, lesson }) => {
@@ -18,6 +19,8 @@ const SingleDropDown = ({ question, lesson }) => {
   const [goButton, setGoButton] = useState(true);
   const [showNext, setShowNext] = useState(false);
   const [showFinishQuiz, setShowFinishQuiz] = useState(false);
+
+  const quizId = lesson.quiz._id;
 
   const handleNext = () => {
     const nextQuestionIndex = findNextQuestionIndex(lesson, questionId);
@@ -115,7 +118,7 @@ const SingleDropDown = ({ question, lesson }) => {
             showFinishQuiz ? { display: "inline-block" } : { display: "none" }
           }
           className="finishQuizBtn"
-          onClick={() => navigate(`/quiz/result/${lessonId}`)}
+          onClick={() => submitQuiz(navigate, lessonId, quizId)}
         >
           Submit quiz
         </button>
