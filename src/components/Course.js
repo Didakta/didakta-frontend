@@ -38,8 +38,9 @@ const Course = () => {
   const handlePrev = () => {
     let prevLessonNumber = thisLesson.number - 1;
     let prevLesson = lessons.__html.filter(
-      (lesson) => lesson.number == prevLessonNumber
+      (lesson) => lesson.number === prevLessonNumber
     );
+    localStorage.setItem("lessonProgress", prevLesson[0]._id);
     navigate(`/course/${prevLesson[0]._id}`);
     window.scrollTo({
       top: 0,
@@ -50,8 +51,9 @@ const Course = () => {
   const handleNext = () => {
     let nextLessonNumber = thisLesson.number + 1;
     let nextLesson = lessons.__html.filter(
-      (lesson) => lesson.number == nextLessonNumber
+      (lesson) => lesson.number === nextLessonNumber
     );
+    localStorage.setItem("lessonProgress", nextLesson[0]._id);
     navigate(`/course/${nextLesson[0]._id}`);
     window.scrollTo({
       top: 0,
@@ -60,17 +62,9 @@ const Course = () => {
   };
 
   const handleGoQuiz = () => {
-    if (thisLesson.quiz) {
-      navigate(`/quiz/${lessonId}/${thisLesson.quiz.questions[0]._id}`);
-      window.scrollTo({
-        top: 0,
-      });
-    } else {
-      navigate("/dashboard");
-      window.scrollTo({
-        top: 0,
-      });
-    }
+    thisLesson.quiz
+      ? navigate(`/quiz/${lessonId}/${thisLesson.quiz.questions[0]._id}`)
+      : navigate("/dashboard");
   };
 
   useEffect(() => {
@@ -116,19 +110,19 @@ const Course = () => {
   ];
   return (
     <>
-      <Header id="course-header" />
-      <TableOfContent lessonId={lessonId} />
+      <Header />
+      <TableOfContent />
       <div className="crs-ct">
         <div className="crs-lsn-ct">
           <LessonTitle title={thisLesson.title} number={thisLesson.number} />
           {thisLesson.chapters.map((chapter, i) => {
             return (
               <div
+                id={chapter._id}
                 key={i.toString()}
                 style={{
                   backgroundColor: `${bgColors[i]}`,
                 }}
-                id={chapter.title}
                 className="chapter-ct"
               >
                 {chapter.title && <ChapterTitle title={chapter.title} />}

@@ -1,3 +1,6 @@
+import axios from "axios";
+import jwtDecode from "jwt-decode";
+
 export const showQuizText = (quiz) => {
   if (quiz.text) {
     quiz.text.map((paragraph) => {
@@ -238,7 +241,6 @@ export const verifyAnswersInStorageAndSetStates = ({
     const alreadyDone = userAnswers.filter(
       (answer) => answer.question === questionId
     );
-    console.log(alreadyDone);
     if (alreadyDone.length === 1) {
       setGoButton(false);
       setShowNext(true);
@@ -268,4 +270,39 @@ export const setStatesIfLastQuestion = ({
   } else {
     setShowFinishQuiz(false);
   }
+};
+
+// submitQuiz function is being revoked from Quiz > DualDropDown || MultipleChoice || SingleDropDown. It reads useranswers from localStorage, and sends it to the backend to be sent to the DB.
+
+export const submitQuiz = (navigate, lessonId, quizId) => {
+  const userAnswers = JSON.parse(localStorage.useranswers);
+  const score = Number((localStorage.score * 100) / userAnswers.length);
+  const userToken = localStorage.usertoken;
+  const decodedUserData = jwtDecode(userToken);
+  axios
+    .get(`https://didakta.herokuapp.com/user/${decodedUserData.user._id}`)
+    .then((res) => {
+      console.log(res.data);
+      const thisQuizAlreadyTaken = res.data.data.quizProgress.filter(
+        (element) => element.quiz === quizId
+      )[0];
+      if (thisQuizAlreadyTaken === [] || thisQuizAlreadyTaken === undefined) {
+        axios
+          .put(
+            `https://didakta.herokuapp.com/user/${decodedUserData.user._id}/quiz-progress/update`,
+            {
+              quizResult: {
+                quiz: quizId,
+                firstTimeScore: score,
+                questionsResult: userAnswers,
+              },
+            }
+          )
+          .then((res) => res)
+          .catch((err) => console.log(err));
+      }
+    })
+    .catch((err) => console.log(err));
+
+  navigate(`/quiz/result/${lessonId}`);
 };

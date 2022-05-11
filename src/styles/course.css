@@ -2,6 +2,9 @@
   width: 100%;
   margin: 0;
 }
+.crs-ct .crs-lsn-ct .lesson-title-ct .lesson-title {
+  z-index: 100;
+}
 .crs-ct .crs-lsn-ct .chapter-ct {
   width: 100%;
   padding: 50px 21vw;

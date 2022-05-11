@@ -6,12 +6,15 @@ import {
   verifyAnswersInStorageAndSetStates,
   findNextQuestionIndex,
   setStatesIfLastQuestion,
+  submitQuiz,
 } from "../../functions/quizFunctions";
 
 const MultipleChoice = ({ question, lesson }) => {
   const navigate = useNavigate();
   const { lessonId, questionId } = useParams();
   const location = useLocation();
+
+  const quizId = lesson.quiz._id;
 
   const [chosen, setChosen] = useState("");
   const [hintToggle, setHintToggle] = useState(false);
@@ -122,7 +125,7 @@ const MultipleChoice = ({ question, lesson }) => {
             showFinishQuiz ? { display: "inline-block" } : { display: "none" }
           }
           className="quiz-finish-btn"
-          onClick={() => navigate(`/quiz/result/${lessonId}`)}
+          onClick={() => submitQuiz(navigate, lessonId, quizId)}
         >
           Submit quiz
         </button>

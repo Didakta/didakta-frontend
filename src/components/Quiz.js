@@ -39,7 +39,7 @@ const Quiz = () => {
       <Header />
       <div className="quiz-page-ct">
         <div className="quiz-ct">
-          {thisLesson.quiz.title && <QuizTitle lesson={lesson} />}
+          {thisLesson.quiz.title && <QuizTitle lesson={thisLesson} />}
           {thisQuestion.title !== "" && (
             <QuestionTitle title={thisQuestion.title} />
           )}
