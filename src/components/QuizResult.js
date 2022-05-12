@@ -1,6 +1,5 @@
 import "../styles/quizResult.css";
-import axios from "axios";
-import jwtDecode from "jwt-decode";
+
 import { useContext, useEffect, useRef } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
@@ -12,10 +11,13 @@ import Header from "./Header";
 import Text from "./course-components/Text";
 import UserResult from "./quiz-components/UserResult";
 import BackToTop from "./BackToTop";
+import NotFound from "./NotFound";
 
 import { filterThisLesson } from "../functions/quizFunctions";
 
 const QuizResult = () => {
+  const navigate = useNavigate();
+
   const [lessons] = useContext(ApiContext);
   const score = useRef(
     localStorage.score
@@ -25,17 +27,18 @@ const QuizResult = () => {
   const userAnswers = useRef(
     localStorage.useranswers
       ? JSON.parse(localStorage.useranswers)
-      : JSON.parse(localStorage.userOLDanswers)
+      : localStorage.userOLDanswers
+      ? JSON.parse(localStorage.userOLDanswers)
+      : ""
   );
   const { lessonId } = useParams();
-  const navigate = useNavigate();
 
   const thisLesson = filterThisLesson(lessons, lessonId);
 
   const averageScore = (score.current / thisLesson.quiz.questions.length) * 100;
-  // setUserAnswers(JSON.parse(localStorage.useranswers));
 
   useEffect(() => {
+    userAnswers.current === "" && navigate("/bad-request");
     window.scrollTo({
       top: 0,
     });
@@ -50,6 +53,9 @@ const QuizResult = () => {
     localStorage.removeItem("useranswers");
     localStorage.removeItem("score");
   }, []);
+  if (!localStorage.usertoken) {
+    return <NotFound />;
+  }
 
   return (
     <>
@@ -72,37 +78,41 @@ const QuizResult = () => {
           )}
         </div>
         <div className="result-ct">
-          {userAnswers.current.map((userAnswer, i) => {
-            const thisQuestion = thisLesson.quiz.questions.filter(
-              (question) => question._id === userAnswer.question
-            )[0];
-            return (
-              <div
-                key={i.toString()}
-                className={
-                  userAnswer.score === 1 ? "right-ans-ct" : "wrong-ans-ct"
-                }
-              >
-                <div className="qNa-ct col-6">
-                  {thisQuestion.title !== "" && (
-                    <QuestionTitle title={thisQuestion.title} />
-                  )}
-                  {thisQuestion.text[0] && (
-                    <Text text={thisQuestion.text} classprefix="result" />
-                  )}
-                  <UserResult userAnswer={userAnswer} question={thisQuestion} />
-                </div>
-                <div className="align-ct col-6">
-                  {thisQuestion.alignment && (
-                    <Alignment
-                      alignment={thisQuestion.alignment}
-                      classprefix="result"
+          {userAnswers.current !== "" &&
+            userAnswers.current.map((userAnswer, i) => {
+              const thisQuestion = thisLesson.quiz.questions.filter(
+                (question) => question._id === userAnswer.question
+              )[0];
+              return (
+                <div
+                  key={i.toString()}
+                  className={
+                    userAnswer.score === 1 ? "right-ans-ct" : "wrong-ans-ct"
+                  }
+                >
+                  <div className="qNa-ct col-6">
+                    {thisQuestion.title !== "" && (
+                      <QuestionTitle title={thisQuestion.title} />
+                    )}
+                    {thisQuestion.text[0] && (
+                      <Text text={thisQuestion.text} classprefix="result" />
+                    )}
+                    <UserResult
+                      userAnswer={userAnswer}
+                      question={thisQuestion}
                     />
-                  )}
+                  </div>
+                  <div className="align-ct col-6">
+                    {thisQuestion.alignment && (
+                      <Alignment
+                        alignment={thisQuestion.alignment}
+                        classprefix="result"
+                      />
+                    )}
+                  </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
         </div>
         <div className="results-dash-ct">
           <button

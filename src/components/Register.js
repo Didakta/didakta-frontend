@@ -1,10 +1,11 @@
 import "../styles/register.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { register, login } from "../functions/userFunctions";
 
 import Header from "./Header";
+import NotFound from "./NotFound";
 
 const Register = () => {
   const [first, setFirst] = useState();
@@ -34,6 +35,16 @@ const Register = () => {
     navigate("/dashboard");
   };
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  });
+
+  if (localStorage.usertoken) {
+    return <NotFound />;
+  }
+
   return (
     <>
       <Header />
@@ -48,7 +59,6 @@ const Register = () => {
                 id="firstName"
                 type="text"
                 name="first"
-                value={first}
                 onChange={(e) => setFirst(e.target.value)}
                 required
               />
@@ -60,7 +70,6 @@ const Register = () => {
                 id="lastName"
                 type="text"
                 name="last"
-                value={last}
                 onChange={(e) => setLast(e.target.value)}
                 required
               />
@@ -72,7 +81,6 @@ const Register = () => {
                 id="userEmail"
                 type="email"
                 name="email"
-                value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
@@ -84,7 +92,6 @@ const Register = () => {
                 id="password"
                 type="password"
                 name="password"
-                value={password}
                 placeholder="choose a strong password"
                 onChange={(e) => setPassword(e.target.value)}
                 required

@@ -11,6 +11,7 @@ import Alignment from "./course-components/Alignment";
 import QuizTitle from "./quiz-components/QuizTitle";
 import QuestionTitle from "./quiz-components/QuestionTitle";
 import Question from "./quiz-components/Question";
+import NotFound from "./NotFound";
 
 import {
   filterThisLesson,
@@ -33,6 +34,9 @@ const Quiz = () => {
   });
 
   console.log(thisQuestion);
+  if (!localStorage.usertoken) {
+    return <NotFound />;
+  }
 
   return (
     <>
