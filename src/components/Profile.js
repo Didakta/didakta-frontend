@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
+import NotFound from "./NotFound";
+
 import {
   getUserToken,
   getUserProgress,
@@ -45,6 +48,9 @@ const Profile = () => {
   //   });
   //   console.log(userData);
   // };
+  if (!localStorage.usertoken) {
+    return <NotFound />;
+  }
 
   return (
     <div>

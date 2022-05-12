@@ -1,9 +1,21 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 
+const backendUriPrefix = process.env.REACT_APP_BACKEND_URI;
+
+export const fetchLessons = async (setLessons, setLoading) => {
+  try {
+    const { data } = await axios.get(`${backendUriPrefix}/lesson`);
+    setLessons({ __html: data.data });
+    setLoading(false);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const register = async (userData) => {
   return await axios
-    .post("https://didakta.herokuapp.com/user/register", {
+    .post(`${backendUriPrefix}/user/register`, {
       first: userData.first,
       last: userData.last,
       email: userData.email,
@@ -15,7 +27,7 @@ export const register = async (userData) => {
 
 export const login = async (user) => {
   return await axios
-    .post("https://didakta.herokuapp.com/user/login", {
+    .post(`${backendUriPrefix}/user/login`, {
       email: user.email,
       password: user.password,
     })
@@ -32,7 +44,7 @@ export const logOut = async (event, navigate) => {
   const userToken = localStorage.usertoken;
   const decodedToken = jwtDecode(userToken);
   await axios.put(
-    `https://didakta.herokuapp.com/user/${decodedToken.user._id}/progress/update`,
+    `${backendUriPrefix}/user/${decodedToken.user._id}/progress/update`,
     {
       lessonProgress: localStorage.lessonProgress,
     }
@@ -50,7 +62,7 @@ export const logOut = async (event, navigate) => {
 export const updateProfile = async (userData, userId) => {
   // !!! the function does NOT work !!! ////////////////////////////////
   return await axios
-    .put(`https://didakta.herokuapp.com/user/profile/${userId}`, {
+    .put(`${backendUriPrefix}/user/profile/${userId}`, {
       first: userData.first,
       last: userData.last,
       email: userData.email,
@@ -83,7 +95,7 @@ export const getUserProfile = async (setUserData) => {
 
 export const getUserProgress = async (userId, token) => {
   return await axios
-    .get(`https://didakta.herokuapp.com/user/${userId}`, {
+    .get(`${backendUriPrefix}/user/${userId}`, {
       headers: {
         "authentication-token": token,
       },

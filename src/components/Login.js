@@ -1,10 +1,11 @@
 import "../styles/register.css";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { login } from "../functions/userFunctions";
 
 import Header from "./Header";
+import NotFound from "./NotFound";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,6 +28,16 @@ const Login = () => {
     });
   };
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  });
+
+  if (localStorage.usertoken) {
+    return <NotFound />;
+  }
+
   return (
     <>
       <Header />
@@ -41,7 +52,6 @@ const Login = () => {
                 id="userEmail"
                 type="email"
                 name="email"
-                value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
@@ -53,7 +63,6 @@ const Login = () => {
                 id="password"
                 type="password"
                 name="password"
-                value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />

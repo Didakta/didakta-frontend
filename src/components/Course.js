@@ -17,19 +17,21 @@ import Footnotes from "./course-components/Footnotes";
 import Questions from "./course-components/Questions";
 import QuestionText from "./course-components/QuestionText";
 import Image from "./course-components/Image";
+import NotFound from "./NotFound";
 
 import { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ApiContext } from "../LessonsContext";
 
 const Course = () => {
+  const navigate = useNavigate();
+
   const [goQuiz, setGoQuiz] = useState(false);
   const [showPrev, setShowPrev] = useState(false);
   const [showNext, setShowNext] = useState(false);
 
   const { lessonId } = useParams();
   const [lessons] = useContext(ApiContext);
-  const navigate = useNavigate();
 
   const thisLesson = lessons.__html.filter(
     (lesson) => lesson._id === lessonId
@@ -108,6 +110,11 @@ const Course = () => {
     "#27342a",
     "#6e7c8b",
   ];
+
+  if (!localStorage.usertoken) {
+    return <NotFound />;
+  }
+
   return (
     <>
       <Header />

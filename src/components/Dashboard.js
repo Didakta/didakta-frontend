@@ -1,13 +1,16 @@
 import "../styles/dashboard.css";
-import Header from "./Header";
-import BackToTop from "./BackToTop";
+
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 import { ApiContext } from "../LessonsContext";
+
+import Header from "./Header";
+import BackToTop from "./BackToTop";
+import NotFound from "./NotFound";
 
 const Dashboard = ({ lessonId, chapterId }) => {
   const navigate = useNavigate();
+
   const [lessons] = useContext(ApiContext);
 
   const bgColors = [
@@ -47,13 +50,26 @@ const Dashboard = ({ lessonId, chapterId }) => {
       top: 0,
     });
   });
+  if (!localStorage.usertoken) {
+    return <NotFound />;
+  }
 
   return (
     <>
       <Header />
       <div className="dash-ct">
+        <h1>Homeric Greek course syllabus</h1>
+        <div className="dash-continue-ct">
+          <button
+            onClick={() => {
+              navigate(`/course/${localStorage.lessonProgress}`);
+            }}
+            className="dash-continue-btn"
+          >
+            Continue to the course
+          </button>
+        </div>
         <div className="dash-tabs-ct">
-          <h1>Homeric Greek course syllabus</h1>
           {lessons.__html.map((lesson, i) => {
             return (
               <div

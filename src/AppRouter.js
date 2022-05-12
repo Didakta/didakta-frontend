@@ -12,7 +12,6 @@ import Quiz from "./components/Quiz";
 import QuizResult from "./components/QuizResult";
 import Profile from "./components/Profile";
 import NotFound from "./components/NotFound";
-
 import Defaultsite from "./components/Defaultsite";
 
 const AppRouter = () => {
@@ -22,14 +21,16 @@ const AppRouter = () => {
         <Routes>
           <Route path="/defaultsite" element={<Defaultsite />} />
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/user/:userId" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/course/:lessonId" element={<Course />} />
+
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/about" element={<About />} />
+          <Route path="/course/:lessonId" element={<Course />} />
           <Route path="/quiz/:lessonId/:questionId" element={<Quiz />} />
           <Route path="/quiz/result/:lessonId" element={<QuizResult />} />
-          <Route path="/user/:userId" element={<Profile />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
