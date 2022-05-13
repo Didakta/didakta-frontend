@@ -5,7 +5,11 @@ const backendUriPrefix = process.env.REACT_APP_BACKEND_URI;
 
 export const fetchLessons = async (setLessons, setLoading) => {
   try {
-    const { data } = await axios.get(`${backendUriPrefix}/lesson`);
+    const { data } = await axios.get(`${backendUriPrefix}/lesson`, {
+      headers: {
+        "authentication-token": process.env.REACT_APP_LESSONSTOKEN,
+      },
+    });
     setLessons({ __html: data.data });
     setLoading(false);
   } catch (err) {
@@ -15,22 +19,38 @@ export const fetchLessons = async (setLessons, setLoading) => {
 
 export const register = async (userData) => {
   return await axios
-    .post(`${backendUriPrefix}/user/register`, {
-      first: userData.first,
-      last: userData.last,
-      email: userData.email,
-      password: userData.password,
-    })
+    .post(
+      `${backendUriPrefix}/user/register`,
+      {
+        first: userData.first,
+        last: userData.last,
+        email: userData.email,
+        password: userData.password,
+      },
+      {
+        hearders: {
+          "authentication-token": localStorage.usertoken,
+        },
+      }
+    )
     .then((res) => res)
     .catch((err) => console.error(err));
 };
 
 export const login = async (user) => {
   return await axios
-    .post(`${backendUriPrefix}/user/login`, {
-      email: user.email,
-      password: user.password,
-    })
+    .post(
+      `${backendUriPrefix}/user/login`,
+      {
+        email: user.email,
+        password: user.password,
+      },
+      {
+        hearders: {
+          "authentication-token": localStorage.usertoken,
+        },
+      }
+    )
     .then((res) => {
       localStorage.setItem("usertoken", res.data.token);
       localStorage.setItem("lessonProgress", res.data.data.lessonProgress);
@@ -42,11 +62,18 @@ export const login = async (user) => {
 export const logOut = async (event, navigate) => {
   event.preventDefault();
   const userToken = localStorage.usertoken;
+
   const decodedToken = jwtDecode(userToken);
+
   await axios.put(
-    `${backendUriPrefix}/user/${decodedToken.user._id}/progress/update`,
+    `${backendUriPrefix}/user/${decodedToken.id}/progress/update`,
     {
       lessonProgress: localStorage.lessonProgress,
+    },
+    {
+      headers: {
+        "authentication-token": userToken,
+      },
     }
   );
   localStorage.removeItem("lessonProgress");
@@ -62,11 +89,19 @@ export const logOut = async (event, navigate) => {
 export const updateProfile = async (userData, userId) => {
   // !!! the function does NOT work !!! ////////////////////////////////
   return await axios
-    .put(`${backendUriPrefix}/user/profile/${userId}`, {
-      first: userData.first,
-      last: userData.last,
-      email: userData.email,
-    })
+    .put(
+      `${backendUriPrefix}/user/profile/${userId}`,
+      {
+        first: userData.first,
+        last: userData.last,
+        email: userData.email,
+      },
+      {
+        hearders: {
+          "authentication-token": localStorage.usertoken,
+        },
+      }
+    )
     .then((res) => console.log(res))
     .catch((err) => console.error(err));
 };
@@ -81,29 +116,35 @@ export const getUserToken = async () => {
 };
 
 export const getUserProfile = async (setUserData) => {
-  const token = await localStorage.usertoken;
-  // console.log(token);
-  const decodedToken = await jwtDecode(token);
-  setUserData({
-    first: decodedToken.first,
-    last: decodedToken.last,
-    email: decodedToken.email,
-    id: decodedToken.id,
-    admin: decodedToken.admin,
-  });
+  const userToken = await localStorage.usertoken;
+  const decodedToken = await jwtDecode(userToken);
+  setUserData(
+    {
+      first: decodedToken.first,
+      last: decodedToken.last,
+      email: decodedToken.email,
+      id: decodedToken.id,
+      admin: decodedToken.admin,
+    },
+    {
+      hearders: {
+        "authentication-token": userToken,
+      },
+    }
+  );
 };
 
 export const getUserProgress = async (userId, token) => {
   return await axios
     .get(`${backendUriPrefix}/user/${userId}`, {
       headers: {
-        "authentication-token": token,
+        "authentication-token": localStorage.usertoken,
       },
     })
     .then((res) => {
       const userProgress = {
         lessonProgress: res.data.data.lessonProgress,
-        chapterProgress: res.data.data.chapterProgress,
+        // chapterProgress: res.data.data.chapterProgress,
         quizProgress: res.data.data.quizProgress,
       };
       return userProgress;
