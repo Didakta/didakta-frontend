@@ -280,21 +280,32 @@ export const submitQuiz = (navigate, lessonId, quizId) => {
   const userToken = localStorage.usertoken;
   const decodedUserData = jwtDecode(userToken);
   axios
-    .get(`https://didakta.herokuapp.com/user/${decodedUserData.user._id}`)
+    .get(
+      `${process.env.REACT_APP_BACKEND_URI}/user/${decodedUserData.user._id}`,
+      {
+        headers: {
+          "authentication-token": userToken,
+        },
+      }
+    )
     .then((res) => {
-      console.log(res.data);
       const thisQuizAlreadyTaken = res.data.data.quizProgress.filter(
         (element) => element.quiz === quizId
       )[0];
       if (thisQuizAlreadyTaken === [] || thisQuizAlreadyTaken === undefined) {
         axios
           .put(
-            `https://didakta.herokuapp.com/user/${decodedUserData.user._id}/quiz-progress/update`,
+            `${process.env.REACT_APP_BACKEND_URI}/user/${decodedUserData.user._id}/quiz-progress/update`,
             {
               quizResult: {
                 quiz: quizId,
                 firstTimeScore: score,
                 questionsResult: userAnswers,
+              },
+            },
+            {
+              headers: {
+                "authentication-token": userToken,
               },
             }
           )
