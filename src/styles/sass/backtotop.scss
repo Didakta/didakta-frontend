@@ -1,25 +1,25 @@
-$dk-yellow: rgb(167, 119, 31);
+@import "colors";
 
 .back-to-top-ct {
   .back-to-top {
     position: fixed;
-    cursor: default;
     bottom: 20px;
     right: 20px;
     z-index: 101;
-    font-size: 6vw;
+    font-size: clamp(60px, 6vw, 6vw);
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
-    filter: drop-shadow(-6px 6px 3px black);
-    -webkit-filter: drop-shadow(-6px 6px 3px black);
-    color: $dk-yellow;
-    opacity: 0.5;
-    transition: opacity 0.5s;
-    -webkit-transition: opacity 1s;
+    filter: drop-shadow(-1px -1px 3px black);
+    -webkit-filter: drop-shadow(-1px -1px 3px black);
+    color: black;
+    opacity: 0.6;
+    transition: 0.5s;
+    -webkit-transition: 1s;
     &:hover {
+      color: $dk-yellow;
       opacity: 1;
     }
     // .back-to-top-btn {

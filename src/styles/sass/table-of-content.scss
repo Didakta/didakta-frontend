@@ -80,6 +80,20 @@
           }
         }
       }
+      .cl-quiz-link {
+        padding-top: 30px;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        &:hover {
+          padding-left: 10px;
+        }
+
+        a {
+          color: $dk-violet;
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
 
       .back-to-dash-btn {
         display: block;

@@ -1,12 +1,18 @@
 import "../styles/homenavbar.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-import { logOut } from "../functions/userFunctions";
+import { logOut, getUserId } from "../functions/userFunctions";
 
 const HomeNavBar = () => {
   const navigate = useNavigate();
   const [navOpen, setNavOpen] = useState(0);
+  const [userId, setUserId] = useState();
+
+  useEffect(() => {
+    const id = localStorage.usertoken && getUserId();
+    setUserId(id);
+  }, []);
 
   return (
     <>
@@ -88,7 +94,7 @@ const HomeNavBar = () => {
         {localStorage.usertoken && (
           <>
             <hr className="h-ruller" />
-            <NavLink className="side-nav-link" to="/user">
+            <NavLink className="side-nav-link" to={`/user/${userId}`}>
               Your Profile
             </NavLink>
             <Link

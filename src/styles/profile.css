@@ -1,0 +1,369 @@
+.profile-ct {
+  width: 100%;
+}
+.profile-ct .profile-title {
+  background-color: #302934;
+  width: 100%;
+  color: lightgray;
+  padding: 100px 0 50px;
+}
+.profile-ct .profile-title h2 {
+  font-size: clamp(18px, 2.6vw, 2.6vw);
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 20px;
+}
+.profile-ct .profile-title h3 {
+  font-size: clamp(14px, 1.5vw, 1.5vw);
+  width: 70%;
+  margin: 0 auto;
+}
+.profile-ct .user-data-ct .user-first-ct {
+  padding: 15px 15vw;
+  background-color: rgba(21, 50, 59, 0.8);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.profile-ct .user-data-ct .user-first-ct:hover {
+  background-color: rgba(21, 50, 59, 0.9);
+}
+.profile-ct .user-data-ct .user-first-ct .user-first {
+  text-transform: uppercase;
+  color: rgba(211, 211, 211, 0.5);
+  font-size: 16px;
+  font-weight: bold;
+}
+.profile-ct .user-data-ct .user-first-ct .user-first-name {
+  display: inline-block;
+  margin-top: 7px;
+  width: 50%;
+  text-transform: capitalize;
+  color: lightgray;
+  font-size: 24px;
+}
+.profile-ct .user-data-ct .user-first-ct .user-first-input {
+  display: inline-block;
+  width: 50%;
+  background-color: transparent;
+  color: lightgray;
+  font-size: 24px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 1px dotted lightgray;
+  border-bottom: 1px dotted lightgray;
+  border-top: none;
+  border-right: none;
+  padding: 5px;
+}
+.profile-ct .user-data-ct .user-first-ct .user-first-input:focus {
+  background-color: rgba(21, 50, 59, 0.7);
+  outline: none;
+}
+.profile-ct .user-data-ct .user-first-ct .edit-first-btn {
+  padding: 5px 20px;
+  margin: 0 2px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.profile-ct .user-data-ct .user-first-ct .edit-first-btn:hover {
+  background-color: lightgray;
+  color: #15323b;
+  border-color: rgba(21, 50, 59, 0.9);
+}
+.profile-ct .user-data-ct .user-first-ct .save-first-btn {
+  padding: 5px 20px;
+  margin: 0 2px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.profile-ct .user-data-ct .user-first-ct .save-first-btn:hover {
+  background-color: lightgray;
+  color: #15323b;
+  border-color: rgba(21, 50, 59, 0.9);
+}
+.profile-ct .user-data-ct .user-last-ct {
+  padding: 15px 15vw;
+  background-color: rgba(21, 50, 59, 0.8);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.profile-ct .user-data-ct .user-last-ct:hover {
+  background-color: rgba(21, 50, 59, 0.9);
+}
+.profile-ct .user-data-ct .user-last-ct .user-last {
+  text-transform: uppercase;
+  color: rgba(211, 211, 211, 0.5);
+  font-size: 16px;
+  font-weight: bold;
+}
+.profile-ct .user-data-ct .user-last-ct .user-last-name {
+  display: inline-block;
+  margin-top: 7px;
+  width: 50%;
+  text-transform: capitalize;
+  color: lightgray;
+  font-size: 24px;
+}
+.profile-ct .user-data-ct .user-last-ct .user-last-input {
+  display: inline-block;
+  width: 50%;
+  background-color: transparent;
+  color: lightgray;
+  font-size: 24px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 1px dotted lightgray;
+  border-bottom: 1px dotted lightgray;
+  border-top: none;
+  border-right: none;
+  padding: 5px;
+}
+.profile-ct .user-data-ct .user-last-ct .user-last-input:focus {
+  background-color: rgba(21, 50, 59, 0.7);
+  outline: none;
+}
+.profile-ct .user-data-ct .user-last-ct .edit-last-btn {
+  padding: 5px 20px;
+  margin: 0 2px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.profile-ct .user-data-ct .user-last-ct .edit-last-btn:hover {
+  background-color: lightgray;
+  color: #15323b;
+  border-color: rgba(21, 50, 59, 0.9);
+}
+.profile-ct .user-data-ct .user-last-ct .save-last-btn {
+  padding: 5px 20px;
+  margin: 0 2px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.profile-ct .user-data-ct .user-last-ct .save-last-btn:hover {
+  background-color: lightgray;
+  color: #15323b;
+  border-color: rgba(21, 50, 59, 0.9);
+}
+.profile-ct .user-data-ct .user-email-ct {
+  padding: 15px 15vw;
+  background-color: rgba(21, 50, 59, 0.8);
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.profile-ct .user-data-ct .user-email-ct:hover {
+  background-color: rgba(21, 50, 59, 0.9);
+}
+.profile-ct .user-data-ct .user-email-ct .user-email {
+  text-transform: uppercase;
+  color: rgba(211, 211, 211, 0.5);
+  font-size: 16px;
+  font-weight: bold;
+}
+.profile-ct .user-data-ct .user-email-ct .user-email-address {
+  display: inline-block;
+  margin-top: 7px;
+  width: 50%;
+  color: lightgray;
+  font-size: 24px;
+}
+.profile-ct .user-data-ct .user-email-ct .user-email-form {
+  display: inline-block;
+  width: 100%;
+}
+.profile-ct .user-data-ct .user-email-ct .user-email-form .user-email-input {
+  display: inline-block;
+  width: 50%;
+  background-color: transparent;
+  color: lightgray;
+  font-size: 24px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 1px dotted lightgray;
+  border-bottom: 1px dotted lightgray;
+  border-top: none;
+  border-right: none;
+  padding: 5px;
+}
+.profile-ct .user-data-ct .user-email-ct .user-email-form .user-email-input:focus {
+  background-color: rgba(21, 50, 59, 0.7);
+  outline: none;
+}
+.profile-ct .user-data-ct .user-email-ct .user-email-form .save-email-btn {
+  padding: 5px 20px;
+  margin: 0 2px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.profile-ct .user-data-ct .user-email-ct .user-email-form .save-email-btn:hover {
+  background-color: lightgray;
+  color: #15323b;
+  border-color: rgba(21, 50, 59, 0.9);
+}
+.profile-ct .user-data-ct .user-email-ct .edit-email-btn {
+  padding: 5px 20px;
+  margin: 0 2px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.profile-ct .user-data-ct .user-email-ct .edit-email-btn:hover {
+  background-color: lightgray;
+  color: #15323b;
+  border-color: rgba(21, 50, 59, 0.9);
+}
+.profile-ct .user-data-ct .user-pass-ct {
+  padding: 15px 15vw;
+  background-color: #a7771f;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.profile-ct .user-data-ct .user-pass-ct .user-pass-feedback {
+  color: #a14141;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 20px 0;
+}
+.profile-ct .user-data-ct .user-pass-ct .account-password {
+  text-transform: uppercase;
+  color: rgba(211, 211, 211, 0.5);
+  font-size: 16px;
+  font-weight: bold;
+}
+.profile-ct .user-data-ct .user-pass-ct .change-pass-btn {
+  padding: 5px 20px;
+  margin-top: 15px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.profile-ct .user-data-ct .user-pass-ct .change-pass-btn:hover {
+  background-color: lightgray;
+  color: #a7771f;
+  border-color: rgba(167, 119, 31, 0.9);
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct {
+  padding: 20px 0;
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct .user-pass-feedback {
+  color: #a14141;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 20px 0;
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct .new-pass {
+  text-transform: uppercase;
+  color: rgba(211, 211, 211, 0.5);
+  font-size: 16px;
+  font-weight: bold;
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct .new-pass-input {
+  display: inline-block;
+  width: 50%;
+  background-color: transparent;
+  color: lightgray;
+  font-size: 24px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 1px dotted lightgray;
+  border-bottom: 1px dotted lightgray;
+  border-top: none;
+  border-right: none;
+  padding: 5px;
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct .new-pass-input:focus {
+  background-color: rgba(122, 88, 88, 0.4);
+  outline: none;
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct .new-pass-repeat {
+  text-transform: uppercase;
+  color: rgba(211, 211, 211, 0.5);
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct .new-pass-repeat-input {
+  display: inline-block;
+  width: 50%;
+  background-color: transparent;
+  color: lightgray;
+  font-size: 24px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-left: 1px dotted lightgray;
+  border-bottom: 1px dotted lightgray;
+  border-top: none;
+  border-right: none;
+  padding: 5px;
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct .new-pass-repeat-input:focus {
+  background-color: rgba(122, 88, 88, 0.4);
+  outline: none;
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct .new-pass-submit-btn {
+  display: block;
+  padding: 5px 20px;
+  margin-top: 15px;
+  background-color: transparent;
+  border: 2px solid lightgray;
+  border-radius: 5px;
+  color: lightgray;
+  font-size: clamp(12px, 1.3vw, 1.5vw);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+  -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+.profile-ct .user-data-ct .user-pass-ct .new-pass-ct .new-pass-submit-btn:hover {
+  background-color: lightgray;
+  color: #a7771f;
+  border-color: rgba(167, 119, 31, 0.9);
+}
+
+/*# sourceMappingURL=profile.css.map */

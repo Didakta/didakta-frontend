@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { ApiController } from "./LessonsContext";
+import LessonsContext from "./LessonsContext";
 
 import Login from "./components/Login";
 import Register from "./components/Register";
@@ -16,7 +16,7 @@ import Defaultsite from "./components/Defaultsite";
 
 const AppRouter = () => {
   return (
-    <ApiController>
+    <LessonsContext>
       <>
         <Routes>
           <Route path="/defaultsite" element={<Defaultsite />} />
@@ -35,7 +35,7 @@ const AppRouter = () => {
         </Routes>
         <Footer />
       </>
-    </ApiController>
+    </LessonsContext>
   );
 };
 

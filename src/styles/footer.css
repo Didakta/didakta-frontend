@@ -94,12 +94,12 @@
 
 .copyright-ct {
   font-size: 14px;
-  background-color: rgb(16, 13, 17);
+  background-color: #100d11;
   color: #6e7c8b;
-  padding: 20px 0;
+  padding: 20px 0 10px;
+  text-align: center;
 }
 .copyright-ct .copyright {
-  text-align: center;
   line-height: 1.1;
 }
 .copyright-ct .copyright .cc-icon img {
@@ -112,16 +112,66 @@
 .copyright-ct .copyright .cc-icon img:hover {
   filter: invert(100%);
 }
-.copyright-ct .copyright .mrclcyn {
-  color: #fd8700;
+.copyright-ct .copyright .mrclcyn-ct {
+  display: inline-block;
+}
+.copyright-ct .copyright .mrclcyn-ct .mrclcyn {
+  font-weight: bold;
+  display: inline-block;
+  position: relative;
+  color: #ff8800;
   text-decoration: none;
   font-size: 18px;
   font-family: "Gloria Hallelujah", cursive;
-  transition: filter 1s, text-transform 1s;
-  -webkit-transition: filter 1s, text-transform 1s;
+  cursor: none;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
 }
-.copyright-ct .copyright .mrclcyn:hover {
-  filter: hue-rotate(360deg) brightness(0%);
+@keyframes mrclcyn {
+  0% {
+    color: #001aff;
+    left: -2px;
+    bottom: -2px;
+  }
+  25% {
+    color: rgba(73, 73, 73, 0.431372549);
+    left: 0px;
+    bottom: -2px;
+  }
+  50% {
+    color: #ff0000;
+    left: 2px;
+    bottom: 0px;
+  }
+  75% {
+    color: #000000;
+    left: 0px;
+    bottom: 2px;
+  }
+  100% {
+    color: #ffffff;
+    left: -2px;
+    bottom: 0px;
+  }
+}
+.copyright-ct .copyright .mrclcyn-ct .mrclcyn:hover {
+  animation: mrclcyn 0.0001s linear infinite;
+}
+
+.bug-ct {
+  width: 100%;
+  background-color: black;
+  text-align: center;
+}
+.bug-ct .find-a-bug {
+  text-decoration: none;
+  color: #6e7c8b;
+  font-size: 11px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.bug-ct .find-a-bug:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=footer.css.map */

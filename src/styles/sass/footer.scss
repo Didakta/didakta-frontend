@@ -103,11 +103,11 @@
 }
 .copyright-ct {
   font-size: 14px;
-  background-color: rgb(16, 13, 17);
+  background-color: #100d11;
   color: $dk-sky;
-  padding: 20px 0;
+  padding: 20px 0 10px;
+  text-align: center;
   .copyright {
-    text-align: center;
     line-height: 1.1;
     .cc-icon {
       img {
@@ -121,16 +121,66 @@
         }
       }
     }
-    .mrclcyn {
-      color: #fd8700;
-      text-decoration: none;
-      font-size: 18px;
-      font-family: "Gloria Hallelujah", cursive;
-      transition: filter 1s, text-transform 1s;
-      -webkit-transition: filter 1s, text-transform 1s;
-      &:hover {
-        filter: hue-rotate(360deg) brightness(0%);
+    .mrclcyn-ct {
+      display: inline-block;
+
+      .mrclcyn {
+        @keyframes mrclcyn {
+          0% {
+            color: #001aff;
+            left: -2px;
+            bottom: -2px;
+          }
+          25% {
+            color: #4949496e;
+            left: 0px;
+            bottom: -2px;
+          }
+          50% {
+            color: #ff0000;
+            left: 2px;
+            bottom: 0px;
+          }
+          75% {
+            color: #000000;
+            left: 0px;
+            bottom: 2px;
+          }
+          100% {
+            color: #ffffff;
+            left: -2px;
+            bottom: 0px;
+          }
+        }
+        font-weight: bold;
+        display: inline-block;
+        position: relative;
+        color: #ff8800;
+        text-decoration: none;
+        font-size: 18px;
+        font-family: "Gloria Hallelujah", cursive;
+        cursor: none;
+        transition: 0.5s;
+        -webkit-transition: 0.5s;
+        &:hover {
+          animation: mrclcyn 0.0001s linear infinite;
+        }
       }
+    }
+  }
+}
+.bug-ct {
+  width: 100%;
+  background-color: black;
+  text-align: center;
+  .find-a-bug {
+    text-decoration: none;
+    color: $dk-sky;
+    font-size: 11px;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    &:hover {
+      color: white;
     }
   }
 }

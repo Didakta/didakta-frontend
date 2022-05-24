@@ -54,7 +54,7 @@ const TableOfContent = () => {
               );
             })}
             {thisLesson.quiz && (
-              <div className="cl-chapter-link">
+              <div className="cl-quiz-link">
                 <Link
                   to={`/quiz/${thisLesson._id}/${thisLesson.quiz.questions[0]._id}`}
                 >

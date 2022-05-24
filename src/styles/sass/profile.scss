@@ -1,0 +1,387 @@
+@import "colors";
+
+* {
+  //   border: 1px dotted red;
+}
+.profile-ct {
+  width: 100%;
+
+  .profile-title {
+    background-color: $dk-violet;
+    width: 100%;
+    color: lightgray;
+    padding: 100px 0 50px;
+    h2 {
+      font-size: clamp(18px, 2.6vw, 2.6vw);
+      width: 70%;
+      margin: 0 auto;
+      padding-bottom: 20px;
+    }
+    h3 {
+      font-size: clamp(14px, 1.5vw, 1.5vw);
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+  .user-data-ct {
+    .user-first-ct {
+      padding: 15px 15vw;
+      background-color: rgba($dk-blue, 0.8);
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      &:hover {
+        background-color: rgba($dk-blue, 0.9);
+      }
+      .user-first {
+        text-transform: uppercase;
+        color: rgba(lightgray, 0.5);
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .user-first-name {
+        display: inline-block;
+        margin-top: 7px;
+        width: 50%;
+        text-transform: capitalize;
+        color: lightgray;
+        font-size: 24px;
+      }
+      .user-first-input {
+        display: inline-block;
+        width: 50%;
+        background-color: transparent;
+        color: lightgray;
+        font-size: 24px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-left: 1px dotted lightgray;
+        border-bottom: 1px dotted lightgray;
+        border-top: none;
+        border-right: none;
+        padding: 5px;
+        &:focus {
+          background-color: rgba($dk-blue, 0.7);
+          outline: none;
+        }
+      }
+      .edit-first-btn {
+        padding: 5px 20px;
+        margin: 0 2px;
+        background-color: transparent;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        color: lightgray;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: lightgray;
+          color: $dk-blue;
+          border-color: rgba($dk-blue, 0.9);
+        }
+      }
+      .save-first-btn {
+        padding: 5px 20px;
+        margin: 0 2px;
+        background-color: transparent;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        color: lightgray;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: lightgray;
+          color: $dk-blue;
+          border-color: rgba($dk-blue, 0.9);
+        }
+      }
+    }
+
+    .user-last-ct {
+      padding: 15px 15vw;
+      background-color: rgba($dk-blue, 0.8);
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      &:hover {
+        background-color: rgba($dk-blue, 0.9);
+      }
+      .user-last {
+        text-transform: uppercase;
+        color: rgba(lightgray, 0.5);
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .user-last-name {
+        display: inline-block;
+        margin-top: 7px;
+        width: 50%;
+        text-transform: capitalize;
+        color: lightgray;
+        font-size: 24px;
+      }
+      .user-last-input {
+        display: inline-block;
+        width: 50%;
+        background-color: transparent;
+        // margin-top: 2px;
+        color: lightgray;
+        font-size: 24px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-left: 1px dotted lightgray;
+        border-bottom: 1px dotted lightgray;
+        border-top: none;
+        border-right: none;
+        padding: 5px;
+        &:focus {
+          background-color: rgba($dk-blue, 0.7);
+          outline: none;
+        }
+      }
+      .edit-last-btn {
+        padding: 5px 20px;
+        margin: 0 2px;
+        background-color: transparent;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        color: lightgray;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: lightgray;
+          color: $dk-blue;
+          border-color: rgba($dk-blue, 0.9);
+        }
+      }
+      .save-last-btn {
+        padding: 5px 20px;
+        margin: 0 2px;
+        background-color: transparent;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        color: lightgray;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: lightgray;
+          color: $dk-blue;
+          border-color: rgba($dk-blue, 0.9);
+        }
+      }
+    }
+
+    .user-email-ct {
+      padding: 15px 15vw;
+      background-color: rgba($dk-blue, 0.8);
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      &:hover {
+        background-color: rgba($dk-blue, 0.9);
+      }
+      .user-email {
+        text-transform: uppercase;
+        color: rgba(lightgray, 0.5);
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .user-email-address {
+        display: inline-block;
+        margin-top: 7px;
+        width: 50%;
+        color: lightgray;
+        font-size: 24px;
+      }
+      .user-email-form {
+        display: inline-block;
+        width: 100%;
+        .user-email-input {
+          display: inline-block;
+          width: 50%;
+          background-color: transparent;
+          color: lightgray;
+          font-size: 24px;
+          border-bottom-left-radius: 5px;
+          border-top-right-radius: 5px;
+          border-left: 1px dotted lightgray;
+          border-bottom: 1px dotted lightgray;
+          border-top: none;
+          border-right: none;
+          padding: 5px;
+          &:focus {
+            background-color: rgba($dk-blue, 0.7);
+            outline: none;
+          }
+        }
+
+        .save-email-btn {
+          padding: 5px 20px;
+          margin: 0 2px;
+          background-color: transparent;
+          border: 2px solid lightgray;
+          border-radius: 5px;
+          color: lightgray;
+          font-size: clamp(12px, 1.3vw, 1.5vw);
+          font-weight: bold;
+          text-transform: uppercase;
+          transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+          -webkit-transition: background-color 0.5s, color 0.5s,
+            border-color 0.5s;
+          &:hover {
+            background-color: lightgray;
+            color: $dk-blue;
+            border-color: rgba($dk-blue, 0.9);
+          }
+        }
+      }
+      .edit-email-btn {
+        padding: 5px 20px;
+        margin: 0 2px;
+        background-color: transparent;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        color: lightgray;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: lightgray;
+          color: $dk-blue;
+          border-color: rgba($dk-blue, 0.9);
+        }
+      }
+    }
+    .user-pass-ct {
+      padding: 15px 15vw;
+      background-color: $dk-yellow;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+
+      .user-pass-feedback {
+        color: #a14141;
+        font-weight: bold;
+        font-size: 24px;
+        padding: 20px 0;
+      }
+      .account-password {
+        text-transform: uppercase;
+        color: rgba(lightgray, 0.5);
+        font-size: 16px;
+        font-weight: bold;
+      }
+      .change-pass-btn {
+        padding: 5px 20px;
+        margin-top: 15px;
+        background-color: transparent;
+        border: 2px solid lightgray;
+        border-radius: 5px;
+        color: lightgray;
+        font-size: clamp(12px, 1.3vw, 1.5vw);
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        -webkit-transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+        &:hover {
+          background-color: lightgray;
+          color: $dk-yellow;
+          border-color: rgba($dk-yellow, 0.9);
+        }
+      }
+
+      .new-pass-ct {
+        padding: 20px 0;
+        .user-pass-feedback {
+          color: #a14141;
+          font-weight: bold;
+          font-size: 24px;
+          padding: 20px 0;
+        }
+        .new-pass {
+          text-transform: uppercase;
+          color: rgba(lightgray, 0.5);
+          font-size: 16px;
+          font-weight: bold;
+        }
+        .new-pass-input {
+          display: inline-block;
+          width: 50%;
+          background-color: transparent;
+          color: lightgray;
+          font-size: 24px;
+          border-bottom-left-radius: 5px;
+          border-top-right-radius: 5px;
+          border-left: 1px dotted lightgray;
+          border-bottom: 1px dotted lightgray;
+          border-top: none;
+          border-right: none;
+          padding: 5px;
+          &:focus {
+            background-color: rgba($dk-pink, 0.4);
+            outline: none;
+          }
+        }
+        .new-pass-repeat {
+          text-transform: uppercase;
+          color: rgba(lightgray, 0.5);
+          font-size: 16px;
+          font-weight: bold;
+          padding-top: 20px;
+        }
+        .new-pass-repeat-input {
+          display: inline-block;
+          width: 50%;
+          background-color: transparent;
+          color: lightgray;
+          font-size: 24px;
+          border-bottom-left-radius: 5px;
+          border-top-right-radius: 5px;
+          border-left: 1px dotted lightgray;
+          border-bottom: 1px dotted lightgray;
+          border-top: none;
+          border-right: none;
+          padding: 5px;
+          &:focus {
+            background-color: rgba($dk-pink, 0.4);
+            outline: none;
+          }
+        }
+        .new-pass-submit-btn {
+          display: block;
+          padding: 5px 20px;
+          margin-top: 15px;
+          background-color: transparent;
+          border: 2px solid lightgray;
+          border-radius: 5px;
+          color: lightgray;
+          font-size: clamp(12px, 1.3vw, 1.5vw);
+          font-weight: bold;
+          text-transform: uppercase;
+          transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+          -webkit-transition: background-color 0.5s, color 0.5s,
+            border-color 0.5s;
+          &:hover {
+            background-color: lightgray;
+            color: $dk-yellow;
+            border-color: rgba($dk-yellow, 0.9);
+          }
+        }
+      }
+    }
+  }
+}
+
+* {
+  // border: 1px dotted rgb(255, 0, 0);
+}
