@@ -79,6 +79,19 @@
   color: #302934;
   margin-left: 10px;
 }
+.cl-ct .cl-content-ct .cl-chapters .cl-quiz-link {
+  padding-top: 30px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.cl-ct .cl-content-ct .cl-chapters .cl-quiz-link:hover {
+  padding-left: 10px;
+}
+.cl-ct .cl-content-ct .cl-chapters .cl-quiz-link a {
+  color: #302934;
+  font-weight: bold;
+  text-decoration: none;
+}
 .cl-ct .cl-content-ct .cl-chapters .back-to-dash-btn {
   display: block;
   padding: 7px 10px;

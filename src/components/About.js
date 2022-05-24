@@ -72,7 +72,7 @@ const About = () => {
                   <img
                     className="about-card-img"
                     src={teacher}
-                    alt="Farnoush Shamsian"
+                    alt="Farnoosh Shamsian"
                   />
                   <h2>Farnoush Shamsian</h2>
                   <p>Content Provider</p>
@@ -114,7 +114,7 @@ const About = () => {
                   <img
                     className="about-card-img"
                     src={designer}
-                    alt="Faxte Shamsian"
+                    alt="Faxteh Shamsian"
                   />
                   <h2>Faxte Shamsian</h2>
                   <p>Graphic Design</p>

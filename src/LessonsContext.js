@@ -4,7 +4,7 @@ import { fetchLessons } from "./functions/userFunctions";
 
 export const ApiContext = createContext();
 
-export const ApiController = (props) => {
+const LessonsContext = (props) => {
   const [lessons, setLessons] = useState();
   const [loading, setLoading] = useState(true);
 
@@ -18,3 +18,5 @@ export const ApiController = (props) => {
     </ApiContext.Provider>
   );
 };
+
+export default LessonsContext;

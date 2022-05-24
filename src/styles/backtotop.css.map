@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["sass/backtotop.scss"],"names":[],"mappings":"AAGE;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA,OAjBQ;EAkBR;EACA;EACA;;AACA;EACE","file":"backtotop.css"}
+{"version":3,"sourceRoot":"","sources":["sass/backtotop.scss","sass/_colors.scss"],"names":[],"mappings":"AAGE;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AACA;EACE,OCpBM;EDqBN","file":"backtotop.css"}

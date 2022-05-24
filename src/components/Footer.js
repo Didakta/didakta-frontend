@@ -24,14 +24,16 @@ function Copyright() {
       {new Date().getFullYear()}
       <br />
       Implemented by{" "}
-      <a
-        className="mrclcyn"
-        href="https://github.com/mrclcyn"
-        target="_blank"
-        rel="noreferrer"
-      >
-        mrclcyn
-      </a>
+      <div className="mrclcyn-ct">
+        <a
+          className="mrclcyn"
+          href="https://github.com/mrclcyn"
+          target="_blank"
+          rel="noreferrer"
+        >
+          mrclcyn
+        </a>
+      </div>
     </div>
   );
 }
@@ -116,6 +118,16 @@ const Footer = () => {
       </div>
       <div className="copyright-ct">
         <Copyright />
+      </div>
+      <div className="bug-ct">
+        <a
+          className="find-a-bug"
+          href="https://github.com/mrclcyn/didakta-reactjs/issues"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Did you just find a bug?
+        </a>
       </div>
     </>
   );

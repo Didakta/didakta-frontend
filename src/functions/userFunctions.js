@@ -1,13 +1,13 @@
 import axios from "axios";
 import jwtDecode from "jwt-decode";
 
-const backendUriPrefix = process.env.REACT_APP_BACKEND_URI;
+const backendUri = process.env.REACT_APP_BACKEND_URI;
 
 export const fetchLessons = async (setLessons, setLoading) => {
   try {
-    const { data } = await axios.get(`${backendUriPrefix}/lesson`, {
+    const { data } = await axios.get(`${backendUri}/lesson`, {
       headers: {
-        "authentication-token": process.env.REACT_APP_LESSONSTOKEN,
+        "authentication-token": process.env.REACT_APP_ADMIN_TOKEN,
       },
     });
     setLessons({ __html: data.data });
@@ -17,10 +17,24 @@ export const fetchLessons = async (setLessons, setLoading) => {
   }
 };
 
+export const fetchUserData = async (userId, setUser, setLoading) => {
+  try {
+    const { data } = await axios.get(`${backendUri}/user/${userId}`, {
+      headers: {
+        "authentication-token": localStorage.usertoken,
+      },
+    });
+    setUser(data.data);
+    setLoading(false);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 export const register = async (userData) => {
   return await axios
     .post(
-      `${backendUriPrefix}/user/register`,
+      `${backendUri}/user/register`,
       {
         first: userData.first,
         last: userData.last,
@@ -33,14 +47,13 @@ export const register = async (userData) => {
         },
       }
     )
-    .then((res) => res)
     .catch((err) => console.error(err));
 };
 
 export const login = async (user) => {
   return await axios
     .post(
-      `${backendUriPrefix}/user/login`,
+      `${backendUri}/user/login`,
       {
         email: user.email,
         password: user.password,
@@ -66,7 +79,7 @@ export const logOut = async (event, navigate) => {
   const decodedToken = jwtDecode(userToken);
 
   await axios.put(
-    `${backendUriPrefix}/user/${decodedToken.id}/progress/update`,
+    `${backendUri}/user/${decodedToken.id}/progress/update`,
     {
       lessonProgress: localStorage.lessonProgress,
     },
@@ -86,57 +99,93 @@ export const logOut = async (event, navigate) => {
   navigate(`/`);
 };
 
-export const updateProfile = async (userData, userId) => {
-  // !!! the function does NOT work !!! ////////////////////////////////
+export const updateUserFirstName = async (newFirst, userId) => {
   return await axios
     .put(
-      `${backendUriPrefix}/user/profile/${userId}`,
+      `${backendUri}/user/${userId}/update`,
       {
-        first: userData.first,
-        last: userData.last,
-        email: userData.email,
+        first: newFirst,
       },
       {
-        hearders: {
+        headers: {
           "authentication-token": localStorage.usertoken,
         },
       }
     )
-    .then((res) => console.log(res))
     .catch((err) => console.error(err));
 };
 
-export const getUserToken = async () => {
-  const token = await localStorage.usertoken;
-  if (token) {
-    return token;
-  } else {
-    return 0;
-  }
+export const updateUserLastName = async (newLast, userId) => {
+  return await axios
+    .put(
+      `${backendUri}/user/${userId}/update`,
+      {
+        last: newLast,
+      },
+      {
+        headers: {
+          "authentication-token": localStorage.usertoken,
+        },
+      }
+    )
+    .catch((err) => console.error(err));
 };
 
-export const getUserProfile = async (setUserData) => {
-  const userToken = await localStorage.usertoken;
-  const decodedToken = await jwtDecode(userToken);
-  setUserData(
-    {
-      first: decodedToken.first,
-      last: decodedToken.last,
-      email: decodedToken.email,
-      id: decodedToken.id,
-      admin: decodedToken.admin,
-    },
-    {
-      hearders: {
-        "authentication-token": userToken,
+export const updateUserEmail = async (newEmail, userId) => {
+  return await axios
+    .put(
+      `${backendUri}/user/${userId}/update`,
+      {
+        email: newEmail,
       },
-    }
-  );
+      {
+        headers: {
+          "authentication-token": localStorage.usertoken,
+        },
+      }
+    )
+    .catch((err) => console.error(err));
+};
+
+export const updateUserPassword = async (newPass, userId) => {
+  return await axios
+    .put(
+      `${backendUri}/user/${userId}/update`,
+      {
+        password: newPass,
+      },
+      {
+        headers: {
+          "authentication-token": localStorage.usertoken,
+        },
+      }
+    )
+    .then((res) => {
+      return res.data.success;
+    })
+    .catch((err) => console.error(err));
+};
+
+export const getUserId = () => {
+  const userToken = localStorage.usertoken;
+  const user = jwtDecode(userToken);
+  return user.id;
+};
+
+export const getUserToken = async () => {
+  const userToken = (await localStorage.usertoken)
+    ? localStorage.usertoken
+    : null;
+  if (userToken !== null) {
+    return userToken;
+  } else {
+    return null;
+  }
 };
 
 export const getUserProgress = async (userId, token) => {
   return await axios
-    .get(`${backendUriPrefix}/user/${userId}`, {
+    .get(`${backendUri}/user/${userId}`, {
       headers: {
         "authentication-token": localStorage.usertoken,
       },
