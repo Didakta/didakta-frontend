@@ -74,7 +74,7 @@ const Dashboard = ({ lessonId, chapterId }) => {
             return (
               <div
                 onClick={() => {
-                  lesson.number < 3 ? handleNavigation(lesson) : navigate("");
+                  lesson.number < 4 ? handleNavigation(lesson) : navigate("");
                 }}
                 key={i.toString()}
                 className="dash-tab-ct"
@@ -84,7 +84,7 @@ const Dashboard = ({ lessonId, chapterId }) => {
                   <h2>Lesson {lesson.number}</h2>
                   <h3
                     style={
-                      lesson.number > 2
+                      lesson.number > 3
                         ? { display: "none" }
                         : { display: "block" }
                     }
@@ -94,7 +94,7 @@ const Dashboard = ({ lessonId, chapterId }) => {
                   <p
                     className="pending"
                     style={
-                      lesson.number > 2
+                      lesson.number > 3
                         ? { display: "block" }
                         : { display: "none" }
                     }

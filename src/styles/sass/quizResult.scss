@@ -1,5 +1,25 @@
 @import "colors";
 
+.back-to-profile {
+  z-index: 100;
+  display: inline-block;
+  // width: 100px;
+  position: fixed;
+  top: 12px;
+  left: 170px;
+  color: $dk-yellow;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: $dk-violet;
+  text-transform: uppercase;
+  padding: 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  &:hover {
+    color: lightgray;
+    padding-left: 15px;
+  }
+}
 .results-ct {
   color: lightgray;
   width: 100%;

@@ -37,6 +37,7 @@ const Course = () => {
     (lesson) => lesson._id === lessonId
   )[0];
 
+  console.log(thisLesson);
   const handlePrev = () => {
     let prevLessonNumber = thisLesson.number - 1;
     let prevLesson = lessons.__html.filter(

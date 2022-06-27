@@ -1,6 +1,6 @@
 import "../styles/profile.css";
 import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import Header from "./Header";
 import NotFound from "./NotFound";
@@ -30,7 +30,7 @@ const Profile = () => {
   const [newEmail, setNewEmail] = useState();
   const [editableEmail, setEditableEmail] = useState(false);
 
-  const [newPass, setNewPass] = useState();
+  const [newPass, setNewPass] = useState("");
   const [newPassRepeat, setNewPassRepeat] = useState();
 
   const [changePass, setChangePass] = useState(false);
@@ -71,10 +71,7 @@ const Profile = () => {
         <div className="profile-ct">
           <div className="profile-title">
             <h2>Hi {user.first}</h2>
-            <h3>
-              Here you can see and edit your personal information and review
-              your quiz results
-            </h3>
+            <h3>Here you can see and edit your personal information</h3>
           </div>
           <div className="user-data-ct">
             {/**************** FIRST NAME ****************/}
@@ -271,6 +268,66 @@ const Profile = () => {
           </div>
         </div>
       )}
+      {!loading &&
+      (!user.quizProgress ||
+        user.quizProgress === undefined ||
+        user.quizProgress.length === 0) ? (
+        <div>
+          <h3>
+            You have not taken a quiz yet. Once you do so, you can review your
+            scores and detailed results here.
+          </h3>
+        </div>
+      ) : (
+        <div>
+          <h3>Review your quiz results</h3>
+          <p>
+            If you have taken a quiz several times, here you can only see your
+            first time result.
+          </p>
+        </div>
+      )}
+      <div>
+        {!loading &&
+          lessons.__html.map((lesson, i) => {
+            if (
+              lesson.quiz !== undefined &&
+              lesson.quiz !== "" &&
+              lesson.quiz !== {} &&
+              user.quizProgress &&
+              user.quizProgress !== undefined &&
+              user.quizProgress.length !== 0
+            ) {
+              const thisQuizProgress = user.quizProgress.filter(
+                (element) => element.quiz === lesson.quiz._id
+              )[0];
+              console.log(thisQuizProgress);
+              return (
+                <div key={i}>
+                  <h3>
+                    Lesson {lesson.number} quiz: {lesson.quiz.title}
+                  </h3>
+                  <div>
+                    Your average score: {thisQuizProgress.firstTimeScore}%<br />
+                    Minimum passing score: {lesson.quiz.minPassingPercentage}%
+                  </div>
+                  <div>
+                    <Link
+                      to={`/quiz/${lesson._id}/${lesson.quiz.questions[0]._id}`}
+                    >
+                      Take this quiz again
+                    </Link>
+                  </div>
+                  <div>
+                    <Link to={`/user/${userId}/quiz/result/${lesson._id}`}>
+                      Your detailed results
+                    </Link>
+                  </div>
+                </div>
+              );
+            }
+          })}
+      </div>
     </>
   );
 };
