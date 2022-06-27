@@ -1,3 +1,23 @@
+.back-to-profile {
+  z-index: 100;
+  display: inline-block;
+  position: fixed;
+  top: 12px;
+  left: 170px;
+  color: #a7771f;
+  font-weight: bold;
+  font-size: 14px;
+  background-color: #302934;
+  text-transform: uppercase;
+  padding: 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+}
+.back-to-profile:hover {
+  color: lightgray;
+  padding-left: 15px;
+}
+
 .results-ct {
   color: lightgray;
   width: 100%;

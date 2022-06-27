@@ -280,14 +280,11 @@ export const submitQuiz = (navigate, lessonId, quizId) => {
   const userToken = localStorage.usertoken;
   const decodedUserData = jwtDecode(userToken);
   axios
-    .get(
-      `${process.env.REACT_APP_BACKEND_URI}/user/${decodedUserData.user._id}`,
-      {
-        headers: {
-          "authentication-token": userToken,
-        },
-      }
-    )
+    .get(`${process.env.REACT_APP_BACKEND_URI}/user/${decodedUserData.id}`, {
+      headers: {
+        "authentication-token": userToken,
+      },
+    })
     .then((res) => {
       const thisQuizAlreadyTaken = res.data.data.quizProgress.filter(
         (element) => element.quiz === quizId
@@ -295,7 +292,7 @@ export const submitQuiz = (navigate, lessonId, quizId) => {
       if (thisQuizAlreadyTaken === [] || thisQuizAlreadyTaken === undefined) {
         axios
           .put(
-            `${process.env.REACT_APP_BACKEND_URI}/user/${decodedUserData.user._id}/quiz-progress/update`,
+            `${process.env.REACT_APP_BACKEND_URI}/user/${decodedUserData.id}/quiz-progress/update`,
             {
               quizResult: {
                 quiz: quizId,

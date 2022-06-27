@@ -193,7 +193,6 @@ export const getUserProgress = async (userId, token) => {
     .then((res) => {
       const userProgress = {
         lessonProgress: res.data.data.lessonProgress,
-        // chapterProgress: res.data.data.chapterProgress,
         quizProgress: res.data.data.quizProgress,
       };
       return userProgress;

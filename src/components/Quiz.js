@@ -33,7 +33,6 @@ const Quiz = () => {
     });
   });
 
-  console.log(thisQuestion);
   if (!localStorage.usertoken) {
     return <NotFound />;
   }

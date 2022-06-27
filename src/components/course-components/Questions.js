@@ -22,7 +22,8 @@ const Questions = ({ questions }) => {
   return (
     <div className="chapter-question-ct">
       {questions.map((question, i) => {
-        if (question.tags === "dropDown") {
+        if (question.tags[0] === "dropDown") {
+          console.log("hey");
           if (question.answers_1[0]) {
             return (
               // rendering the text of each question inside chapter + answers (Drop Down)
