@@ -20,6 +20,7 @@
   font-size: clamp(18px, 1.5vw, 2vw);
   text-align: justify;
   line-height: 1.5;
+  padding-bottom: 20px;
 }
 .crs-ct .crs-lsn-ct .chapter-ct .chapter-text-ct .chapter-text a {
   color: rgba(0, 0, 0, 0.705);
