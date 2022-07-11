@@ -35,8 +35,9 @@ const QuizResult = () => {
 
   const thisLesson = filterThisLesson(lessons, lessonId);
 
-  const averageScore = (score.current / thisLesson.quiz.questions.length) * 100;
-
+  const averageScore = Math.floor(
+    (score.current / thisLesson.quiz.questions.length) * 100
+  );
   useEffect(() => {
     userAnswers.current === "" && navigate("/bad-request");
     window.scrollTo({
@@ -63,7 +64,7 @@ const QuizResult = () => {
       <div className="results-ct">
         <div className="results-header">
           {thisLesson.quiz.title !== "" && <QuizTitle lesson={thisLesson} />}
-          <h3 className="average">Your average Score is {averageScore}%</h3>
+          <h3 className="average">Your quiz score is {averageScore}%</h3>
           {averageScore < thisLesson.quiz.minPassingPercentage && (
             <div className="recommendation">
               <p>

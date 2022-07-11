@@ -37,7 +37,6 @@ const Course = () => {
     (lesson) => lesson._id === lessonId
   )[0];
 
-  console.log(thisLesson);
   const handlePrev = () => {
     let prevLessonNumber = thisLesson.number - 1;
     let prevLesson = lessons.__html.filter(
@@ -75,7 +74,7 @@ const Course = () => {
     prevLessonNumber === 0 ? setShowPrev(false) : setShowPrev(true);
 
     ///////////////////////////// MUST BE INCREMENTED EACH TIME A LESSEON HAS BEEN ADDED TO SHOW THE NEXT BUTTON  /////////////////////////////
-    thisLesson.number < 2 ? setShowNext(true) : setShowNext(false);
+    thisLesson.number < 3 ? setShowNext(true) : setShowNext(false);
     thisLesson.quiz ? setGoQuiz(true) : setGoQuiz(false);
   }, [lessonId]);
 

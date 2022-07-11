@@ -276,7 +276,10 @@ export const setStatesIfLastQuestion = ({
 
 export const submitQuiz = (navigate, lessonId, quizId) => {
   const userAnswers = JSON.parse(localStorage.useranswers);
-  const score = Number((localStorage.score * 100) / userAnswers.length);
+  const score = Math.floor(
+    Number((localStorage.score * 100) / userAnswers.length)
+  );
+
   const userToken = localStorage.usertoken;
   const decodedUserData = jwtDecode(userToken);
   axios

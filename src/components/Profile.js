@@ -272,22 +272,22 @@ const Profile = () => {
       (!user.quizProgress ||
         user.quizProgress === undefined ||
         user.quizProgress.length === 0) ? (
-        <div>
-          <h3>
+        <div className="quizzes-result-ct">
+          <h3 className="result-title">
             You have not taken a quiz yet. Once you do so, you can review your
             scores and detailed results here.
           </h3>
         </div>
       ) : (
-        <div>
-          <h3>Review your quiz results</h3>
-          <p>
+        <div className="quizzes-result-ct">
+          <h3 className="result-title">Review your quiz results</h3>
+          <p className="result-p">
             If you have taken a quiz several times, here you can only see your
             first time result.
           </p>
         </div>
       )}
-      <div>
+      <div className="quizzes-result-ct">
         {!loading &&
           lessons.__html.map((lesson, i) => {
             if (
@@ -296,32 +296,35 @@ const Profile = () => {
               lesson.quiz !== {} &&
               user.quizProgress &&
               user.quizProgress !== undefined &&
-              user.quizProgress.length !== 0
+              user.quizProgress.length !== 0 &&
+              user.quizProgress.some((el) => el.quiz === lesson.quiz._id)
             ) {
               const thisQuizProgress = user.quizProgress.filter(
                 (element) => element.quiz === lesson.quiz._id
               )[0];
               console.log(thisQuizProgress);
               return (
-                <div key={i}>
-                  <h3>
+                <div className="quiz-result-ct" key={i}>
+                  <h3 className="result-quiz-title">
                     Lesson {lesson.number} quiz: {lesson.quiz.title}
                   </h3>
-                  <div>
-                    Your average score: {thisQuizProgress.firstTimeScore}%<br />
+                  <div className="result-quiz-result">
+                    Your score: {thisQuizProgress.firstTimeScore}%
+                    <br />
                     Minimum passing score: {lesson.quiz.minPassingPercentage}%
                   </div>
-                  <div>
+                  <div className="take-quiz-again">
                     <Link
                       to={`/quiz/${lesson._id}/${lesson.quiz.questions[0]._id}`}
                     >
                       Take this quiz again
                     </Link>
                   </div>
-                  <div>
+                  <div className="take-quiz-again">
                     <Link to={`/user/${userId}/quiz/result/${lesson._id}`}>
                       Your detailed results
                     </Link>
+                    <hr />
                   </div>
                 </div>
               );
