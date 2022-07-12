@@ -38,67 +38,64 @@ export const handleDualDropdownSubmit = (
   setGoButton,
   setShowNext
 ) => {
+  const {
+    answers,
+    correctAnswer,
+    answers_1,
+    correctAnswer_1,
+    _id: id,
+  } = question;
+
+  const setDropDownComponentStates = (correction, goButton, showNext) => {
+    setCorrection(correction);
+    setGoButton(goButton);
+    setShowNext(showNext);
+  };
+
+  const addNewAnswerAndUpdateStorage = (
+    id,
+    selectedAnswer,
+    selectedAnswer_1,
+    score
+  ) => {
+    const newAnswer = {
+      question: id,
+      userAnswer: selectedAnswer,
+      userAnswer_1: selectedAnswer_1,
+      score: score,
+    };
+    console.log(newAnswer);
+
+    const updateAnswersInStorage = (userAnswers) => {
+      localStorage.setItem("useranswers", JSON.stringify(userAnswers));
+    };
+
+    const answers = localStorage.useranswers
+      ? JSON.parse(localStorage.useranswers)
+      : [];
+    console.log(answers);
+    updateAnswersInStorage(
+      answers !== {} ? [...answers, newAnswer] : [newAnswer]
+    );
+  };
+
+  const updateScoreInStorage = (newScore) => {
+    let score = localStorage.score ? JSON.parse(localStorage.score) : 0;
+    newScore === 1 && score++;
+    localStorage.setItem("score", score);
+  };
+
   if (
-    question.answers[question.correctAnswer] === selectedAnswer &&
-    question.answers_1[question.correctAnswer_1] === selectedAnswer_1
+    answers[correctAnswer] === selectedAnswer &&
+    answers_1[correctAnswer_1] === selectedAnswer_1
   ) {
-    setCorrection("Correct!");
-    setGoButton(false);
-    setShowNext(true);
-    if (localStorage.score) {
-      let score = JSON.parse(localStorage.score);
-      score++;
-      localStorage.setItem("score", score);
-    } else {
-      localStorage.setItem("score", "1");
-    }
-    if (localStorage.useranswers) {
-      const userAnswers = JSON.parse(localStorage.useranswers);
-      userAnswers.push({
-        question: question._id,
-        userAnswer: selectedAnswer,
-        userAnswer_1: selectedAnswer_1,
-        score: 1,
-      });
-      localStorage.setItem("useranswers", JSON.stringify(userAnswers));
-    } else {
-      const userAnswers = [
-        {
-          question: question._id,
-          userAnswer: selectedAnswer,
-          userAnswer_1: selectedAnswer_1,
-          score: 1,
-        },
-      ];
-      localStorage.setItem("useranswers", JSON.stringify(userAnswers));
-    }
+    setDropDownComponentStates("Correct!", false, true);
+    updateScoreInStorage(1);
+    addNewAnswerAndUpdateStorage(id, selectedAnswer, selectedAnswer_1, 1);
   } else {
-    setCorrection("Incorrect!");
-    setGoButton(false);
-    setShowNext(true);
-    if (!localStorage.score) {
-      localStorage.setItem("score", "0");
-    }
-    if (localStorage.useranswers) {
-      const userAnswers = JSON.parse(localStorage.useranswers);
-      userAnswers.push({
-        question: question._id,
-        userAnswer: selectedAnswer,
-        userAnswer_1: selectedAnswer_1,
-        score: 0,
-      });
-      localStorage.setItem("useranswers", JSON.stringify(userAnswers));
-    } else {
-      const userAnswers = [
-        {
-          question: question._id,
-          userAnswer: selectedAnswer,
-          userAnswer_1: selectedAnswer_1,
-          score: 0,
-        },
-      ];
-      localStorage.setItem("useranswers", JSON.stringify(userAnswers));
-    }
+    setDropDownComponentStates("Incorrect!", false, true);
+    updateScoreInStorage(0);
+    addNewAnswerAndUpdateStorage(id, selectedAnswer, selectedAnswer_1, 0);
   }
 };
 
